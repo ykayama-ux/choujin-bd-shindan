@@ -141,11 +141,16 @@ strong { font-weight: 700; }
     border-bottom: 1px solid var(--border);
 }
 .hero-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 12px;
     font-size: 13px;
-    letter-spacing: .14em;
+    letter-spacing: .12em;
     color: var(--text-muted);
     margin: 0 0 22px;
 }
+.hero-label span { white-space: nowrap; }
+.hero-accent { white-space: nowrap; }
 .hero-title {
     font-family: var(--font-serif);
     font-weight: 900;
