@@ -136,10 +136,72 @@ strong { font-weight: 700; }
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ---- Hero ---- */
+.container-wide { max-width: 1120px; }
 .hero {
-    padding: 72px 0 64px;
+    padding: 64px 0 56px;
     border-bottom: 1px solid var(--border);
 }
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 560px) minmax(280px, 1fr);
+    gap: 48px;
+    align-items: center;
+}
+.hero-photo { margin: 0; }
+.hero-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 7 / 5;
+    object-fit: cover;
+}
+.hero-photo figcaption,
+.photo-band figcaption {
+    font-size: 12px;
+    letter-spacing: .06em;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+/* ---- Photo band (section head) ---- */
+.photo-band { margin: 0 0 36px; }
+.photo-band img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 40 / 19;
+    object-fit: cover;
+}
+
+/* ---- Closing band (full-bleed photo + paper scrim) ---- */
+.closing-band {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+}
+.closing-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+.closing-band::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(246, 245, 242, .80);
+}
+.closing-inner {
+    position: relative;
+    z-index: 1;
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+.closing-inner .cta-title { margin-bottom: 12px; }
+.closing-inner .cta-sub { margin-bottom: 0; }
 .hero-label {
     display: flex;
     flex-wrap: wrap;
@@ -438,7 +500,8 @@ section + section { border-top: 1px solid var(--border); }
 }
 
 /* ---- CTA / Form ---- */
-.cta { padding-bottom: 96px; }
+.cta { padding-top: 64px; padding-bottom: 96px; }
+.closing-band + .cta { border-top: none; }
 .cta-title {
     font-family: var(--font-serif);
     font-weight: 600;
@@ -549,7 +612,11 @@ section + section { border-top: 1px solid var(--border); }
 @media (max-width: 768px) {
     :root { --section-padding: 60px; }
     .pc-only { display: none; }
-    .hero { padding: 56px 0 52px; }
+    .hero { padding: 56px 0 44px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero-photo img { aspect-ratio: 16 / 10; }
+    .photo-band { margin-bottom: 28px; }
+    .closing-inner { padding-top: 64px; padding-bottom: 64px; }
     .header-logo { font-size: 14.5px; }
     .header-nav {
         display: none;
