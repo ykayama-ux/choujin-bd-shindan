@@ -115,10 +115,12 @@ section + section { border-top: 1px solid var(--border); }
 .letter p { line-height: 2.1; }
 .letter-sign { margin-top: 26px; font-size: 15px; color: var(--text-secondary); text-align: right; }
 
-/* CHOUJINについて */
-.photo-band { margin: 0 0 56px; }
-.photo-band img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 7; object-fit: cover; }
-.about .btn { margin-top: 6px; }
+/* CHOUJINとは（手紙の下） */
+.about-mini { max-width: 38em; margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--border); }
+.about-mini .h3 { font-size: 19px; margin-bottom: 12px; }
+.dash-list.compact { margin: 14px 0 12px; }
+.dash-list.compact li { padding: 9px 0 9px 1.4em; font-size: 15px; color: var(--text-secondary); }
+.about-mini .btn { margin-top: 8px; }
 
 /* 流れ・VC */
 .flow-list { margin: 0 0 40px; padding-left: 1.4em; }
