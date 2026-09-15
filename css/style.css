@@ -9,10 +9,10 @@
     --bg-deep: #e8e4dc;
     --text-main: #3d3530;
     --text-secondary: #5c534d;
-    --text-muted: #8a8078;
+    --text-muted: #736a60;      /* 紙地で 4.8:1（AA） */
 
-    --accent-warm: #8b7355;
-    --accent-warm-hover: #6e5a42;
+    --accent-warm: #7d6749;     /* 白文字で 5.2:1（AA） */
+    --accent-warm-hover: #66533a;
     --accent-gold: #c4a96a;
 
     --border: #e3ded6;
@@ -49,6 +49,35 @@ strong { font-weight: 700; }
     padding: 0 28px;
 }
 .pc-only { display: inline; }
+
+/* ---- Skip link ---- */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 8px;
+    z-index: 200;
+    background: var(--text-main);
+    color: var(--bg-main);
+    padding: 8px 14px;
+    font-size: 14px;
+    text-decoration: none;
+}
+.skip-link:focus { left: 8px; }
+
+/* ---- Sticky CTA（モバイルのみ・ヒーローを過ぎたら出す） ---- */
+.sticky-cta {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 90;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(246, 245, 242, .96);
+    border-top: 1px solid var(--border);
+    transform: translateY(100%);
+    transition: transform .3s ease;
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta .btn { width: 100%; text-align: center; padding: 14px 20px; }
 
 /* ---- Buttons ---- */
 .btn {
@@ -212,6 +241,7 @@ strong { font-weight: 700; }
     margin: 0 0 22px;
 }
 .hero-label span { white-space: nowrap; }
+.nowrap { white-space: nowrap; }
 .hero-accent { white-space: nowrap; }
 .hero-title {
     font-family: var(--font-serif);
@@ -240,6 +270,79 @@ strong { font-weight: 700; }
     font-size: 13.5px;
     color: var(--text-muted);
 }
+
+/* ---- Hero deliverables ---- */
+.hero-deliverables {
+    list-style: none;
+    margin: 0 0 30px;
+    padding: 0;
+    border-top: 1px solid var(--border);
+}
+.hero-deliverables li {
+    position: relative;
+    padding: 9px 0 9px 1.3em;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    font-weight: 500;
+}
+.hero-deliverables li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+}
+
+/* ---- Stats ---- */
+.stats { padding: 40px 0; background: var(--bg-alt); }
+.stats-row {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 22px 36px;
+}
+.stats-row li { display: flex; flex-direction: column; gap: 2px; }
+.stat-label { font-size: 12.5px; letter-spacing: .1em; color: var(--text-muted); }
+.stat-num {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1.1;
+    color: var(--text-main);
+    font-variant-numeric: tabular-nums;
+}
+.stat-num small { font-size: 16px; font-weight: 600; margin-left: 4px; }
+.stat-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.7; }
+@media (min-width: 640px) {
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---- Domains ---- */
+.domain-list { margin: 0; border-top: 1px solid var(--border); }
+.domain-row {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    gap: 0 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+.domain-row dt {
+    font-weight: 700;
+    font-size: 15px;
+    padding-top: .1em;
+}
+.domain-row dd { margin: 0; font-size: 14.5px; color: var(--text-secondary); line-height: 1.85; }
+.problem-note { margin-top: 24px; color: var(--text-secondary); font-size: 15px; max-width: 40em; }
+
+/* ---- Copy block (VC向け転送文) ---- */
+.copy-block {
+    margin-top: 26px;
+    padding: 20px 24px;
+    background: var(--bg-alt);
+    border-left: 3px solid var(--accent-gold);
+}
+.copy-label { font-size: 12.5px; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 8px; }
+.copy-text { font-size: 15px; color: var(--text-main); margin: 0; user-select: all; }
 
 /* ---- Sections ---- */
 section { padding: var(--section-padding) 0; }
@@ -617,6 +720,8 @@ section + section { border-top: 1px solid var(--border); }
     .hero-photo img { aspect-ratio: 16 / 10; }
     .photo-band { margin-bottom: 28px; }
     .closing-inner { padding-top: 64px; padding-bottom: 64px; }
+    .sticky-cta { display: block; }
+    .footer { padding-bottom: 96px; }
     .header-logo { font-size: 14.5px; }
     .header-nav {
         display: none;
@@ -634,6 +739,9 @@ section + section { border-top: 1px solid var(--border); }
     .header-nav .nav-cta { margin: 8px 28px 0; text-align: center; }
     .hamburger { display: flex; }
     .who-row { grid-template-columns: 1fr; gap: 6px; }
+    .domain-row { grid-template-columns: 1fr; gap: 4px; }
+    .stats { padding: 32px 0; }
+    .stat-num { font-size: 34px; }
     .inline-form-container { padding: 28px 20px; }
     .key-question, .transparency { padding: 20px 22px; }
 }

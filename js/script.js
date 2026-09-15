@@ -15,10 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const headerNav = document.getElementById('header-nav');
 
+    const stickyCta = document.getElementById('sticky-cta');
+    const formSection = document.getElementById('form-section');
+
     if (header) {
         const onScroll = () => {
             const heroHeight = document.getElementById('hero')?.offsetHeight || 400;
-            if (window.scrollY > heroHeight * 0.5) {
+            const pastHero = window.scrollY > heroHeight * 0.5;
+            // フォームが見えている間はモバイルの固定CTAを隠す
+            const formInView = formSection
+                ? formSection.getBoundingClientRect().top < window.innerHeight * 0.8
+                : false;
+            if (stickyCta) stickyCta.classList.toggle('visible', pastHero && !formInView);
+            if (pastHero) {
                 header.classList.add('visible');
             } else {
                 header.classList.remove('visible');
