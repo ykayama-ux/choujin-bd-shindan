@@ -81,10 +81,6 @@ strong, b { font-weight: 700; }
 .hero-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .hero-cta-note { font-size: 13.5px; color: var(--text-muted); }
 
-.sheet-thumb { display: flex; align-items: flex-start; gap: 14px; margin-top: 12px; text-decoration: none; color: var(--text-muted); font-size: 13px; }
-.sheet-thumb img { display: block; width: 96px; height: auto; background: #fff; border: 1px solid var(--border-strong); box-shadow: 0 8px 18px -12px rgba(61, 53, 48, .5); flex: 0 0 96px; }
-.sheet-thumb span { padding-top: 2px; }
-.sheet-thumb:hover span { color: var(--text-main); text-decoration: underline; }
 
 /* ---- Sections ---- */
 section { padding: 88px 0; }
