@@ -124,9 +124,6 @@ section + section { border-top: 1px solid var(--border); }
 .flow-list { margin: 0 0 40px; padding-left: 1.4em; }
 .flow-list li { margin: 0 0 10px; color: var(--text-secondary); }
 .flow-list li b { color: var(--text-main); }
-.vc-box { padding: 26px 28px; border: 1px solid var(--border-strong); background: var(--bg-alt); }
-.vc-box p { font-size: 15.5px; }
-.copy-text { margin-top: 14px !important; padding: 12px 14px; background: #fff; border: 1px dashed var(--border-strong); font-size: 14.5px !important; user-select: all; }
 
 /* FAQ */
 .faq-accordion { border-top: 1px solid var(--border); }
@@ -189,7 +186,6 @@ section + section { border-top: 1px solid var(--border); }
     .steps-table th { display: block; width: auto; padding: 10px 0 0; border-bottom: none; }
     .steps-table td { display: block; padding: 2px 0 10px; }
     .photo-band { margin-bottom: 36px; }
-    .vc-box { padding: 20px 20px; }
     .inline-form-container { padding: 28px 20px; }
     .cta { padding: 56px 0 96px; }
     .sticky-cta { display: block; }
