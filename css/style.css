@@ -108,19 +108,11 @@ section + section { border-top: 1px solid var(--border); }
 .steps-table th { width: 9.5em; font-weight: 700; white-space: nowrap; padding-right: 20px; }
 .steps-table td { color: var(--text-secondary); font-size: 15.5px; }
 
-/* 嘉山から */
-.letter-section { background: #fff; }
-.letter { max-width: 38em; }
-.letter-from { font-family: var(--font-serif); font-weight: 600; font-size: 20px; margin-bottom: 22px; }
-.letter p { line-height: 2.1; }
-.letter-sign { margin-top: 26px; font-size: 15px; color: var(--text-secondary); text-align: right; }
-
-/* CHOUJINとは（手紙の下） */
-.about-mini { max-width: 38em; margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--border); }
-.about-mini .h3 { font-size: 19px; margin-bottom: 12px; }
+/* CHOUJINとは */
+.about-section { background: #fff; }
 .dash-list.compact { margin: 14px 0 12px; }
 .dash-list.compact li { padding: 9px 0 9px 1.4em; font-size: 15px; color: var(--text-secondary); }
-.about-mini .btn { margin-top: 8px; }
+.about-section .btn { margin-top: 8px; }
 
 /* 流れ・VC */
 .flow-list { margin: 0 0 40px; padding-left: 1.4em; }
