@@ -4,102 +4,419 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>スタートアップ向け 事業開発診断｜CHOUJIN</title>
-  <meta name="description" content="スタートアップ向け・無料。オンラインで45分、いまどうやって顧客を探しているかを伺い、事業を止めている一点と次の一手をお伝えします。営業提案はしません。">
-  <link rel="canonical" href="https://shindan.choujin.net/">
+  <meta name="description" content="事業開発がどこで止まっているのか。45分のオンライン診断で、事業を止めている一点と次の一手をお伝えします。">
   <meta property="og:title" content="スタートアップ向け 事業開発診断｜CHOUJIN">
-  <meta property="og:description" content="事業開発が、どこで止まっているか。オンライン45分・無料。止めている一点と次の一手をお伝えします。">
+  <meta property="og:description" content="45分のオンライン診断で、事業を止めている一点と次の一手をお伝えします。">
   <meta property="og:type" content="website">
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="canonical" href="https://shindan.choujin.net/">
   <meta property="og:url" content="https://shindan.choujin.net/">
   <meta property="og:image" content="https://shindan.choujin.net/assets/ogp.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#101114">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23101114'/%3E%3Cpath d='M44 18c-4-3-8-5-14-5-11 0-19 8-19 19s8 19 19 19c6 0 11-2 15-6l-7-8c-2 2-4 3-7 3-5 0-8-3-8-8s3-8 8-8c3 0 5 1 7 3z' fill='%23ff512f'/%3E%3C/svg%3E">
-  <!-- Google Analytics（GA4のプロパティを作成後、IDを差し替える） -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#101114;--paper:#f5f4ef;--white:#fffef9;--signal:#ff512f;--signal-dark:#d93617;--muted:#666a70;--line:#c9c8c2;--soft:#eae9e3;--max:1180px;--shadow:10px 12px 0 #101114}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;font-size:16px;line-height:1.85;letter-spacing:.02em}body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:linear-gradient(rgba(16,17,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(16,17,20,.035) 1px,transparent 1px);background-size:24px 24px;z-index:-1}a{color:inherit}button,input,textarea,select{font:inherit}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:100;background:var(--white);padding:10px 14px;border:2px solid var(--ink)}.wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}.site-header{position:sticky;top:0;z-index:50;background:rgba(245,244,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--ink)}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:900;letter-spacing:.12em;text-decoration:none;font-size:1.08rem}.brand span{color:var(--signal)}.nav-links{display:flex;gap:28px;align-items:center;font-size:.84rem;font-weight:700}.nav-links a{text-decoration:none}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border:2px solid var(--ink);background:var(--ink);color:white;text-decoration:none;font-weight:800;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--signal)}.btn:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--signal);outline-offset:3px}.btn.signal{background:var(--signal);border-color:var(--signal)}.btn.signal:hover{box-shadow:5px 5px 0 var(--ink)}
-    .hero{padding:76px 0 62px;border-bottom:1px solid var(--ink);overflow:hidden}.hero-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(360px,.74fr);gap:72px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 24px;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.eyebrow::before{content:"";width:34px;height:3px;background:var(--signal)}h1,h2,h3,p{margin-top:0}h1{margin-bottom:24px;font-size:clamp(2.65rem,6.2vw,5.8rem);line-height:1.02;letter-spacing:-.065em;font-weight:950}h1 .mark{color:var(--signal);white-space:nowrap}.lead{max-width:750px;margin-bottom:28px;font-size:clamp(1.05rem,1.7vw,1.25rem);line-height:1.9;font-weight:600}.hero-actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center}.micro{margin:16px 0 0;font-size:.78rem;color:var(--muted);font-weight:650}.sheet-wrap{position:relative;padding:14px 6px 6px 14px}.sheet-wrap::before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:var(--signal);right:-48px;top:-46px;z-index:-1}.sheet{background:var(--white);border:2px solid var(--ink);box-shadow:var(--shadow);transform:rotate(1.3deg);padding:30px;min-height:520px}.sheet-head{display:flex;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:2px solid var(--ink)}.sheet-label{font-size:.66rem;letter-spacing:.18em;font-weight:900}.stamp{color:var(--signal);border:2px solid currentColor;padding:2px 9px;font-size:.72rem;font-weight:900;transform:rotate(-5deg)}.sheet-title{margin:22px 0 12px;font-size:1.55rem;line-height:1.35;letter-spacing:-.03em}.meter{display:grid;gap:8px;margin:22px 0 26px}.meter-row{display:grid;grid-template-columns:96px 1fr 56px;gap:10px;align-items:center;font-size:.68rem;font-weight:800}.bar{height:8px;background:var(--soft);overflow:hidden}.bar i{display:block;height:100%;background:var(--ink)}.meter-row.alert .bar i{background:var(--signal)}.meter-row.alert{color:var(--signal-dark)}.diagnosis{border:2px solid var(--signal);padding:16px;background:#fff4ef}.diagnosis b{display:block;margin-bottom:4px;font-size:.72rem;letter-spacing:.08em;color:var(--signal-dark)}.diagnosis p{margin:0;font-size:.9rem;line-height:1.55;font-weight:750}.mini-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:18px}.mini-actions div{border-top:3px solid var(--ink);padding-top:7px;font-size:.65rem;line-height:1.45;font-weight:750}.proof{background:var(--ink);color:white}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr)}.proof-item{padding:26px 30px;border-right:1px solid #45474d}.proof-item:last-child{border-right:0}.proof strong{display:block;color:var(--signal);font-size:clamp(1.45rem,3vw,2.35rem);line-height:1.2;letter-spacing:-.04em}.proof span{font-size:.78rem;color:#c5c7cb}
-    section{padding:104px 0;border-bottom:1px solid var(--ink)}.section-head{display:grid;grid-template-columns:180px 1fr;gap:42px;margin-bottom:54px;align-items:start}.section-num{font:800 .76rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:var(--signal-dark)}h2{max-width:880px;margin-bottom:18px;font-size:clamp(2rem,4.5vw,4.2rem);line-height:1.12;letter-spacing:-.055em;font-weight:950}.section-intro{max-width:760px;margin-bottom:0;font-size:1.05rem;color:#35373b}.fit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.fit-list{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}.fit-list div{min-height:132px;padding:22px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:rgba(255,254,249,.6);font-weight:720}.fit-list b{display:block;margin-bottom:9px;color:var(--signal-dark);font:900 .72rem/1 ui-monospace,monospace}.not-box{background:var(--ink);color:white;padding:32px}.not-box h3{font-size:1.45rem}.not-box p{color:#c5c7cb}.not-box strong{color:white}.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink)}.step{min-height:260px;padding:28px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--white)}.step-no{display:flex;align-items:center;justify-content:space-between;color:var(--signal-dark);font:900 .72rem/1 ui-monospace,monospace}.step-no::after{content:"";width:54px;height:2px;background:var(--signal)}.step h3{margin:52px 0 10px;font-size:1.45rem}.step p{color:var(--muted);font-size:.9rem}.cause{background:var(--signal);color:var(--ink)}.cause .eyebrow::before{background:var(--ink)}.cause-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}.cause h2{margin-bottom:0}.cause-list{background:var(--ink);color:white;border:2px solid var(--ink)}.cause-row{display:grid;grid-template-columns:1fr 34px 1fr;gap:12px;padding:20px 22px;border-bottom:1px solid #44464b;align-items:center;font-size:.88rem}.cause-row:last-child{border-bottom:0}.cause-row span:nth-child(2){color:var(--signal);font-size:1.3rem;text-align:center}.cause-row strong{color:white}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--ink);background:var(--white)}.flow-item{min-height:210px;padding:26px;border-right:1px solid var(--ink)}.flow-item:last-child{border-right:0}.flow-item b{display:block;margin-bottom:42px;color:var(--signal-dark);font:900 .72rem/1 ui-monospace,monospace}.flow-item h3{font-size:1.1rem}.flow-item p{margin:0;color:var(--muted);font-size:.85rem}
-    .about{background:var(--ink);color:white}.about .section-num{color:var(--signal)}.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:start}.about h2{color:white}.about-copy{font-size:1.05rem;color:#d6d7da}.about-copy strong{color:white}.about-copy ul{padding-left:1.2em;margin:18px 0}.about-copy li{margin-bottom:8px}.about-copy .fine{font-size:.78rem;color:#aeb0b5}.manifesto{border-left:5px solid var(--signal);padding-left:28px;font-size:clamp(1.4rem,3vw,2.4rem);line-height:1.55;font-weight:900;letter-spacing:-.035em}.faq-list{max-width:920px;margin-left:auto}details{border-top:1px solid var(--ink)}details:last-child{border-bottom:1px solid var(--ink)}summary{position:relative;list-style:none;padding:24px 54px 24px 0;cursor:pointer;font-weight:850}summary::-webkit-details-marker{display:none}summary::after{content:"+";position:absolute;right:12px;top:17px;font-size:1.7rem;font-weight:400}details[open] summary::after{content:"−"}.answer{max-width:760px;padding:0 54px 24px 0;color:var(--muted)}.answer p{margin-bottom:0}.contact{background:var(--signal)}.contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px}.contact h2{margin-bottom:22px}.contact-note{font-size:.9rem;font-weight:680}.contact-form{background:var(--white);border:2px solid var(--ink);padding:32px;box-shadow:9px 9px 0 var(--ink)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-size:.76rem;font-weight:850}label span{display:block;margin-bottom:5px}label.full{grid-column:1/-1}input,textarea,select{width:100%;border:1px solid var(--ink);border-radius:0;background:white;padding:12px 13px;color:var(--ink)}select{-webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}textarea{min-height:130px;resize:vertical}.form-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px}.form-foot small{color:var(--muted);font-size:.72rem;line-height:1.5}.form-done{display:none;padding:24px 0;font-weight:800}footer{padding:34px 0;background:var(--ink);color:white}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px}.footer-row p{margin:0;color:#aeb0b5;font-size:.76rem}.footer-links{display:flex;gap:18px;font-size:.78rem}.footer-links a{color:white;text-decoration:none}.mobile-cta{display:none}
-    @media(max-width:920px){.nav-links a:not(.btn){display:none}.hero{padding-top:54px}.hero-grid,.cause-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-grid{gap:52px}.sheet-wrap{max-width:540px;margin:0 auto}.proof-grid{grid-template-columns:1fr}.proof-item{border-right:0;border-bottom:1px solid #45474d}.proof-item:last-child{border-bottom:0}.section-head{grid-template-columns:1fr;gap:16px}.steps{grid-template-columns:1fr 1fr}.fit-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.flow-item:nth-child(2){border-right:0}.flow-item:nth-child(-n+2){border-bottom:1px solid var(--ink)}.contact-grid{gap:36px}}
-    @media(max-width:620px){body{font-size:16px}.wrap{width:min(calc(100% - 28px),var(--max))}.site-header .btn{min-height:42px;padding:0 13px;font-size:.76rem}.nav{min-height:60px}.hero{padding:44px 0 48px}h1{font-size:clamp(2.5rem,14vw,4.2rem)}.lead{font-size:1rem}.hero-actions .btn{width:100%}.sheet{padding:22px;min-height:480px;box-shadow:7px 8px 0 var(--ink)}.sheet-wrap::before{width:128px;height:128px}.meter-row{grid-template-columns:84px 1fr 48px}section{padding:74px 0}h2{font-size:clamp(2.1rem,10vw,3.1rem)}.steps,.fit-list,.flow,.form-grid{grid-template-columns:1fr}.step{min-height:220px}.flow-item{border-right:0;border-bottom:1px solid var(--ink)}.flow-item:nth-child(3){border-bottom:1px solid var(--ink)}.flow-item:last-child{border-bottom:0}.cause-row{grid-template-columns:1fr;gap:2px}.cause-row span:nth-child(2){text-align:left;transform:rotate(90deg);transform-origin:10px center}label.full{grid-column:auto}.contact-form{padding:22px;box-shadow:7px 7px 0 var(--ink)}.form-foot,.footer-row{align-items:stretch;flex-direction:column}.form-foot .btn{width:100%}.mobile-cta{display:block;position:fixed;left:14px;right:14px;bottom:12px;z-index:45}footer{padding-bottom:100px}}
+    :root{
+      --ink:#080809;
+      --paper:#f8f7f6;
+      --white:#fff;
+      --gold:#d2b757;
+      --gold-dark:#9a8130;
+      --pink:#ff4a69;
+      --coral:#ff7658;
+      --muted:#686868;
+      --line:#dedbd6;
+      --max:1200px;
+      --shadow:0 22px 55px rgba(18,18,18,.11);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--ink)}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:Montserrat,-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      font-size:18px;
+      line-height:1.9;
+      letter-spacing:.035em;
+    }
+    a{color:inherit}
+    button,input,textarea,select{font:inherit}
+    h1,h2,h3,p{margin-top:0}
+    .wrap{width:min(calc(100% - 56px),var(--max));margin:0 auto}
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:16px;top:16px;z-index:100;padding:10px 16px;border-radius:999px;background:var(--gold);color:var(--ink)}
+
+    .site-header{
+      position:fixed;
+      inset:0 0 auto;
+      z-index:50;
+      color:white;
+      background:linear-gradient(180deg,rgba(0,0,0,.92),rgba(0,0,0,.06));
+    }
+    .nav{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;align-items:center;color:white;font:800 24px/1 "Big Caslon",Georgia,serif;letter-spacing:2.4px;text-decoration:none}
+    .brand-cho{color:transparent;background:linear-gradient(90deg,#ddd4d4,#fff);background-clip:text;-webkit-background-clip:text}
+    .brand-u{color:#dbbb20}
+    .brand-jin{color:white}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:.78rem;font-weight:500;letter-spacing:.12em}
+    .nav-links a{text-decoration:none;opacity:.9}
+    .nav-links a:hover{color:#eadca8;opacity:1}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 27px;
+      border:0;
+      border-radius:999px;
+      background:var(--ink);
+      color:white;
+      font-size:.88rem;
+      font-weight:600;
+      letter-spacing:.05em;
+      text-decoration:none;
+      cursor:pointer;
+      box-shadow:0 9px 25px rgba(10,10,10,.2);
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+    .btn.signal{background:linear-gradient(110deg,var(--coral),var(--pink));box-shadow:0 11px 30px rgba(255,74,105,.3)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(10,10,10,.28)}
+    .btn.signal:hover{box-shadow:0 15px 38px rgba(255,74,105,.42)}
+    .btn:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+    .hero{
+      position:relative;
+      min-height:850px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      padding:150px 0 90px;
+      color:white;
+      background:#050506 url("assets/choujin-cosmic-hero.png") right center/cover no-repeat;
+    }
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,4,5,.99) 0%,rgba(4,4,5,.9) 32%,rgba(4,4,5,.36) 61%,rgba(4,4,5,.05) 100%),linear-gradient(0deg,rgba(0,0,0,.32),transparent 45%)}
+    .hero-grid{position:relative;z-index:1;display:block}
+    .hero-copy{max-width:880px}
+    .eyebrow{display:inline-flex;align-items:center;gap:12px;margin:0 0 24px;color:var(--gold);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:36px;height:1px;background:currentColor}
+    h1{max-width:790px;margin-bottom:30px;color:white;font-size:clamp(3rem,6.4vw,6.2rem);line-height:1.08;letter-spacing:-.06em;font-weight:600;text-wrap:balance}
+    h1 .accent{color:transparent;background:linear-gradient(90deg,var(--pink),#fff 72%);background-clip:text;-webkit-background-clip:text}
+    .lead{max-width:760px;margin-bottom:34px;color:#eee;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:2}
+    .micro{margin:18px 0 0;color:rgba(255,255,255,.7);font-size:.8rem}
+
+    section{padding:118px 0}
+    .section-head{display:grid;grid-template-columns:155px 1fr;gap:46px;margin-bottom:56px;align-items:start}
+    .section-num{color:var(--gold-dark);font-size:.78rem;font-weight:600;letter-spacing:.15em}
+    h2{max-width:930px;margin-bottom:20px;font-size:clamp(2.25rem,4.6vw,4.7rem);line-height:1.18;letter-spacing:-.055em;font-weight:600;text-wrap:balance}
+    .section-intro{max-width:850px;margin-bottom:0;color:var(--muted);font-size:1.08rem}
+
+    .issues{display:grid;grid-template-columns:repeat(2,1fr);column-gap:54px;border-top:1px solid #bdb9b2}
+    .issue{display:grid;grid-template-columns:44px 1fr;align-items:start;min-height:118px;padding:28px 4px;border-bottom:1px solid #bdb9b2;background:transparent;font-weight:500}
+    .issue b{display:block;margin-bottom:8px;color:var(--gold-dark);font-size:.78rem}
+    .cause-copy{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;padding:42px 0;border-top:1px solid #bdb9b2;border-bottom:1px solid #bdb9b2}
+    .cause-copy p{margin-bottom:0;color:#484848}
+    .scope{padding:28px 30px;border-radius:16px;background:var(--ink);color:#d5d5d5}
+    .scope strong{display:block;margin-bottom:8px;color:var(--gold);font-size:.83rem;letter-spacing:.08em}
+    figure{margin:0}
+    .wide-photo{height:310px;margin-top:64px;overflow:hidden;border-radius:18px}
+    .wide-photo img,.about-photo img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.68) contrast(1.03)}
+    .wide-photo img{object-position:center 45%}
+
+    .method{background:#080809;color:white}
+    .method .section-num,.method .eyebrow{color:var(--gold)}
+    .method h2{color:white}
+    .method .section-intro{color:#bdbdbd}
+    .steps{display:grid;grid-template-columns:repeat(2,1fr);column-gap:54px;border-top:1px solid rgba(255,255,255,.25)}
+    .step{min-height:220px;padding:32px 4px;border:0;border-bottom:1px solid rgba(255,255,255,.25);border-radius:0;background:transparent}
+    .step-no{display:flex;justify-content:space-between;align-items:center;color:var(--gold);font-size:.76rem;font-weight:600}
+    .step-no::after{content:"";width:50px;height:1px;background:var(--gold)}
+    .step h3{margin:42px 0 12px;color:white;font-size:1.45rem;font-weight:600}
+    .step p{margin-bottom:0;color:#c7c7c7;font-size:.96rem}
+
+    .about{position:relative;overflow:hidden;background:var(--paper)}
+    .about-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:70px}
+    .about-photo{height:470px;margin-top:46px;overflow:hidden;border-radius:18px}
+    .about-photo img{object-position:center}
+    .about-copy{color:#454545;font-size:1.05rem}
+    .about-copy .statement{margin-bottom:28px;color:var(--ink);font-size:1.5rem;line-height:1.7;font-weight:600}
+    .records{display:grid;margin-top:40px;border-top:1px solid #bdb9b2}
+    .record{padding:26px 0;border-bottom:1px solid #bdb9b2;border-radius:0;background:transparent;box-shadow:none}
+    .record b{display:block;margin-bottom:7px;color:var(--gold-dark);font-size:.8rem;letter-spacing:.08em}
+    .record p{margin:0;color:#555;font-size:.94rem}
+    .note{margin:22px 0 0;color:#777;font-size:.78rem}
+    .about-actions{margin-top:30px}
+
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #bdb9b2;border-bottom:1px solid #bdb9b2}
+    .flow-item{min-height:235px;padding:30px 30px 30px 0;background:transparent}
+    .flow-item+.flow-item{padding-left:30px;border-left:1px solid #bdb9b2}
+    .flow-item b{display:block;margin-bottom:42px;color:var(--gold-dark);font-size:.76rem}
+    .flow-item h3{font-size:1.2rem;font-weight:600}
+    .flow-item p{margin:0;color:var(--muted);font-size:.92rem}
+
+    .faq{background:white}
+    .faq-list{max-width:960px;margin-left:auto}
+    details{border-top:1px solid #ccc9c3}
+    details:last-child{border-bottom:1px solid #ccc9c3}
+    summary{position:relative;list-style:none;padding:27px 58px 27px 0;cursor:pointer;font-weight:600}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"＋";position:absolute;right:8px;top:22px;color:var(--gold-dark);font-size:1.35rem;font-weight:400}
+    details[open] summary::after{content:"−"}
+    .answer{max-width:830px;padding:0 58px 27px 0;color:var(--muted);font-size:1rem}
+    .answer p:last-child{margin-bottom:0}
+
+    .contact{position:relative;overflow:hidden;color:white;background:#080809 url("assets/choujin-cosmic-hero.png") center/cover no-repeat}
+    .contact::before{content:"";position:absolute;inset:0;background:rgba(5,5,6,.8)}
+    .contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:.78fr 1.22fr;gap:66px;align-items:start}
+    .contact h2{color:white}
+    .contact-copy{color:#d3d3d3}
+    .contact-form{padding:35px;border:1px solid rgba(255,255,255,.22);border-radius:26px;background:rgba(255,255,255,.97);box-shadow:0 28px 65px rgba(0,0,0,.34)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    label{display:block;color:#292929;font-size:.82rem;font-weight:600}
+    label span{display:block;margin-bottom:6px}
+    label.full{grid-column:1/-1}
+    input,textarea,select{width:100%;padding:13px 14px;border:1px solid #d2cfca;border-radius:12px;background:white;color:var(--ink)}
+    textarea{min-height:112px;resize:vertical}
+    .field-note{margin:-1px 0 7px;color:#777;font-size:.72rem;font-weight:400;line-height:1.6}
+    .form-foot{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:23px}
+    .form-foot small{max-width:330px;color:#777;font-size:.72rem;line-height:1.65}
+
+    footer{padding:43px 0;background:#050506;color:white}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .footer-copy{margin:0;color:#858585;font-size:.78rem}
+    .footer-links{display:flex;gap:20px;font-size:.8rem}
+    .footer-links a{text-decoration:none}
+    .mobile-cta{display:none}
+
+    @media(max-width:960px){
+      .nav-links a:not(.btn){display:none}
+      .hero{min-height:auto;background-position:62% center}
+      .hero::before{background:linear-gradient(90deg,rgba(4,4,5,.99),rgba(4,4,5,.72))}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .section-head{grid-template-columns:1fr;gap:17px}
+      .cause-copy{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      body{font-size:17px}
+      .wrap{width:min(calc(100% - 30px),var(--max))}
+      .nav{min-height:70px}
+      .brand{font-size:20px;letter-spacing:2px}
+      .site-header .btn{min-height:42px;padding:0 15px;font-size:.75rem}
+      .hero{padding:118px 0 66px;background-position:64% center}
+      h1{font-size:clamp(2.7rem,14vw,4.2rem)}
+      .lead{font-size:1rem}
+      .hero .btn{width:100%}
+      section{padding:86px 0}
+      h2{font-size:clamp(2.1rem,10vw,3.2rem)}
+      .issues,.steps,.flow,.form-grid{grid-template-columns:1fr}
+      .issues,.steps{column-gap:0}
+      .cause-copy{padding:30px 0}
+      .wide-photo{height:230px;margin-top:46px}
+      .about-photo{height:300px;margin-top:30px}
+      .step{min-height:210px}
+      .flow-item{min-height:205px}
+      .flow-item+.flow-item{padding-left:0;border-left:0;border-top:1px solid #bdb9b2}
+      .contact-form{padding:23px}
+      label.full{grid-column:auto}
+      .form-foot,.footer-row{align-items:stretch;flex-direction:column}
+      .form-foot .btn{width:100%}
+      .mobile-cta{display:flex;position:fixed;left:15px;right:15px;bottom:12px;z-index:45}
+      footer{padding-bottom:103px}
+    }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
   </style>
 </head>
 <body>
   <a class="skip" href="#main">本文へ移動</a>
-  <header class="site-header"><div class="wrap nav"><a class="brand" href="#top" aria-label="CHOUJIN トップへ">CHOUJIN<span>.</span></a><nav class="nav-links" aria-label="メインナビゲーション"><a href="#fit">こんなときに</a><a href="#steps">6ステップ</a><a href="#about">CHOUJINとは</a><a class="btn signal" href="#contact">無料診断を申し込む</a></nav></div></header>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="CHOUJIN トップへ"><span class="brand-cho">CHO</span><span class="brand-u">U</span><span class="brand-jin">JIN</span></a>
+      <nav class="nav-links" aria-label="メインナビゲーション">
+        <a href="#issues">対象</a>
+        <a href="#method">6ステップ</a>
+        <a href="#about">CHOUJINとは</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn signal" href="#contact">無料診断を申し込む</a>
+      </nav>
+    </div>
+  </header>
+
   <main id="main">
-
-    <!-- 1. ファーストビュー -->
-    <section class="hero" id="top"><div class="wrap hero-grid"><div><p class="eyebrow">スタートアップ向け｜無料</p><h1>事業開発が、<br><span class="mark">どこで</span><br>止まっているか。</h1><p class="lead">オンラインで45分、いまどうやって顧客を探しているかを伺います。事業を止めている一点と、次の一手をお伝えします。</p><div class="hero-actions"><a class="btn signal" href="#contact">無料診断を申し込む <span aria-hidden="true">→</span></a><a href="#fit">診断内容を見る</a></div><p class="micro">資料の作成は不要　／　営業提案はしません　／　秘密保持対応</p></div><div class="sheet-wrap" aria-label="診断のイメージ"><article class="sheet"><div class="sheet-head"><span class="sheet-label">BUSINESS DEVELOPMENT / DIAGNOSIS</span><span class="stamp">FREE / 45 MIN</span></div><h2 class="sheet-title">事業開発診断</h2><div class="meter" aria-hidden="true"><div class="meter-row"><span>全体を掴む</span><span class="bar"><i style="width:78%"></i></span><span>検証中</span></div><div class="meter-row alert"><span>的を絞る</span><span class="bar"><i style="width:34%"></i></span><span>止めている</span></div><div class="meter-row"><span>営業で掘る</span><span class="bar"><i style="width:62%"></i></span><span>いまここ</span></div><div class="meter-row"><span>法則を見抜く</span><span class="bar"><i style="width:48%"></i></span><span>仮説</span></div><div class="meter-row"><span>勝ち筋を決める</span><span class="bar"><i style="width:24%"></i></span><span>未確認</span></div><div class="meter-row"><span>拡販する</span><span class="bar"><i style="width:18%"></i></span><span>未確認</span></div></div><div class="diagnosis"><b>止めている一点</b><p>営業量ではなく、最初に攻略すべき顧客と課題仮説が絞り切れていない。</p></div><div class="mini-actions"><div>次の一手<br>顧客を絞る</div><div>次の一手<br>5社に聞く</div><div>次の一手<br>仮説を更新</div></div></article></div></div></section>
-
-    <!-- 2. 実績サマリー -->
-    <div class="proof" aria-label="支援実績の概要"><div class="wrap proof-grid"><div class="proof-item"><strong>0 → 40社</strong><span>実績ゼロだった市場から展開（遺伝子検査）</span></div><div class="proof-item"><strong>400件 → 150件</strong><span>自分たちで架電し、自分たちで作った商談</span></div><div class="proof-item"><strong>製造・医療・宇宙・秘密計算</strong><span>幅広い業界での事業開発</span></div></div></div>
-
-    <!-- 3. こんなときに -->
-    <section id="fit"><div class="wrap"><div class="section-head"><span class="section-num">01 / FOR WHOM</span><div><h2>こんな「進まない」のときに。</h2><p class="section-intro">技術やプロダクトの良し悪しを評価する場ではありません。顧客起点で事業を前に進めたいチームのための診断です。</p></div></div><div class="fit-grid"><div class="fit-list"><div><b>01</b>誰に売るべきか、ターゲットが定まり切らない</div><div><b>02</b>顧客ヒアリングをしても、事業仮説が深まらない</div><div><b>03</b>商談は生まれるが、PoCや受注につながらない</div><div><b>04</b>PoCは実施したが、本導入へ進まない</div><div><b>05</b>顧客ごとに提案が変わり、勝ち筋が見えない</div><div><b>06</b>「市場がまだ追いついていない」と言っているが、具体的な顧客の声を思い出せない</div></div><aside class="not-box"><p class="eyebrow">SCOPE</p><h3>経営全般の診断ではありません。</h3><p>財務・資金調達・法務・知財・人事制度・技術開発そのものではなく、<strong>顧客起点で事業を市場へ出し、検証し、売上につなげる領域</strong>を診断します。</p></aside></div></div></section>
-
-    <!-- 4. 進まない原因 -->
-    <section class="cause"><div class="wrap cause-grid"><div><p class="eyebrow">THE REAL ISSUE</p><h2>事業が進まない原因は、営業とは限りません。</h2></div><div class="cause-list"><div class="cause-row"><span>商談が増えない</span><span>→</span><strong>会っている部署が違う</strong></div><div class="cause-row"><span>反応が薄い</span><span>→</span><strong>顧客の本音が聞けていない</strong></div><div class="cause-row"><span>PoCで止まる</span><span>→</span><strong>費用を出す人に会えていない</strong></div><div class="cause-row"><span>仮説が深まらない</span><span>→</span><strong>顧客の声が蓄積されていない</strong></div></div></div></section>
-
-    <!-- 5. 6ステップ -->
-    <section id="steps"><div class="wrap"><div class="section-head"><span class="section-num">02 / METHOD</span><div><h2>事業実装の6ステップで診る。</h2><p class="section-intro">ページのために作った評価軸ではありません。CHOUJINが自分たちの事業開発で使っている型です。この順に伺って、止まっている場所が見えたら、残りの時間はそこの事実確認に使います。</p></div></div><div class="steps"><article class="step"><div class="step-no">STEP 01</div><h3>全体を掴む</h3><p>業界の成り立ち、商流、予算、導入に関わる意思決定者を把握できているか。</p></article><article class="step"><div class="step-no">STEP 02</div><h3>的を絞る</h3><p>誰の、どの課題に、どう応えるかが一点に絞れているか。</p></article><article class="step"><div class="step-no">STEP 03</div><h3>営業で掘る</h3><p>実際の顧客に会い、反応と本音を一次情報として集めているか。</p></article><article class="step"><div class="step-no">STEP 04</div><h3>法則を見抜く</h3><p>受注・失注・見送りの理由を整理し、次の仮説に反映できているか。</p></article><article class="step"><div class="step-no">STEP 05</div><h3>勝ち筋を決める</h3><p>成功パターンが複数の顧客で再現され、言葉にできているか。</p></article><article class="step"><div class="step-no">STEP 06</div><h3>拡販する</h3><p>特定の個人に依存せず、組織で同じ動きと判断を再現できるか。</p></article></div><p class="micro">止まる場所は、ほとんどが②か③です。①を飛ばしたまま作り込んだ結果、そうなります。点数はつけません。</p></div></section>
-
-    <!-- 6. CHOUJINとは -->
-    <section class="about" id="about"><div class="wrap about-grid"><div><span class="section-num">03 / ABOUT CHOUJIN</span><h2>CHOUJINとは。</h2></div><div class="about-copy"><p class="manifesto">すごい技術を、<br>必要としている人に届ける。</p><p>事業開発が本業の会社です。資料の中で戦略を作るのではなく、自分たちで電話をかけ、商談に出て、顧客をつくる側にいます。</p><p>製造、医療から、宇宙や秘密計算のような最先端領域まで幅広く対応してきました。<strong>さまざまな業界での事業開発の経験と、専門分野の知識を兼ね備えた者が対応します。</strong></p><ul><li>遺伝子検査サービス：導入実績のなかった健康保険組合の市場に約400件アプローチ、約150件の商談、40社へ展開</li><li>宇宙×半導体：大手企業40社を対象にした産業ヒアリングと協業先の開拓</li><li>医療機器、電力センシング技術、製造業向け新規事業の営業組織立ち上げ など（社名は伏せています）</li></ul><p>無料なのは、事業開発がどこで止まるのかを一社ずつ聞いて溜めたいからです。営業はしません。手伝ってほしいと思ったときだけ、連絡をください。</p><p class="fine">※合同会社CHOUJIN設立（2024年10月）前の、代表およびメンバーによる支援実績を含みます。</p><p><a class="btn" href="https://choujin.net" target="_blank" rel="noopener">CHOUJINのサイトを見る <span aria-hidden="true">→</span></a></p></div></div></section>
-
-    <!-- 7. 始め方 -->
-    <section><div class="wrap"><div class="section-head"><span class="section-num">04 / FLOW</span><div><h2>始め方。</h2></div></div><div class="flow"><article class="flow-item"><b>STEP 01</b><h3>フォームを送る</h3><p>必須は連絡先だけです。</p></article><article class="flow-item"><b>STEP 02</b><h3>日程を決める</h3><p>1〜2営業日以内にこちらから候補をお送りします。</p></article><article class="flow-item"><b>STEP 03</b><h3>オンラインで45分、話す</h3><p>カメラは不要です。</p></article><article class="flow-item"><b>STEP 04</b><h3>次の一手をお送りする</h3><p>後日、止めている一点と次の一手をお送りします。これで終わりです。</p></article></div></div></section>
-
-    <!-- 8. FAQ -->
-    <section id="faq"><div class="wrap"><div class="section-head"><span class="section-num">05 / FAQ</span><div><h2>よくある質問。</h2></div></div><div class="faq-list">
-      <details><summary>無料相談のみでもいいですか？</summary><div class="answer"><p>もちろんです。ボトルネックが判明し、次の一手につながれば幸いです。</p></div></details>
-      <details><summary>次の一手の相談はできますか？</summary><div class="answer"><p>はい。ご希望があれば、顧客ヒアリング、仮説検証、顧客開拓など、実行の相談も受けています。こちらから提案することはありません。</p></div></details>
-      <details><summary>まだ売上がない段階でも相談できますか？</summary><div class="answer"><p>はい。顧客課題の探索中、プロダクト開発中、営業開始前でも構いません。フェーズに応じて、次に確認すべきことを整理します。</p></div></details>
-      <details><summary>どんな業界が対象ですか？</summary><div class="answer"><p>業界は限定していません。特にBtoB、ディープテック、ヘルスケア、AI、製造業、素材、エネルギー、宇宙など、専門性が高く、顧客や売り方を探索している事業を得意としています。大企業の新規事業部門からのご相談も受けています。</p></div></details>
-      <details><summary>誰が話を聞くのですか？</summary><div class="answer"><p>さまざまな業界での事業開発の経験と、専門分野の知識を兼ね備えた者が対応します。</p></div></details>
-      <details><summary>話した内容の機密は守られますか？</summary><div class="answer"><p>伺った内容は、ご本人以外には出しません。業界横断の傾向として使う場合も、社名や個社が特定できる形にはしません。NDAの締結をご希望の場合は対応します。</p></div></details>
-      <details><summary>何社まで受けてもらえますか？</summary><div class="answer"><p>受け入れは週2社までとさせていただいています。お申し込みが重なった場合は、順番に日程をご案内します。</p></div></details>
-    </div></div></section>
-
-    <!-- 9. 申し込み -->
-    <section class="contact" id="contact"><div class="wrap contact-grid"><div><p class="eyebrow">FREE DIAGNOSIS</p><h2>事業が止まっている場所を、45分で整理しませんか。</h2><p class="contact-note">まずは、現在の事業と感じている課題をお聞かせください。診断後にこちらから営業提案を行うことはありません。</p></div>
-      <form class="contact-form" id="diagnosis-form" name="shindan" data-netlify="true" method="POST" netlify-honeypot="nickname">
-        <input type="hidden" name="form-name" value="shindan">
-        <div class="form-grid">
-          <label class="full"><span>お立場 *</span><select name="role" required><option value="" disabled selected>選んでください</option><option>スタートアップの経営者・事業責任者</option><option>大企業の新規事業部門</option><option>その他</option></select></label>
-          <label><span>会社名 *</span><input name="companyName" autocomplete="organization" required></label>
-          <label><span>お名前 *</span><input name="contactName" autocomplete="name" required></label>
-          <label class="full"><span>メールアドレス *</span><input type="email" name="email" autocomplete="email" required></label>
-          <label class="full" style="display:none" aria-hidden="true"><span>Nickname</span><input name="nickname" tabindex="-1" autocomplete="off"></label>
-          <label class="full"><span>事業を一言で（任意）</span><input name="business" placeholder="例：製造ラインの予兆検知センサーを、自動車部品メーカーに"></label>
-          <label class="full"><span>直近3ヶ月の数字（任意）</span><input name="numbers" placeholder="例：12社に接触・7社と商談・PoC2件・有償0件"></label>
-          <label class="full"><span>いま一番止まっていると感じること（任意）</span><textarea name="stuck" placeholder="例：商談は生まれるが、PoCから有償に進まない"></textarea></label>
-          <label><span>ご紹介者（任意）</span><input name="referrer" placeholder="どなたかのご紹介であれば"></label>
-          <label><span>既存の事業資料のURL（任意）</span><input type="url" name="docUrl" placeholder="https://"></label>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">スタートアップ向け｜無料</p>
+          <h1>事業開発は、<br><span class="accent">どこで止まっているのか。</span></h1>
+          <p class="lead">45分のオンライン診断で、顧客をどう探し、何を確かめ、どこまで進んでいるかを伺います。事業を止めている一点と、次の一手をお伝えします。</p>
+          <a class="btn signal" href="#contact">無料診断を申し込む</a>
+          <p class="micro">資料作成不要　｜　無理な売り込みなし　｜　秘密保持対応</p>
         </div>
-        <div class="form-foot"><small>送信いただいた情報は<a href="privacy.html">プライバシーポリシー</a>に基づいて取り扱います。任意の項目は、書いていただけると当日の話が濃くなります。</small><button class="btn" type="submit">無料診断を申し込む <span aria-hidden="true">→</span></button></div>
-        <div class="form-done" id="form-done">送信が完了しました。1〜2営業日以内に、日程候補をメールでお送りします。</div>
-      </form>
-    </div></section>
+      </div>
+    </section>
+
+    <section id="issues">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">01 / FOR WHOM</span>
+          <div>
+            <h2>こんな「進まない」のときに。</h2>
+          </div>
+        </div>
+        <div class="issues">
+          <div class="issue"><b>01</b>誰に売るべきか、ターゲットが定まり切らない</div>
+          <div class="issue"><b>02</b>顧客の本音や、導入を見送る理由がつかめない</div>
+          <div class="issue"><b>03</b>商談は生まれるが、PoCや受注につながらない</div>
+          <div class="issue"><b>04</b>PoCは実施したが、本導入へ進まない</div>
+          <div class="issue"><b>05</b>顧客ごとに提案が変わり、勝ち筋が見えない</div>
+          <div class="issue"><b>06</b>最先端の技術のため、市場の理解が追いつかず、売り方が見えない</div>
+        </div>
+        <div class="cause-copy">
+          <p>進まない原因はさまざまです。会っている部署が違う、意思決定する人に会えていない、顧客の本音が聞けていない——ということがよくあります。事業開発や営業の現状を伺い、「どこで止まっているか」を見ます。技術やプロダクトの良し悪しを評価する場ではありません。</p>
+          <div class="scope"><strong>診断で見ないもの</strong>財務・資金調達・法務・知財・人事制度・技術開発そのもの。見るのは、顧客起点で事業を市場に出し、検証し、売上につなげる領域だけです。</div>
+        </div>
+        <figure class="wide-photo">
+          <img src="assets/workshop.jpg" alt="事業について議論するチーム" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="method" id="method">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">02 / METHOD</span>
+          <div>
+            <h2>見る順番——<br>事業実装の6ステップ。</h2>
+            <p class="section-intro">CHOUJINが自分たちの事業開発で使っている型です。この順に伺って、止まっている場所が見えたら、残りの時間はそこの事実確認に使います。</p>
+          </div>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="step-no">STEP 01</div><h3>全体をつかむ</h3><p>業界の成り立ち、商流、予算、導入に関わる意思決定者を把握できているか。</p></article>
+          <article class="step"><div class="step-no">STEP 02</div><h3>的を絞る</h3><p>誰の、どの課題に、どう応えるかが一点に絞れているか。</p></article>
+          <article class="step"><div class="step-no">STEP 03</div><h3>営業で掘る</h3><p>実際の顧客に会い、反応と本音を一次情報として集めているか。</p></article>
+          <article class="step"><div class="step-no">STEP 04</div><h3>法則を見抜く</h3><p>受注・失注・見送りの理由を整理し、次の仮説に反映できているか。</p></article>
+          <article class="step"><div class="step-no">STEP 05</div><h3>勝ち筋を決める</h3><p>成功パターンが複数の顧客で再現され、言葉にできているか。</p></article>
+          <article class="step"><div class="step-no">STEP 06</div><h3>拡販する</h3><p>特定の個人に依存せず、組織で同じ動きと判断を再現できるか。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <span class="section-num">03 / ABOUT CHOUJIN</span>
+          <h2>CHOUJINとは。</h2>
+          <figure class="about-photo">
+            <img src="assets/research-lab.jpg" alt="専門領域の研究開発現場" loading="lazy" decoding="async">
+          </figure>
+        </div>
+        <div class="about-copy">
+          <p class="statement">製造、医療から、宇宙や秘密計算のような最先端領域まで、幅広い業界の事業開発を支援している会社です。</p>
+          <p>短期間で業界構造と専門知識をつかみ、顧客に直接会いながら、事業の仮説を検証することを得意としています。戦略を考えるだけでなく、顧客開拓やヒアリングまで自分たちで動く事業開発チームです。</p>
+          <p>私たちは、そんな事業開発の実行者を「超人」と呼んでいます。</p>
+
+          <div class="records" aria-label="支援実績">
+            <div class="record"><b>遺伝子検査サービス</b><p>導入事例のなかった健康保険組合の市場にテレアポからアプローチし、3年間で40社へ導入。</p></div>
+            <div class="record"><b>宇宙×半導体</b><p>大手企業40社を対象にした産業ヒアリングと協業先の開拓。</p></div>
+            <div class="record"><b>その他の領域</b><p>医療機器、電力センシング技術、製造業向け事業開発チームの立ち上げなど。</p></div>
+          </div>
+          <p class="note">※合同会社CHOUJIN設立（2024年10月）前の、代表およびメンバーによる支援実績を含みます。</p>
+          <div class="about-actions"><a class="btn" href="https://choujin.net/" target="_blank" rel="noopener">CHOUJINのサイトを見る</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">04 / FLOW</span>
+          <div><h2>始め方。</h2></div>
+        </div>
+        <div class="flow">
+          <article class="flow-item"><b>STEP 01</b><h3>フォームを送る</h3><p>分かる範囲で、事業の現在地をお送りください。</p></article>
+          <article class="flow-item"><b>STEP 02</b><h3>日程を決める</h3><p>1〜2営業日以内に、こちらから候補をお送りします。</p></article>
+          <article class="flow-item"><b>STEP 03</b><h3>オンラインで話す</h3><p>45分間、事業開発や営業の現状を伺います。</p></article>
+          <article class="flow-item"><b>STEP 04</b><h3>次の一手を受け取る</h3><p>後日、止めている一点と次の一手をお送りします。これで終わりです。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">05 / FAQ</span>
+          <div><h2>よくある質問。</h2></div>
+        </div>
+        <div class="faq-list">
+          <details><summary>無料診断だけでもいいですか？</summary><div class="answer"><p>もちろんです。診断だけでボトルネックと次の一手が見つかり、事業が前に進むことを目的にしています。実行支援を依頼する必要はありません。</p></div></details>
+          <details><summary>次の一手の支援を相談できますか？</summary><div class="answer"><p>はい。診断によって課題が明確になり、そのままCHOUJINへ実行支援をご依頼いただくことがあります。顧客ヒアリング、仮説検証、顧客開拓など、必要な領域をご相談いただけます。無料診断を入口に、無理な売り込みをすることはありません。</p></div></details>
+          <details><summary>まだ売上がない段階でも相談できますか？</summary><div class="answer"><p>はい。顧客課題の探索中、プロダクト開発中、営業開始前でも構いません。フェーズに応じて、次に確認すべきことを整理します。</p></div></details>
+          <details><summary>どんな業界が対象ですか？</summary><div class="answer"><p>業界は限定していません。特にBtoB、ディープテック、ヘルスケア、AI、製造業、素材、エネルギー、宇宙など、専門性が高く、顧客や売り方を探索している事業を得意としています。大企業の新規事業部門からのご相談も受けています。</p></div></details>
+          <details><summary>誰が話を聞くのですか？</summary><div class="answer"><p>CHOUJINの事業開発メンバーが対応します。さまざまな業界での事業開発経験と専門分野の知識をもとに、事業の現在地を一緒に確認します。</p></div></details>
+          <details><summary>話した内容の機密は守られますか？</summary><div class="answer"><p>伺った内容は、ご本人以外には出しません。業界横断の傾向として使う場合も、社名や個社が特定できる形にはしません。NDAの締結をご希望の場合は対応します。</p></div></details>
+          <details><summary>何社まで受けてもらえますか？</summary><div class="answer"><p>受け入れは週2社までとさせていただいています。お申し込みが重なった場合は、順番に日程をご案内します。</p></div></details>
+          <details><summary>CHOUJINと繋がるメリットは他にありますか。</summary><div class="answer"><p>ご希望の方には、会費無料のCHOUJINコミュニティをご案内しています。</p><p>経営者や事業開発責任者を中心に、先端技術・事業開発の勉強会、美術館・博物館巡り、ランニング、スパルタンレースなどを開催しています。昆虫食会や真冬の滝行といった、少し変わった企画もあります。</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="eyebrow">FREE DIAGNOSIS</p>
+          <h2>無料診断を申し込む。</h2>
+          <p class="contact-copy">1〜2営業日以内に、日程候補をお送りします。</p>
+        </div>
+        <form class="contact-form" id="diagnosis-form" name="shindan" data-netlify="true" method="POST" netlify-honeypot="nickname">
+          <input type="hidden" name="form-name" value="shindan">
+          <label class="full" style="display:none" aria-hidden="true"><span>Nickname</span><input name="nickname" tabindex="-1" autocomplete="off"></label>
+          <div class="form-grid">
+            <label class="full"><span>お立場（必須）</span><select name="role" required><option value="">選択してください</option><option>スタートアップの経営者・事業責任者</option><option>大企業の新規事業部門</option><option>その他</option></select></label>
+            <label><span>会社名（必須）</span><input name="company" autocomplete="organization" required></label>
+            <label><span>お名前（必須）</span><input name="name" autocomplete="name" required></label>
+            <label class="full"><span>メールアドレス（必須）</span><input type="email" name="email" autocomplete="email" required></label>
+            <label class="full"><span>事業を一言で（任意）</span><input name="business" placeholder="例：製造現場向けの画像検査AI"></label>
+            <label class="full"><span>直近3ヶ月の事業開発状況（任意）</span><p class="field-note">商談数、顧客ヒアリング数、PoC数、受注数など、分かる範囲で構いません。</p><textarea name="metrics"></textarea></label>
+            <label class="full"><span>いま一番止まっていると感じること（任意）</span><textarea name="issue"></textarea></label>
+            <label><span>ご紹介者（任意）</span><input name="referrer"></label>
+            <label><span>事業資料の共有URL（任意）</span><input type="url" name="materials" placeholder="https://"></label>
+          </div>
+          <div class="form-foot">
+            <small>送信いただいた情報は、無料診断のご連絡・実施にのみ利用します（<a href="privacy.html">プライバシーポリシー</a>）。</small>
+            <button class="btn signal" type="submit">送信する</button>
+          </div>
+          <p class="form-done" id="form-done" style="display:none;margin:22px 0 0;color:#292929;font-weight:600">送信が完了しました。1〜2営業日以内に、日程候補をメールでお送りします。</p>
+        </form>
+      </div>
+    </section>
   </main>
+
   <a class="btn signal mobile-cta" href="#contact">無料診断を申し込む</a>
-  <footer><div class="wrap footer-row"><a class="brand" href="#top">CHOUJIN<span>.</span></a><p>© CHOUJIN LLC. All rights reserved.</p><div class="footer-links"><a href="https://choujin.net" target="_blank" rel="noopener">公式サイト</a><a href="https://ai-advisor.choujin.net" target="_blank" rel="noopener">リッツー</a><a href="privacy.html">プライバシーポリシー</a></div></div></footer>
+  <footer>
+    <div class="wrap footer-row">
+      <a class="brand" href="#top" aria-label="CHOUJIN トップへ"><span class="brand-cho">CHO</span><span class="brand-u">U</span><span class="brand-jin">JIN</span></a>
+      <p class="footer-copy">運営：合同会社CHOUJIN　© CHOUJIN LLC. All rights reserved.</p>
+      <div class="footer-links"><a href="https://choujin.net/" target="_blank" rel="noopener">会社サイト</a><a href="privacy.html">プライバシーポリシー</a></div>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById('diagnosis-form').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const form = e.currentTarget, btn = form.querySelector('button[type=submit]'), label = btn.innerHTML;
+    document.getElementById('diagnosis-form').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const form = event.currentTarget, btn = form.querySelector('button[type=submit]'), label = btn.textContent;
       btn.disabled = true; btn.textContent = '送信中...';
       try {
         const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)) });
-        if (res.ok) { form.querySelector('.form-grid').style.display = 'none'; form.querySelector('.form-foot').style.display = 'none'; document.getElementById('form-done').style.display = 'block'; if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_label: 'shindan_form' }); }
-        else { alert('送信に失敗しました。時間をおいて再度お試しください。'); btn.disabled = false; btn.innerHTML = label; }
-      } catch (err) { alert('通信エラーが発生しました。ネットワーク環境をご確認ください。'); btn.disabled = false; btn.innerHTML = label; }
+        if (res.ok) {
+          form.querySelector('.form-grid').style.display = 'none';
+          form.querySelector('.form-foot').style.display = 'none';
+          document.getElementById('form-done').style.display = 'block';
+          if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_label: 'shindan_form' });
+        } else { alert('送信に失敗しました。時間をおいて再度お試しください。'); btn.disabled = false; btn.textContent = label; }
+      } catch (e) { alert('通信エラーが発生しました。ネットワーク環境をご確認ください。'); btn.disabled = false; btn.textContent = label; }
     });
   </script>
 </body>
