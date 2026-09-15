@@ -7,14 +7,11 @@
     <title>CHOUJIN事業開発診断 — 事業開発の「詰まり」を、45分で診断します。無料。 | 合同会社CHOUJIN</title>
     <meta name="description" content="スタートアップ向け・無料。CHOUJINの事業実装6ステップに沿って現在地を整理し、事業を止めている詰まりの一点と、次の30日で取るべきアクション3つをA4一枚にまとめます。オンライン45分、営業提案は行いません。">
 
-    <!-- Favicon -->
     <link rel="icon" href="assets/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/favicon.png">
     <meta name="theme-color" content="#f6f5f2">
     <link rel="canonical" href="https://shindan.choujin.net/">
-    <link rel="preload" as="image" href="assets/photo-hero.jpg">
 
-    <!-- OGP & Twitter Cards -->
     <meta property="og:site_name" content="CHOUJIN事業開発診断">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="CHOUJIN事業開発診断 — 事業開発の「詰まり」を、45分で診断します。無料。">
@@ -40,27 +37,16 @@
     </script>
     -->
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@600;900&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://choujin.net/#org",
-          "name": "合同会社CHOUJIN",
-          "url": "https://choujin.net/"
-        },
+        { "@type": "Organization", "@id": "https://choujin.net/#org", "name": "合同会社CHOUJIN", "url": "https://choujin.net/" },
         {
           "@type": "Service",
           "name": "CHOUJIN事業開発診断",
@@ -76,8 +62,8 @@
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "本当に無料ですか？", "acceptedAnswer": { "@type": "Answer", "text": "無料です。あとから請求することも、診断を入口に営業提案をすることもありません。" } },
-            { "@type": "Question", "name": "誰が話を聞くのですか？", "acceptedAnswer": { "@type": "Answer", "text": "合同会社CHOUJIN代表の嘉山洋輔、または事業開発を本業とするメンバーが対応します。" } },
-            { "@type": "Question", "name": "どのフェーズの会社が対象ですか？", "acceptedAnswer": { "@type": "Answer", "text": "プロダクトや技術があり、顧客開拓を始めている、または始めようとしているスタートアップが対象です。大企業の新規事業部門からのご相談も受けています。" } },
+            { "@type": "Question", "name": "まだ売上がない段階でも相談できますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい。顧客課題の探索中、プロダクト開発中、営業開始前でも構いません。フェーズに応じて、次に確認すべきことを整理します。" } },
+            { "@type": "Question", "name": "営業診断とは何が違いますか？", "acceptedAnswer": { "@type": "Answer", "text": "営業活動だけでなく、その前提となる業界構造、顧客の絞り方、検証の順番まで見ます。営業が進まない原因が営業以外にあることは少なくありません。" } },
             { "@type": "Question", "name": "診断シートはVCにも共有されますか？", "acceptedAnswer": { "@type": "Answer", "text": "VC・CVCからのご紹介で申し込まれた場合は、同じA4一枚をご紹介元にもお送りします。話し始める前に必ずお伝えします。ご自身で申し込まれた場合は、ご本人以外にはお渡ししません。" } },
             { "@type": "Question", "name": "診断後の実行も依頼できますか？", "acceptedAnswer": { "@type": "Answer", "text": "ご希望がある場合は、顧客ヒアリング、仮説検証、顧客開拓などの実行支援も可能です。無料診断後に、こちらから営業提案を行うことはありません。" } }
           ]
@@ -90,22 +76,17 @@
 <body>
     <a class="skip-link" href="#deliverables">本文へ移動</a>
 
-    <!-- Header Navigation -->
     <header class="site-header" id="site-header">
         <div class="container header-inner">
             <a href="#hero" class="header-logo">CHOUJIN事業開発診断</a>
             <nav class="header-nav" id="header-nav">
                 <a href="#deliverables" class="nav-link">もらえるもの</a>
                 <a href="#steps" class="nav-link">6ステップ</a>
-                <a href="#flow" class="nav-link">診断の流れ</a>
+                <a href="#domains" class="nav-link">実績</a>
                 <a href="#faq" class="nav-link">よくある質問</a>
                 <a href="#form-section" class="nav-link nav-cta">無料診断を申し込む</a>
             </nav>
-            <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </header>
 
@@ -115,10 +96,7 @@
             <div class="hero-content">
                 <p class="hero-label"><span>スタートアップ向け</span><span class="hero-label-sep" aria-hidden="true">｜</span><span>無料</span></p>
                 <h1 class="hero-title">事業開発の<span class="nowrap">「詰まり」</span>を、<br>45分で診断します。</h1>
-                <p class="hero-sub">
-                    顧客理解から、仮説設計、現場検証、勝ち筋の構築まで。
-                    CHOUJINの「事業実装6ステップ」に沿って現在地を整理し、事業を止めている最大のボトルネックと、次の30日で取るべきアクションをA4一枚にまとめます。
-                </p>
+                <p class="hero-sub">顧客理解から、仮説設計、現場検証、勝ち筋の構築まで。CHOUJINの「事業実装6ステップ」に沿って現在地を整理し、事業を止めている最大のボトルネックと、次の30日で取るべきアクションをA4一枚にまとめます。</p>
                 <ul class="hero-deliverables">
                     <li>事業を止めている「詰まりの一点」</li>
                     <li>次の30日で取り組むアクション3つ</li>
@@ -129,9 +107,24 @@
                     <span class="hero-cta-note">オンライン45分｜資料の作成は不要｜営業提案は行いません｜秘密保持対応</span>
                 </div>
             </div>
-            <figure class="hero-photo">
-                <img src="assets/photo-hero.jpg" alt="CHOUJINの交流会「超人祭」の会場。参加者が一堂に集まっている" width="1400" height="1000" loading="eager">
-                <figcaption>2025年12月　第1回超人祭（CHOUJINの交流会）</figcaption>
+
+            <!-- A4診断シートのイメージ（記入例） -->
+            <figure class="hero-sheet" aria-label="事業開発診断シートの記入例">
+                <div class="sheet">
+                    <div class="sheet-head"><span class="sheet-brand">CHOUJIN 事業開発診断</span><span class="sheet-sample">記入例</span></div>
+                    <div class="sheet-title">事業開発診断シート</div>
+                    <p class="sheet-verdict">止まっているのは「商品」ではなく「話す相手」です。商談は自力で作れています。ただ、費用を出す人にまだ一度も会っていない。</p>
+                    <div class="sheet-strip" aria-hidden="true">
+                        <span>①全体を掴む</span><span class="stuck">②的を絞る</span><span class="now">③営業で掘る</span><span>④法則を見抜く</span><span>⑤勝ち筋を決める</span><span>⑥拡販する</span>
+                    </div>
+                    <div class="sheet-point"><b>詰まりの一点</b>費用を出す部署と「何が揃えば稟議が通るか」を、まだ一社にも確認していない。</div>
+                    <div class="sheet-actions">
+                        <div><b>1</b>費用を出す人に3社で会う</div>
+                        <div><b>2</b>見送り5件に理由を聞き直す</div>
+                        <div><b>3</b>PoC→本導入の条件を先に握る</div>
+                    </div>
+                </div>
+                <figcaption>実際にお送りするA4一枚の形です。点数はつけません。</figcaption>
             </figure>
         </div>
     </section>
@@ -140,45 +133,27 @@
     <section class="stats reveal" id="stats" aria-label="実績">
         <div class="container">
             <ul class="stats-row">
-                <li>
-                    <span class="stat-label">実績ゼロの市場から</span>
-                    <span class="stat-num">40<small>社</small></span>
-                    <span class="stat-desc">遺伝子検査サービスを、導入実績のない市場で40社へ展開</span>
-                </li>
-                <li>
-                    <span class="stat-label">自分たちで作った商談</span>
-                    <span class="stat-num">150<small>件</small></span>
-                    <span class="stat-desc">400件の架電から150件の商談。当たる先の選び方と回数で決まった</span>
-                </li>
-                <li>
-                    <span class="stat-label">対応領域</span>
-                    <span class="stat-num">5<small>領域</small></span>
-                    <span class="stat-desc">ヘルスケア・宇宙・半導体・AI・製造業。ディープテックを中心に</span>
-                </li>
+                <li><span class="stat-label">実績ゼロの市場から</span><span class="stat-num">40<small>社</small></span><span class="stat-desc">遺伝子検査サービスを、導入実績のない市場で40社へ展開</span></li>
+                <li><span class="stat-label">自分たちで作った商談</span><span class="stat-num">150<small>件</small></span><span class="stat-desc">400件の架電から150件の商談。当たる先の選び方と回数で決まった</span></li>
+                <li><span class="stat-label">対応領域</span><span class="stat-num">5<small>領域</small></span><span class="stat-desc">ヘルスケア・宇宙・半導体・AI・製造業。ディープテックを中心に</span></li>
             </ul>
+            <p class="stats-note">※合同会社CHOUJIN設立（2024年10月）前の、代表およびメンバーによる支援実績を含みます。</p>
         </div>
     </section>
 
-    <!-- 3. もらえるもの -->
+    <!-- 3. A4に何が書いてあるか -->
     <section class="deliverables reveal" id="deliverables">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">A4一枚に、何が書いてあるか</h2>
-                <p class="section-lead">診断のあと、手元に残るのはこの一枚です。長い報告書は作りません。</p>
+                <p class="section-lead">長い報告書は作りません。翌朝やることが決まる一枚だけをお渡しします。</p>
             </div>
             <dl class="who-list">
-                <div class="who-row">
-                    <dt>現在地</dt>
-                    <dd><strong>事業実装6ステップのどこにいるか</strong><br>いま何段目にいるのか、一つに絞って書きます。</dd>
-                </div>
-                <div class="who-row">
-                    <dt>詰まり</dt>
-                    <dd><strong>事業を止めている「詰まりの一点」</strong><br>できていないことを並べません。最大のボトルネックを一つだけ特定します。</dd>
-                </div>
-                <div class="who-row">
-                    <dt>次の30日</dt>
-                    <dd><strong>取り組むアクション3つ</strong><br>翌日から動ける粒度で。「誰に会いに行くか」まで具体に書きます。</dd>
-                </div>
+                <div class="who-row"><dt>見立て</dt><dd><strong>3行で、何が起きているか</strong><br>いちばん最初に書きます。これだけ読めば終わるように。</dd></div>
+                <div class="who-row"><dt>現在地</dt><dd><strong>事業実装6ステップの、いまどこか</strong><br>6つのマスに「いまここ」と「詰まり」の印を2つ。表でも点数でもありません。</dd></div>
+                <div class="who-row"><dt>詰まり</dt><dd><strong>事業を止めている「詰まりの一点」と、根拠3つ</strong><br>できていないことは並べません。最大のボトルネックを一つに絞り、顧客の言葉と数字で根拠を示します。</dd></div>
+                <div class="who-row"><dt>次の30日</dt><dd><strong>取り組むアクション3つ</strong><br>「やること」と「終わった状態」だけ。誰に会いに行くか、まで具体に書きます。</dd></div>
+                <div class="who-row"><dt>やらないこと</dt><dd><strong>今はやらないこと2つ</strong><br>やることより、やめることで前に進む場合が多いので。</dd></div>
             </dl>
             <div class="transparency">
                 <h3 class="transparency-title">先にお伝えしておくこと</h3>
@@ -188,43 +163,64 @@
         </div>
     </section>
 
-    <!-- 4. こんな企業に向いている -->
+    <!-- 4. こんな進まないに -->
     <section class="problem reveal" id="problem">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">こんな状態のとき、効きます</h2>
+                <h2 class="section-title">こんな「進まない」のときに</h2>
+                <p class="section-lead">技術やプロダクトの良し悪しを評価する場ではありません。顧客起点で事業を前に進めたいチームのための診断です。</p>
             </div>
             <ul class="problem-list">
-                <li>技術やプロダクトはある。顧客にも会っている。それでも、なぜか事業が前に進まない</li>
+                <li>誰に売るべきか、ターゲットが定まり切らない</li>
+                <li>顧客ヒアリングをしても、事業仮説が深まらない</li>
+                <li>商談は生まれるが、PoCや受注につながらない</li>
+                <li>PoCは実施したが、本導入へ進まない</li>
+                <li>顧客ごとに提案が変わり、勝ち筋が見えない</li>
                 <li>「市場がまだ追いついていない」と言っているが、具体的な顧客の声を思い出せない</li>
-                <li>営業をやった方がいいのは分かっているが、研究者出身で何から手をつければいいか分からない</li>
-                <li>投資家や上司から「顧客は誰か」を聞かれるたびに、答えが少しずつ変わる</li>
-                <li>次に何をすべきか、自分たちだけで考えていて煮詰まっている</li>
             </ul>
-            <p class="problem-note">事業が進まない原因は、営業とは限りません。顧客の絞り方、仮説の立て方、検証の順番——止まっている場所は会社ごとに違います。だから最初に「どこで止まっているか」だけを見ます。</p>
+            <div class="scope">
+                <h3 class="scope-title">診断しないこと</h3>
+                <p>経営全般の診断ではありません。財務・資金調達・法務・知財・人事制度・技術開発そのものは見ません。見るのは、<strong>顧客起点で事業を市場に出し、検証し、売上につなげる領域</strong>だけです。</p>
+            </div>
         </div>
     </section>
 
-    <!-- 5. 事業実装の6ステップ -->
+    <!-- 5. 原因は営業とは限らない -->
+    <section class="cause reveal" id="cause">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">事業が進まない原因は、営業とは限りません</h2>
+                <p class="section-lead">同じ「売れない」でも、止まっている場所は会社ごとに違います。だから最初に「どこで止まっているか」だけを見ます。</p>
+            </div>
+            <dl class="cause-list">
+                <div class="cause-row"><dt>商談が増えない</dt><dd>会っている顧客・部署が違う</dd></div>
+                <div class="cause-row"><dt>反応が薄い</dt><dd>技術の説明が、顧客の困りごとに変換できていない</dd></div>
+                <div class="cause-row"><dt>PoCで止まる</dt><dd>費用を出す人・決裁者を巻き込めていない</dd></div>
+                <div class="cause-row"><dt>仮説が深まらない</dt><dd>顧客の言葉が記録されず、推測で判断している</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    <!-- 6. 6ステップ -->
     <section class="steps-section reveal" id="steps">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">事業実装の6ステップ</h2>
-                <p class="section-lead">CHOUJINが自分たちの事業開発で使っている型です。診断では、伺った内容をこの6つのどこにいるかに置き直します。</p>
+                <h2 class="section-title">事業実装の6ステップで診ます</h2>
+                <p class="section-lead">このページのために作った評価軸ではありません。CHOUJINが自分たちの事業開発で使っている型です。伺った内容を、この6つのどこにいるかに置き直します。</p>
             </div>
             <ol class="steps-list">
-                <li><span class="step-name">全体を掴む</span><span class="step-desc">業界の構造・歴史・用語を一気に掴む</span></li>
-                <li><span class="step-name">的を絞る</span><span class="step-desc">誰の・どんな痛みに・どう当てるかを一点に絞る</span></li>
-                <li><span class="step-name">営業で掘る</span><span class="step-desc">実際に商談を重ね、必要とされているかを見極める</span></li>
-                <li><span class="step-name">法則を見抜く</span><span class="step-desc">得たデータから真のニーズと真の顧客を定義し直す</span></li>
-                <li><span class="step-name">勝ち筋を決める</span><span class="step-desc">別の相手にもぶつけて裏を取り、これでいくと決める</span></li>
-                <li><span class="step-name">拡販する</span><span class="step-desc">体制と計画を立て、広げて売る</span></li>
+                <li><span class="step-name">全体を掴む<small>構造理解</small></span><span class="step-desc">業界の成り立ち、商流、予算、導入に関わる意思決定者を把握できているか</span></li>
+                <li><span class="step-name">的を絞る<small>仮説設計</small></span><span class="step-desc">誰の、どの課題に、どのような価値で応えるかが一点に絞れているか</span></li>
+                <li><span class="step-name">営業で掘る<small>現場検証</small></span><span class="step-desc">実際の顧客に会い、市場の反応と本音を一次情報として集めているか</span></li>
+                <li><span class="step-name">法則を見抜く<small>分析</small></span><span class="step-desc">受注・失注・見送りの理由を整理し、次の仮説へ反映できているか</span></li>
+                <li><span class="step-name">勝ち筋を決める<small>再現性</small></span><span class="step-desc">成功パターンが複数の顧客で再現され、言葉にできているか</span></li>
+                <li><span class="step-name">拡販する<small>展開</small></span><span class="step-desc">特定の個人に依存せず、組織の中で同じ動きと判断を再現できるか</span></li>
             </ol>
             <p class="steps-note">止まる場所は、ほとんどが2段目か3段目です。1段目を飛ばしたまま作り込んだ結果、そうなります。</p>
         </div>
     </section>
 
-    <!-- 6. 領域別の支援実績 -->
+    <!-- 7. 領域別の支援実績 -->
     <section class="domains reveal" id="domains">
         <div class="container">
             <figure class="photo-band">
@@ -236,31 +232,17 @@
                 <p class="section-lead">社名は伏せています。いずれも、自分たちで電話をかけ、商談に出て、顧客をつくる側で入った案件です。</p>
             </div>
             <dl class="domain-list">
-                <div class="domain-row">
-                    <dt>ヘルスケア・医療</dt>
-                    <dd>遺伝子検査サービスの新規開拓（40社へ展開）／医療機器の事業開発／目の健康経営プラン／サプリメント事業の販売設計</dd>
-                </div>
-                <div class="domain-row">
-                    <dt>宇宙・半導体</dt>
-                    <dd>宇宙×半導体の産業ヒアリング（大手企業40社を対象）／軌道上データセンター構想の市場設計／宇宙食の事業化ワークショップ</dd>
-                </div>
-                <div class="domain-row">
-                    <dt>AI・製造業</dt>
-                    <dd>製造業向け新規事業の営業組織立ち上げ／中小企業向けAI伴走サービス「リッツー」の運営</dd>
-                </div>
-                <div class="domain-row">
-                    <dt>住宅・エネルギー</dt>
-                    <dd>電力センシング技術の住宅メーカー向け事業開発（5年事業計画の策定と商談推進）</dd>
-                </div>
-                <div class="domain-row">
-                    <dt>金融・自治体</dt>
-                    <dd>地方銀行を対象とした宇宙産業のニーズ調査（130行超をリスト化し接触）</dd>
-                </div>
+                <div class="domain-row"><dt>ヘルスケア・医療</dt><dd>遺伝子検査サービスの新規開拓（健康保険組合市場へ約400件アプローチ、約150件の商談、40社へ展開）／医療機器の事業開発／目の健康経営プラン／サプリメント事業の販売設計</dd></div>
+                <div class="domain-row"><dt>宇宙・半導体</dt><dd>宇宙×半導体の産業ヒアリング（大手企業40社を対象）／軌道上データセンター構想の市場設計／宇宙食の事業化ワークショップ</dd></div>
+                <div class="domain-row"><dt>AI・製造業</dt><dd>製造業向け新規事業の営業組織立ち上げ／中小企業向けAI伴走サービス「リッツー」の運営</dd></div>
+                <div class="domain-row"><dt>住宅・エネルギー</dt><dd>電力センシング技術の住宅メーカー向け事業開発（5年事業計画の策定と商談推進）</dd></div>
+                <div class="domain-row"><dt>金融・自治体</dt><dd>地方銀行を対象とした宇宙産業のニーズ調査（130行超をリスト化し接触）</dd></div>
             </dl>
+            <p class="stats-note">※守秘義務のため社名と一部の内容を匿名化しています。合同会社CHOUJIN設立前の、代表およびメンバーによる支援実績を含みます。</p>
         </div>
     </section>
 
-    <!-- 7. なぜ無料か -->
+    <!-- 8. なぜ無料か -->
     <section class="why-free reveal" id="why-free">
         <div class="container">
             <div class="section-header">
@@ -274,41 +256,26 @@
         </div>
     </section>
 
-    <!-- 8. 診断の流れ -->
+    <!-- 9. 流れ -->
     <section class="how reveal" id="flow">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">診断の流れ</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">診断の流れ</h2></div>
             <ol class="how-list">
-                <li>
-                    <span class="how-name">下のフォームを送る</span>
-                    <span class="how-desc">連絡先のほかに、「事業を一言で」「直近3ヶ月の数字」「いま一番止まっていること」の3つだけ書いてください。資料を新しく作る必要はありません。この3つがあると、45分が浅くなりません。</span>
-                </li>
-                <li>
-                    <span class="how-name">日程を決める</span>
-                    <span class="how-desc">1〜2営業日以内に、こちらから日程候補をメールでお送りします。</span>
-                </li>
-                <li>
-                    <span class="how-name">オンラインで45分、話す</span>
-                    <span class="how-desc">カメラは不要です。事業実装6ステップの順に、いまどうやって顧客を探しているかを伺います。詰まりの場所が見えたら、残りの時間はそこの事実確認に使います。終わりに仮の見立てをその場でお伝えします。</span>
-                </li>
-                <li>
-                    <span class="how-name">A4一枚をお送りする</span>
-                    <span class="how-desc">3営業日以内に、現在地・詰まりの一点・次の30日のアクション3つをまとめてお送りします。これで終わりです。</span>
-                </li>
+                <li><span class="how-name">下のフォームを送る</span><span class="how-desc">連絡先のほかに、「事業を一言で」「直近3ヶ月の数字」「いま一番止まっていること」の3つだけ書いてください。資料を新しく作る必要はありません。この3つがあると、45分が浅くなりません。</span></li>
+                <li><span class="how-name">日程を決める</span><span class="how-desc">1〜2営業日以内に、こちらから日程候補をメールでお送りします。</span></li>
+                <li><span class="how-name">オンラインで45分、話す</span><span class="how-desc">カメラは不要です。事業実装6ステップの順に、いまどうやって顧客を探しているかを伺います。詰まりの場所が見えたら、残りの時間はそこの事実確認に使います。終わりに仮の見立てをその場でお伝えします。</span></li>
+                <li><span class="how-name">A4一枚をお送りする</span><span class="how-desc">3営業日以内に、見立て・現在地・詰まりの一点・次の30日のアクション3つをまとめてお送りします。これで終わりです。</span></li>
             </ol>
         </div>
     </section>
 
-    <!-- 9. CHOUJINとは -->
+    <!-- 10. CHOUJINとは -->
     <section class="why-us reveal" id="why-us">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">CHOUJINとは</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">CHOUJINとは</h2></div>
             <div class="why-us-body">
-                <p><strong>合同会社CHOUJIN。事業開発が本業の会社です。</strong>コンサルティングではなく、自分たちで電話をかけ、商談に出て、顧客をつくる側にいます。ディープテック領域では宇宙・半導体・医療機器などの案件で、大手メーカーの現場に入って顧客開拓そのものを担ってきました。</p>
+                <p class="tagline">すごい技術を、必要としている人に届ける。</p>
+                <p><strong>合同会社CHOUJIN。事業開発が本業の会社です。</strong>資料の中だけで戦略を作るのではなく、自分たちで電話をかけ、商談に出て、顧客をつくる側にいます。ディープテック領域では宇宙・半導体・医療機器などの案件で、大手メーカーの現場に入って顧客開拓そのものを担ってきました。</p>
                 <p>診断を担当するのは代表の嘉山洋輔、または事業開発を本業とするメンバーです。研究者出身の経営者の方に営業の話をするのは気が引ける、という声をよく伺います。ですが顧客に会う作業は、技術と同じで、型と回数の問題です。センスの話ではありません。</p>
                 <p class="why-us-link">普段どんな仕事をしているのか、どんな人が集まっているのかは、会社のサイトに載せています。<br>
                     <a href="https://choujin.net" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">CHOUJINのサイトを見る</a>
@@ -317,7 +284,7 @@
         </div>
     </section>
 
-    <!-- VC・CVCの方へ -->
+    <!-- 11. VC・CVCの方へ -->
     <section class="for-vc reveal" id="for-vc">
         <div class="container">
             <div class="section-header">
@@ -336,49 +303,22 @@
         </div>
     </section>
 
-    <!-- 10. FAQ -->
+    <!-- 12. FAQ -->
     <section class="faq reveal" id="faq">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">よくある質問</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">よくある質問</h2></div>
             <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>本当に無料ですか？あとから請求されませんか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>無料です。あとから請求することも、診断を入口に営業提案をすることもありません。私たちが欲しいのは、事業開発がどこで止まるかのデータです。</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>誰が話を聞くのですか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>合同会社CHOUJIN代表の嘉山洋輔、または事業開発を本業とするメンバーが対応します。いずれも自分で電話をかけ、商談に出て、顧客をつくってきた側の人間です。</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>どのフェーズの会社が対象ですか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>プロダクトや技術があり、顧客開拓を始めている、または始めようとしているスタートアップが対象です。分野は問いません。大企業の新規事業部門からのご相談も受けています。</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>事前に準備するものはありますか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>資料を新しく作る必要はありません。申込フォームで「事業を一言で」「直近3ヶ月の数字」「いま一番止まっていること」の3つを書いていただければ十分です。既存の事業資料があればURLを添えてください（任意）。</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>診断シートはVCにも共有されますか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>VC・CVCからのご紹介で申し込まれた場合は、同じA4一枚をご紹介元にもお送りします。話し始める前に必ずお伝えします。書くのは「現在地・詰まり・次の30日」だけで、点数はつけません。ご自身で申し込まれた場合は、ご本人以外にはお渡ししません。</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>話した内容の機密は守られますか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>伺った内容は、ご本人（ご紹介の場合はご紹介元を含む）以外には出しません。業界横断の傾向として使う場合も、社名や個社が特定できる形にはしません。NDAの締結をご希望の場合は対応します。</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>診断だけでも構いませんか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>もちろんです。診断だけで終わる方がほとんどです。A4一枚をお送りした時点で完了とし、その後こちらから連絡することはありません。</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>診断後の実行も依頼できますか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>ご希望がある場合は、顧客ヒアリング、仮説検証、顧客開拓などの実行支援も可能です。無料診断後に、こちらから営業提案を行うことはありません。</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false"><span>何社まで受けてもらえますか？</span><div class="icon"></div></button>
-                    <div class="faq-answer"><p>受け入れは週2社までとさせていただいています。お申し込みが重なった場合は、順番に日程をご案内します。</p></div>
-                </div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>本当に無料ですか？あとから請求されませんか？</span><div class="icon"></div></button><div class="faq-answer"><p>無料です。あとから請求することも、診断を入口に営業提案をすることもありません。私たちが欲しいのは、事業開発がどこで止まるかのデータです。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>まだ売上がない段階でも相談できますか？</span><div class="icon"></div></button><div class="faq-answer"><p>はい。顧客課題の探索中、プロダクト開発中、営業開始前でも構いません。フェーズに応じて、次に確認すべきことを整理します。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>営業診断とは何が違いますか？</span><div class="icon"></div></button><div class="faq-answer"><p>営業活動だけでなく、その前提となる業界構造、顧客の絞り方、検証の順番まで見ます。営業が進まない原因が、営業以外にあることは少なくありません。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>誰が話を聞くのですか？</span><div class="icon"></div></button><div class="faq-answer"><p>合同会社CHOUJIN代表の嘉山洋輔、または事業開発を本業とするメンバーが対応します。いずれも自分で電話をかけ、商談に出て、顧客をつくってきた側の人間です。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>どんな業界が対象ですか？</span><div class="icon"></div></button><div class="faq-answer"><p>業界は限定していません。特にBtoB、ディープテック、ヘルスケア、AI、製造業、素材、エネルギー、宇宙など、専門性が高く、顧客や売り方を探索している事業を得意としています。大企業の新規事業部門からのご相談も受けています。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>事前に準備するものはありますか？</span><div class="icon"></div></button><div class="faq-answer"><p>資料を新しく作る必要はありません。申込フォームで「事業を一言で」「直近3ヶ月の数字」「いま一番止まっていること」の3つを書いていただければ十分です。既存の事業資料があればURLを添えてください（任意）。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>診断シートはVCにも共有されますか？</span><div class="icon"></div></button><div class="faq-answer"><p>VC・CVCからのご紹介で申し込まれた場合は、同じA4一枚をご紹介元にもお送りします。話し始める前に必ずお伝えします。書くのは「現在地・詰まり・次の30日」だけで、点数はつけません。ご自身で申し込まれた場合は、ご本人以外にはお渡ししません。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>話した内容の機密は守られますか？</span><div class="icon"></div></button><div class="faq-answer"><p>伺った内容は、ご本人（ご紹介の場合はご紹介元を含む）以外には出しません。業界横断の傾向として使う場合も、社名や個社が特定できる形にはしません。NDAの締結をご希望の場合は対応します。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>診断だけでも構いませんか？</span><div class="icon"></div></button><div class="faq-answer"><p>もちろんです。診断だけで終わる方がほとんどです。A4一枚をお送りした時点で完了とし、その後こちらから連絡することはありません。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>診断後の実行も依頼できますか？</span><div class="icon"></div></button><div class="faq-answer"><p>ご希望がある場合は、顧客ヒアリング、仮説検証、顧客開拓などの実行支援も可能です。無料診断後に、こちらから営業提案を行うことはありません。</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>何社まで受けてもらえますか？</span><div class="icon"></div></button><div class="faq-answer"><p>受け入れは週2社までとさせていただいています。お申し込みが重なった場合は、順番に日程をご案内します。</p></div></div>
             </div>
         </div>
     </section>
@@ -401,7 +341,6 @@
                 </div>
                 <form class="contact-form" id="consultation-form" name="shindan" data-netlify="true" method="POST" netlify-honeypot="nickname">
                     <input type="hidden" name="form-name" value="shindan">
-
                     <div class="form-group">
                         <label for="role">お立場 <span class="required">必須</span></label>
                         <select id="role" name="role" required>
@@ -412,50 +351,16 @@
                             <option value="その他">その他</option>
                         </select>
                     </div>
-
-                    <div class="form-group">
-                        <label for="companyName">会社名 <span class="required">必須</span></label>
-                        <input type="text" id="companyName" name="companyName" required placeholder="例：合同会社CHOUJIN">
-                    </div>
-
-                    <!-- Spam Prevention: Honeypot field (hidden from real users) -->
-                    <div class="form-group" style="display:none;" aria-hidden="true">
-                        <label for="nickname">Nickname</label>
-                        <input type="text" id="nickname" name="nickname" tabindex="-1" autocomplete="off">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contactName">お名前 <span class="required">必須</span></label>
-                        <input type="text" id="contactName" name="contactName" required placeholder="例：山田 太郎">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">メールアドレス <span class="required">必須</span></label>
-                        <input type="email" id="email" name="email" required placeholder="例：info@choujin.net">
-                    </div>
-                    <div class="form-group">
-                        <label for="business">事業を一言で <span class="required">必須</span></label>
-                        <input type="text" id="business" name="business" required placeholder="例：製造ラインの予兆検知センサーを、自動車部品メーカーに">
-                    </div>
-                    <div class="form-group">
-                        <label for="numbers">直近3ヶ月の数字 <span class="required">必須</span></label>
-                        <input type="text" id="numbers" name="numbers" required placeholder="例：12社に接触・7社と商談・PoC2件・有償0件">
-                        <p class="form-hint">ざっくりで構いません。分からない項目は「不明」で大丈夫です。</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="stuck">いま一番止まっていると感じること <span class="required">必須</span></label>
-                        <textarea id="stuck" name="stuck" rows="3" required placeholder="例：商談は生まれるが、PoCから有償に進まない"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="referrer">ご紹介元のVC・CVC（ある場合）</label>
-                        <input type="text" id="referrer" name="referrer" placeholder="例：〇〇ベンチャーズ 〇〇さん">
-                    </div>
-                    <div class="form-group">
-                        <label for="docUrl">既存の事業資料のURL（任意）</label>
-                        <input type="url" id="docUrl" name="docUrl" placeholder="あれば。新しく作る必要はありません">
-                    </div>
-                    <div class="form-submit">
-                        <button type="submit" class="btn btn-primary btn-large w-100">送信する</button>
-                    </div>
+                    <div class="form-group"><label for="companyName">会社名 <span class="required">必須</span></label><input type="text" id="companyName" name="companyName" required placeholder="例：合同会社CHOUJIN"></div>
+                    <div class="form-group" style="display:none;" aria-hidden="true"><label for="nickname">Nickname</label><input type="text" id="nickname" name="nickname" tabindex="-1" autocomplete="off"></div>
+                    <div class="form-group"><label for="contactName">お名前 <span class="required">必須</span></label><input type="text" id="contactName" name="contactName" required placeholder="例：山田 太郎"></div>
+                    <div class="form-group"><label for="email">メールアドレス <span class="required">必須</span></label><input type="email" id="email" name="email" required placeholder="例：info@choujin.net"></div>
+                    <div class="form-group"><label for="business">事業を一言で <span class="required">必須</span></label><input type="text" id="business" name="business" required placeholder="例：製造ラインの予兆検知センサーを、自動車部品メーカーに"></div>
+                    <div class="form-group"><label for="numbers">直近3ヶ月の数字 <span class="required">必須</span></label><input type="text" id="numbers" name="numbers" required placeholder="例：12社に接触・7社と商談・PoC2件・有償0件"><p class="form-hint">ざっくりで構いません。分からない項目は「不明」で大丈夫です。</p></div>
+                    <div class="form-group"><label for="stuck">いま一番止まっていると感じること <span class="required">必須</span></label><textarea id="stuck" name="stuck" rows="3" required placeholder="例：商談は生まれるが、PoCから有償に進まない"></textarea></div>
+                    <div class="form-group"><label for="referrer">ご紹介元のVC・CVC（ある場合）</label><input type="text" id="referrer" name="referrer" placeholder="例：〇〇ベンチャーズ 〇〇さん"></div>
+                    <div class="form-group"><label for="docUrl">既存の事業資料のURL（任意）</label><input type="url" id="docUrl" name="docUrl" placeholder="あれば。新しく作る必要はありません"></div>
+                    <div class="form-submit"><button type="submit" class="btn btn-primary btn-large w-100">送信する</button></div>
                     <p class="form-privacy">送信いただいた情報は<a href="privacy.html">プライバシーポリシー</a>に基づいて取り扱います。</p>
                 </form>
                 <div class="form-success-message" id="form-success" style="display: none;">
@@ -468,26 +373,17 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>運営</p>
-                <a href="https://choujin.net" target="_blank" rel="noopener noreferrer" class="footer-link">合同会社CHOUJIN</a>
-            </div>
+            <div class="footer-content"><p>運営</p><a href="https://choujin.net" target="_blank" rel="noopener noreferrer" class="footer-link">合同会社CHOUJIN</a></div>
             <div class="footer-links">
                 <a href="https://choujin.net" target="_blank" rel="noopener noreferrer">会社サイト</a>
                 <a href="https://ai-advisor.choujin.net" target="_blank" rel="noopener noreferrer">リッツー（AI相談サービス）</a>
                 <a href="privacy.html">プライバシーポリシー</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; CHOUJIN LLC. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; CHOUJIN LLC. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <div class="sticky-cta" id="sticky-cta">
-        <a href="#form-section" class="btn btn-primary">無料診断を申し込む</a>
-    </div>
-
-    <!-- Scripts -->
+    <div class="sticky-cta" id="sticky-cta"><a href="#form-section" class="btn btn-primary">無料診断を申し込む</a></div>
     <script src="js/script.js"></script>
 </body>
 
