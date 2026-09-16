@@ -147,6 +147,12 @@
     .step h3{margin:0 0 8px;color:white;font-size:1.45rem;font-weight:600;line-height:1.35}
     .step p{margin-bottom:0;color:#c7c7c7;font-size:.98rem;max-width:720px}
 
+    .voices{background:var(--paper)}
+    .voice-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 46px;border-top:1px solid #bdb9b2}
+    .voice{margin:0;padding:34px 0 30px;border-bottom:1px solid #bdb9b2}
+    .voice p{position:relative;margin:0 0 22px;padding-top:34px;color:#333;font-size:1.05rem;line-height:1.95;font-weight:500}
+    .voice p::before{content:"\201C";position:absolute;left:-4px;top:-14px;color:var(--gold);font:700 4rem/1 Georgia,serif;opacity:.85}
+    .voice footer{color:var(--gold-dark);font-size:.8rem;font-weight:600;letter-spacing:.06em}
     .about{position:relative;overflow:hidden;background:var(--paper)}
     .about-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:70px}
     .about-photo{height:470px;margin-top:46px;overflow:hidden;border-radius:18px}
@@ -206,6 +212,7 @@
       .hero{min-height:auto;background-position:62% center}
       .hero::before{background:linear-gradient(90deg,rgba(4,4,5,.99),rgba(4,4,5,.72))}
       .about-grid,.contact-grid{grid-template-columns:1fr}
+      .voice-list{grid-template-columns:1fr;gap:0}
       .section-head{grid-template-columns:1fr;gap:17px}
       .cause-copy{grid-template-columns:1fr}
       .flow{grid-template-columns:1fr 1fr}
@@ -251,6 +258,7 @@
       <nav class="nav-links" aria-label="メインナビゲーション">
         <a href="#issues">こんなときに</a>
         <a href="#method">6ステップ</a>
+        <a href="#voices">声</a>
         <a href="#about">CHOUJINとは</a>
         <a href="#faq">FAQ</a>
         <a class="btn signal" href="#contact">無料診断を申し込む</a>
@@ -318,10 +326,36 @@
       </div>
     </section>
 
+    <section class="voices" id="voices">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">03 / VOICES</span>
+          <div>
+            <h2>話した方の声。</h2>
+            <p class="section-intro">同じやり方で事業の現在地を整理してきた方々の言葉です。社名は伏せています。</p>
+          </div>
+        </div>
+        <div class="voice-list">
+          <blockquote class="voice">
+            <p>事業計画は作りたいと思っていたが、無かった。すごく助かる。「なぜ農業をやるのか」——その質問だけで、相手の答えは大体出てくる。</p>
+            <footer>農業×新規事業　事業責任者</footer>
+          </blockquote>
+          <blockquote class="voice">
+            <p>下請け案件ではなく、発注規模の拡大——本当の意味での顧客の課題解決——という考えは、代表だけではなく、チームや会社全体で意識していきたい。</p>
+            <footer>医療×人材・メディア　スタートアップ経営支援</footer>
+          </blockquote>
+          <blockquote class="voice">
+            <p>第三者的に、プロの目で言ってもらう視点が、一番欲しいところ。投資先にもぜひ。</p>
+            <footer>ディープテック投資　ベンチャーキャピタル</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
     <section class="about" id="about">
       <div class="wrap about-grid">
         <div>
-          <span class="section-num">03 / ABOUT CHOUJIN</span>
+          <span class="section-num">04 / ABOUT CHOUJIN</span>
           <h2>CHOUJINとは。</h2>
           <figure class="about-photo">
             <img src="assets/research-lab.jpg" alt="専門領域の研究開発現場" loading="lazy" decoding="async">
@@ -346,7 +380,7 @@
     <section id="flow">
       <div class="wrap">
         <div class="section-head">
-          <span class="section-num">04 / FLOW</span>
+          <span class="section-num">05 / FLOW</span>
           <div><h2>始め方。</h2></div>
         </div>
         <div class="flow">
@@ -361,7 +395,7 @@
     <section class="faq" id="faq">
       <div class="wrap">
         <div class="section-head">
-          <span class="section-num">05 / FAQ</span>
+          <span class="section-num">06 / FAQ</span>
           <div><h2>よくある質問。</h2></div>
         </div>
         <div class="faq-list">
