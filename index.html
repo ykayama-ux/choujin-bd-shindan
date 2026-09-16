@@ -136,12 +136,15 @@
     .method .section-num,.method .eyebrow{color:var(--gold)}
     .method h2{color:white}
     .method .section-intro{color:#bdbdbd}
-    .steps{display:grid;grid-template-columns:repeat(2,1fr);column-gap:54px;border-top:1px solid rgba(255,255,255,.25)}
-    .step{min-height:220px;padding:32px 4px;border:0;border-bottom:1px solid rgba(255,255,255,.25);border-radius:0;background:transparent}
-    .step-no{display:flex;justify-content:space-between;align-items:center;color:var(--gold);font-size:.76rem;font-weight:600}
-    .step-no::after{content:"";width:50px;height:1px;background:var(--gold)}
-    .step h3{margin:42px 0 12px;color:white;font-size:1.45rem;font-weight:600}
-    .step p{margin-bottom:0;color:#c7c7c7;font-size:.96rem}
+    .steps{position:relative;display:grid;grid-template-columns:1fr;max-width:980px;margin-left:0}
+    .steps::before{content:"";position:absolute;left:33px;top:14px;bottom:14px;width:1px;background:linear-gradient(180deg,rgba(210,183,87,.15),var(--gold) 12%,var(--gold) 88%,rgba(210,183,87,.15))}
+    .step{position:relative;display:grid;grid-template-columns:68px 1fr;column-gap:34px;align-items:start;min-height:0;padding:26px 0 30px;border:0;background:transparent}
+    .step+.step{border-top:1px solid rgba(255,255,255,.12)}
+    .step-no{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:68px;height:68px;border:1px solid var(--gold);border-radius:50%;background:#0b0a0d;color:var(--gold);font-size:1.35rem;font-weight:600;letter-spacing:0;box-shadow:0 0 0 8px rgba(11,10,13,.9)}
+    .step-no::after{content:none}
+    .step-body{padding-top:8px}
+    .step h3{margin:0 0 8px;color:white;font-size:1.45rem;font-weight:600;line-height:1.35}
+    .step p{margin-bottom:0;color:#c7c7c7;font-size:.98rem;max-width:720px}
 
     .about{position:relative;overflow:hidden;background:var(--paper)}
     .about-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:70px}
@@ -218,12 +221,15 @@
       .hero .btn{width:100%;min-height:60px;font-size:1rem}
       section{padding:86px 0}
       h2{font-size:clamp(2.1rem,10vw,3.2rem)}
-      .issues,.steps,.flow,.form-grid{grid-template-columns:1fr}
-      .issues,.steps{column-gap:0}
+      .issues,.flow,.form-grid{grid-template-columns:1fr}
+      .issues{column-gap:0}
+      .steps::before{left:26px}
+      .step{grid-template-columns:54px 1fr;column-gap:20px;padding:22px 0 24px}
+      .step-no{width:54px;height:54px;font-size:1.1rem}
+      .step h3{font-size:1.25rem}
       .cause-copy{padding:30px 0}
       .wide-photo{height:230px;margin-top:46px}
       .about-photo{height:300px;margin-top:30px}
-      .step{min-height:210px}
       .flow-item{min-height:205px}
       .flow-item+.flow-item{padding-left:0;border-left:0;border-top:1px solid #bdb9b2}
       .contact-form{padding:23px}
@@ -301,12 +307,12 @@
           </div>
         </div>
         <div class="steps">
-          <article class="step"><div class="step-no">STEP 01</div><h3>全体をつかむ</h3><p>業界の成り立ち、商流、予算、導入に関わる意思決定者を把握できているか。</p></article>
-          <article class="step"><div class="step-no">STEP 02</div><h3>的を絞る</h3><p>誰の、どの課題に、どう応えるかが一点に絞れているか。</p></article>
-          <article class="step"><div class="step-no">STEP 03</div><h3>営業で掘る</h3><p>実際の顧客に会い、反応と本音を一次情報として集めているか。</p></article>
-          <article class="step"><div class="step-no">STEP 04</div><h3>法則を見抜く</h3><p>受注・失注・見送りの理由を整理し、次の仮説に反映できているか。</p></article>
-          <article class="step"><div class="step-no">STEP 05</div><h3>勝ち筋を決める</h3><p>成功パターンが複数の顧客で再現され、言葉にできているか。</p></article>
-          <article class="step"><div class="step-no">STEP 06</div><h3>拡販する</h3><p>特定の個人に依存せず、組織で同じ動きと判断を再現できるか。</p></article>
+          <article class="step"><div class="step-no" aria-label="STEP 01">01</div><div class="step-body"><h3>全体をつかむ</h3><p>業界の成り立ち、商流、予算、導入に関わる意思決定者を把握できているか。</p></div></article>
+          <article class="step"><div class="step-no" aria-label="STEP 02">02</div><div class="step-body"><h3>的を絞る</h3><p>誰の、どの課題に、どう応えるかが一点に絞れているか。</p></div></article>
+          <article class="step"><div class="step-no" aria-label="STEP 03">03</div><div class="step-body"><h3>営業で掘る</h3><p>実際の顧客に会い、反応と本音を一次情報として集めているか。</p></div></article>
+          <article class="step"><div class="step-no" aria-label="STEP 04">04</div><div class="step-body"><h3>法則を見抜く</h3><p>受注・失注・見送りの理由を整理し、次の仮説に反映できているか。</p></div></article>
+          <article class="step"><div class="step-no" aria-label="STEP 05">05</div><div class="step-body"><h3>勝ち筋を決める</h3><p>成功パターンが複数の顧客で再現され、言葉にできているか。</p></div></article>
+          <article class="step"><div class="step-no" aria-label="STEP 06">06</div><div class="step-body"><h3>拡販する</h3><p>特定の個人に依存せず、組織で同じ動きと判断を再現できるか。</p></div></article>
         </div>
       </div>
     </section>
@@ -346,7 +352,7 @@
           <article class="flow-item"><b>STEP 01</b><h3>フォームを送る</h3><p>分かる範囲で、事業の現在地をお送りください。</p></article>
           <article class="flow-item"><b>STEP 02</b><h3>日程を決める</h3><p>1〜2営業日以内に、こちらから候補をお送りします。</p></article>
           <article class="flow-item"><b>STEP 03</b><h3>オンラインで話す</h3><p>45分間、事業開発や営業の現状を伺います。</p></article>
-          <article class="flow-item"><b>STEP 04</b><h3>次の一手を受け取る</h3><p>後日、止めている一点と次の一手をお送りします。これで終わりです。</p></article>
+          <article class="flow-item"><b>STEP 04</b><h3>次の一手を受け取る</h3><p>後日、止めている一点と次の一手をお送りします。<strong style="color:var(--ink)">これで終わりです。</strong></p></article>
         </div>
       </div>
     </section>
@@ -376,6 +382,7 @@
           <p class="eyebrow">FREE DIAGNOSIS</p>
           <h2>無料診断を申し込む。</h2>
           <p class="contact-copy">1〜2営業日以内に、日程候補をお送りします。</p>
+          <p class="micro" style="color:rgba(255,255,255,.6)">資料作成不要　｜　無理な売り込みなし　｜　秘密保持対応</p>
         </div>
         <form class="contact-form" id="diagnosis-form" name="shindan" data-netlify="true" method="POST" netlify-honeypot="nickname">
           <input type="hidden" name="form-name" value="shindan">
