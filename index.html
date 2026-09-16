@@ -45,6 +45,7 @@
     a{color:inherit}
     button,input,textarea,select{font:inherit}
     h1,h2,h3,p{margin-top:0}
+    .nowrap{white-space:nowrap}
     .wrap{width:min(calc(100% - 56px),var(--max));margin:0 auto}
     .skip{position:absolute;left:-9999px}
     .skip:focus{left:16px;top:16px;z-index:100;padding:10px 16px;border-radius:999px;background:var(--gold);color:var(--ink)}
@@ -276,7 +277,7 @@
         <div class="section-head">
           <span class="section-num">01 / FOR WHOM</span>
           <div>
-            <h2>こんな「進まない」のときに。</h2>
+            <h2>こんな<span class="nowrap">「進まない」</span>のときに。</h2>
           </div>
         </div>
         <div class="issues">
