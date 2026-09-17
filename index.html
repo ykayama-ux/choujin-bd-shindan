@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>合同会社CHOUJIN（ゼロから再構築テスト）</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Noto+Sans+JP:wght@700;900&display=swap">
+<style>
+:root{--pink:#ff4a69;--gold:#d2b757;--paper:#f8f7f6;--ink:#000;--jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--serif:"Big Caslon","Baskerville","Times New Roman",serif;--en:"Montserrat",sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;background:#000;color:#fff;font-family:var(--jp);font-weight:700;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+/* fixed cosmic background */
+.cosmos{position:fixed;inset:0;z-index:0;background:#000 url(img/hero.gif) center/cover no-repeat}
+.cosmos::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.5),rgba(102,102,102,0))}
+.stars{position:fixed;inset:0;z-index:1;pointer-events:none}
+.stars>div{position:absolute;inset:0}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:22px;letter-spacing:.06em}
+.logo img{width:36px;height:36px;border-radius:50%}
+.logo b{color:var(--gold);font-weight:400}
+nav{display:flex;gap:26px;font-family:var(--serif);font-size:13px;letter-spacing:.14em}
+nav a:last-child::after{content:" ↗";font-size:11px}
+/* hero */
+.hero{position:relative;z-index:2;min-height:870px;display:flex;flex-direction:column;justify-content:center;padding:120px 80px 80px 120px}
+.hero h1{margin:0 0 40px;font-size:64px;line-height:70px;font-weight:900;letter-spacing:.4em;white-space:nowrap}
+.hero h1 .l1{display:block;background:linear-gradient(90deg,var(--pink),#fff 42%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .l2{display:block;letter-spacing:.25em;background:linear-gradient(265deg,var(--pink),#fff 42%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:28px;line-height:39px;margin:0 0 9px}
+.hero .sub2{font-size:28px;line-height:39px;margin:0 0 48px}
+.hero .body{font-size:16px;line-height:25px;letter-spacing:.01em;margin:0 0 44px;max-width:727px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #fff;border-radius:999px;padding:14px 40px;font-size:14px;letter-spacing:.05em;color:#fff}
+.btn::after{content:"›";font-size:18px;line-height:1}
+.scroll{position:absolute;right:56px;top:422px;writing-mode:vertical-rl;font-family:var(--serif);font-size:14px;letter-spacing:.15em}
+.scroll::after{content:"";display:block;width:1px;height:40px;background:#fff;margin:12px auto 0}
+/* photo strip + about */
+.about{position:relative;z-index:2;padding:96px 0 192px;background:#000 url(img/band.gif) center/cover no-repeat}
+.about::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.about>*{position:relative}
+.strip{display:flex;gap:24px;justify-content:center;padding:0 160px 96px}
+.strip div{flex:1;aspect-ratio:16/9;background:center/cover no-repeat;max-width:330px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.about h2{font-family:var(--en);font-weight:600;font-size:72px;text-align:center;margin:0 0 88px}
+.about .lead{text-align:center;font-size:28px;line-height:45px;letter-spacing:.05em;margin:0 auto 58px;max-width:786px}
+.about .text{text-align:center;font-size:18px;line-height:30px;letter-spacing:.05em;max-width:967px;margin:0 auto}
+.about .text p{margin:0 0 30px}
+/* eigyoryoku (was an HTML embed) */
+.power{position:relative;z-index:2;background:#eee;padding:80px 48px 96px;color:#222;text-align:center}
+.power h2{font-family:var(--en);font-size:40px;color:#6b5b95;margin:0 0 10px}
+.power .small{font-size:14px;color:#666;font-weight:500;margin:0 0 56px}
+.power .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1040px;margin:0 auto;align-items:center;text-align:left}
+.power h3{font-size:28px;line-height:1.5;margin:0 0 40px;text-align:center}
+.circles{display:flex;align-items:center;justify-content:center;gap:16px}
+.circles .c{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.circles .c1{background:#6b5b95}.circles .c2{background:#e91e63}
+.circles .x{width:44px;height:44px;border-radius:50%;background:#ffa500;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+.power .card{background:#fff;border-left:4px solid #6b5b95;border-radius:8px;padding:28px 32px;box-shadow:0 6px 24px rgba(0,0,0,.08);font-weight:500;font-size:15px;line-height:1.9}
+.power .card b{display:block;color:#6b5b95;margin-bottom:8px;font-size:17px}
+/* service */
+.service{position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:115px 60px 192px}
+.sechead{display:flex;align-items:flex-end;justify-content:space-between;max-width:1160px;margin:0 auto 110px}
+.sechead h2{font-family:var(--en);font-weight:600;font-size:64px;line-height:1;margin:0}
+.more{font-family:var(--serif);font-size:14px;color:var(--ink)}
+.more::after{content:" ›"}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto 96px}
+.card3{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.card3 .ph{aspect-ratio:1/1;background:center/cover no-repeat}
+.card3 .in{padding:28px 20px 34px}
+.card3 h3{font-family:var(--en);font-weight:600;font-size:33px;line-height:1.4;margin:0 0 20px;background:linear-gradient(135deg,var(--gold),#8c6d12);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card3 p{font-size:15px;line-height:24px;letter-spacing:.05em;margin:0}
+.cta-orange{display:flex;width:346px;height:62px;margin:0 auto;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:linear-gradient(90deg,#f2803a,#e8552e);color:#fff;font-family:var(--serif);font-size:20px;letter-spacing:.05em;box-shadow:0 10px 24px rgba(232,85,46,.35)}
+.cta-orange::after{content:"›";font-size:22px}
+/* contact band */
+.band{position:relative;z-index:2;padding:96px;background:transparent;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.band::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25)}
+.band>*{position:relative}
+.band .t{font-family:var(--serif);font-size:32px;line-height:51px;letter-spacing:.05em;margin:0 0 24px;max-width:672px}
+.band .s{font-family:var(--serif);font-size:16px;letter-spacing:.05em;margin:0}
+/* news */
+.news{position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:150px 48px}
+.news .sechead{margin-bottom:48px}
+.ncards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1160px;margin:0 auto}
+.ncard{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.ncard .ph{aspect-ratio:16/9;background:center/cover no-repeat}
+.ncard .in{padding:20px 24px 28px}
+.tag{display:inline-block;background:#000;color:#fff;font-family:var(--en);font-size:12px;padding:4px 10px;border-radius:4px;margin-bottom:12px}
+.ncard h3{font-size:16px;line-height:25px;letter-spacing:.05em;margin:0 0 12px}
+.date{font-family:var(--en);font-weight:500;font-size:14px;color:#aaa;margin:0}
+/* careers */
+.careers{position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:68px 48px}
+.careers .box{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.careers h2{font-family:var(--en);font-weight:600;font-size:64px;margin:0 0 24px}
+.careers p{font-family:var(--serif);font-size:16px;line-height:25px;letter-spacing:.05em;max-width:426px;margin:0 0 26px}
+.careers .ph{aspect-ratio:3/2;background:url(img/careers.jpg) center/cover no-repeat;border-radius:12px}
+.btn.dark{background:#000;border-color:#000}
+/* footer */
+footer{position:relative;z-index:2;color:#fff}
+footer .gband{height:157px;background:transparent}
+footer .inner{background:#0a0a0a;padding:40px 48px 24px}
+.frow{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;max-width:1160px;margin:0 auto 28px}
+.frow .fl{font-family:var(--serif);font-size:16px;letter-spacing:.08em}
+.frow nav{gap:18px;font-size:12px}
+.frow .pp{font-family:var(--serif);font-size:11px;letter-spacing:.12em}
+.frow .pp small{display:block;font-size:9px;opacity:.7;margin-top:6px;letter-spacing:.02em}
+.sns{display:flex;gap:28px;justify-content:center;margin:12px 0 40px}
+.sns img{width:44px;height:44px;filter:invert(1)}
+.copy{text-align:center;font-size:12px;opacity:.6;font-weight:500}
+.fab{position:fixed;right:40px;bottom:40px;z-index:30;width:100px;height:100px;border-radius:50%;background:#000;border:1px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;line-height:1.4;text-align:center;gap:4px}
+.fab span{font-size:18px}
+@media (max-width:900px){.hero{padding:120px 24px 60px}.hero h1{font-size:40px;line-height:48px;letter-spacing:.2em}.hero .sub,.hero .sub2{font-size:20px;line-height:30px}.strip{padding:0 24px 60px;flex-direction:column;align-items:center}.strip div{width:100%}.about h2{font-size:40px}.about .lead{font-size:20px;line-height:32px}.power .grid,.cards,.ncards,.careers .box{grid-template-columns:1fr}.band{padding:60px 24px;flex-direction:column;align-items:flex-start}.service,.news{padding-left:24px;padding-right:24px}.sechead h2{font-size:40px}nav{display:none}.scroll{display:none}}
+</style>
+</head>
+<body>
+<div class="cosmos"></div>
+<div class="stars"><div id="st1"></div><div id="st2"></div></div>
+
+<header>
+  <a class="logo" href="#"><img src="img/logo.webp" alt="">CHO<b>U</b>JIN</a>
+  <nav><a href="#">HOME</a><a href="#">COMPANY</a><a href="#service">SERVICE</a><a href="#">COMMUNITY</a><a href="#news">NEWS</a><a href="#">CONTACT</a><a href="#careers">CAREERS</a></nav>
+</header>
+
+<section class="hero">
+  <h1><span class="l1">新規事業の｢難問｣を</span><span class="l2">最高のエンターテイメントに</span></h1>
+  <p class="sub">企画だけでも、営業だけでも、新規事業は育たない</p>
+  <p class="sub2">「事業開発力」×「営業力」で、新規事業を楽しみクリアする</p>
+  <p class="body">仮説を立て、顧客に深く向き合い、成果につなげる──<br>事業開発と営業、その両輪がCHOUJINの強みです。</p>
+  <p><a class="btn" href="#">ABOUT US</a></p>
+  <div class="scroll">SCROLL</div>
+</section>
+
+<section class="about">
+  <div class="strip"><div style="background-image:url(img/camel.jpg)"></div><div style="background-image:url(img/lion.jpg)"></div><div style="background-image:url(img/nightsky.jpg)"></div></div>
+  <h2>What's the "CHOUJIN"？</h2>
+  <p class="lead">パートナーと共に、<br>新規事業の「難問」を「楽しみながら」クリアする集団</p>
+  <div class="text">
+    <p>CHOUJIN '超人' の概念は、1883年にドイツの哲学者ニーチェが提唱した「Übermensch」に由来します。</p>
+    <p>ニーチェは、「従来の価値観を超え、自らの意思で生きる人間」 こそが「超人」だと定義しました。</p>
+    <p>CHOUJINでは、どんな環境でも楽しめる人間を「超人」と定義します。</p>
+  </div>
+</section>
+
+<section class="power">
+  <h2>CHOUJINの営業力</h2>
+  <p class="small">企画だけでも、営業だけでも届かない領域へ</p>
+  <div class="grid">
+    <div>
+      <h3>二刀流で新規事業を<br>成功に導く</h3>
+      <div class="circles"><div class="c c1">事業開発力</div><div class="x">✕</div><div class="c c2">営業力</div></div>
+    </div>
+    <div class="card"><b>CHOUJINの強み：</b>市場仮説の構築から顧客開拓まで、両領域を一体的に運営し相乗効果を最大化。CHOUJINは「事業開発力」×「営業力」で、新規事業を前に進めます。外注ではなく、チームの一員として参画し、貴社の新規事業を成功に導きます。</div>
+  </div>
+</section>
+
+<section class="service" id="service">
+  <div class="sechead"><h2>SERVICE</h2><a class="more" href="#">VIEW MORE</a></div>
+  <div class="cards">
+    <div class="card3"><div class="ph" style="background-image:url(img/sv1.jpg)"></div><div class="in"><h3>営業コンサルティング</h3><p>新規事業の成功に向けて、営業戦略の設計から実行支援までを一気通貫でサポートします。</p></div></div>
+    <div class="card3"><div class="ph" style="background-image:url(img/sv2.jpg)"></div><div class="in"><h3>PMF支援</h3><p>市場検証から、プロダクトが顧客にとって、必要不可欠な存在になるまでを支援します。</p></div></div>
+    <div class="card3"><div class="ph" style="background-image:url(img/sv3.jpg)"></div><div class="in"><h3>営業人材育成支援</h3><p>新規事業における営業を、実際の顧客と向き合いながら学ぶ実戦研修。</p></div></div>
+  </div>
+  <a class="cta-orange" href="#">資料請求はコチラ</a>
+</section>
+
+<section class="band">
+  <div><p class="t">営業の仕組みづくりから実行支援まで、<br>CHOUJINが最短ルートでサポートします。</p><p class="s">サービスに関するお問い合わせ、資料のご請求はこちらから承っております。</p></div>
+  <a class="btn" href="#">CONTACT</a>
+</section>
+
+<section class="news" id="news">
+  <div class="sechead"><h2>NEWS</h2><a class="more" href="#">VIEW MORE</a></div>
+  <div class="ncards">
+    <a class="ncard" href="#"><div class="ph" style="background-image:url(img/news1.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.5｜不動産×コーチング×アスリート 川島雅弘</h3><p class="date">2025/12/26 13:23</p></div></a>
+    <a class="ncard" href="#"><div class="ph" style="background-image:url(img/news2.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.4｜テラドローン株式会社 執行役員CTO</h3><p class="date">2025/12/19 04:44</p></div></a>
+    <a class="ncard" href="#"><div class="ph" style="background-image:url(img/news3.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.3｜社労士合格／介護福祉士 後藤早貴子</h3><p class="date">2025/12/12</p></div></a>
+  </div>
+</section>
+
+<section class="careers" id="careers">
+  <div class="box">
+    <div>
+      <h2>CAREERS</h2>
+      <p>― “熱量“と”実行力“を重視する組織です ―<br><br>CHOUJINは、AI・医療DX・遺伝子検査など、最先端領域の新規事業において、営業支援・組織構築・チーム運営を手がける専門チームです。</p>
+      <p>CHOUJINは、制約の中でも成果を出したいすべての挑戦者を、心から歓迎します。</p>
+      <a class="btn dark" href="#">募集一覧をみる</a>
+    </div>
+    <div class="ph"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="gband"></div>
+  <div class="inner">
+    <div class="frow">
+      <div class="fl">CHOUJIN LLC.</div>
+      <nav><a href="#">HOME</a><a href="#">COMPANY</a><a href="#">SERVICE</a><a href="#">COMMUNITY</a><a href="#">NEWS</a><a href="#">CONTACT</a><a href="#">CAREERS</a></nav>
+      <div class="pp">PRIVACY POLICY<small>©2025 CHOUJIN LLC.</small></div>
+    </div>
+    <div class="sns"><img src="img/sns1.webp" alt="Facebook"><img src="img/sns2.webp" alt="Instagram"><img src="img/sns3.webp" alt="Threads"><img src="img/sns4.webp" alt="X"><img src="img/sns5.webp" alt="note"></div>
+    <p class="copy">合同会社CHOUJIN</p>
+  </div>
+</footer>
+
+<a class="fab" href="#"><span>✉</span>お問い合わせは<br>コチラまで</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script>
+const opt=(el,sp)=>{const a=lottie.loadAnimation({container:el,renderer:'svg',loop:true,autoplay:true,path:'img/stars.json',rendererSettings:{preserveAspectRatio:'xMidYMid slice'}});a.setSpeed(sp);};
+opt(document.getElementById('st1'),1);opt(document.getElementById('st2'),1.5);
+</script>
+</body>
+</html>
