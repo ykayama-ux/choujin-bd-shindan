@@ -4,136 +4,179 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>合同会社CHOUJIN（ゼロから再構築テスト）</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Noto+Sans+JP:wght@700;900&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@500;700;900&display=swap">
 <style>
-:root{--pink:#ff4a69;--gold:#d2b757;--paper:#f8f7f6;--ink:#000;--jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--serif:"Big Caslon","Baskerville","Times New Roman",serif;--en:"Montserrat",sans-serif}
+:root{--pink:#ff4a69;--gold:#d2b757;--gold2:#8c6d12;--paper:#f8f7f6;--ink:#111;--mute:#6b6b6b;--jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--serif:"Cormorant Garamond","Big Caslon","Baskerville",serif;--en:"Montserrat",sans-serif;--w:1160px}
 *{box-sizing:border-box}
-html,body{margin:0;background:#000;color:#fff;font-family:var(--jp);font-weight:700;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+html,body{margin:0;background:#000;color:#fff;font-family:var(--jp);font-weight:700;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-/* fixed cosmic background */
-.cosmos{position:fixed;inset:0;z-index:0;background:#000 url(img/hero.gif) center/cover no-repeat}
-.cosmos::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.5),rgba(102,102,102,0))}
-.stars{position:fixed;inset:0;z-index:1;pointer-events:none}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 48px}
+/* ===== fixed cosmos ===== */
+.cosmos{position:fixed;inset:0;z-index:0;background:#000 url(img/hero-poster.jpg) center/cover no-repeat;overflow:hidden}
+.cosmos video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover}
+.cosmos::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.05) 60%,rgba(0,0,0,.35))}
+.stars{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.9}
 .stars>div{position:absolute;inset:0}
-/* header */
-header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:22px;letter-spacing:.06em}
+/* ===== header ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:22px 48px;transition:background .4s,padding .4s,backdrop-filter .4s}
+header.on{background:rgba(0,0,0,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:14px 48px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:23px;letter-spacing:.08em;font-weight:600}
 .logo img{width:36px;height:36px;border-radius:50%}
-.logo b{color:var(--gold);font-weight:400}
-nav{display:flex;gap:26px;font-family:var(--serif);font-size:13px;letter-spacing:.14em}
-nav a:last-child::after{content:" ↗";font-size:11px}
-/* hero */
-.hero{position:relative;z-index:2;min-height:870px;display:flex;flex-direction:column;justify-content:center;padding:120px 80px 80px 120px}
-.hero h1{margin:0 0 40px;font-size:64px;line-height:70px;font-weight:900;letter-spacing:.4em;white-space:nowrap}
-.hero h1 .l1{display:block;background:linear-gradient(90deg,var(--pink),#fff 42%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero h1 .l2{display:block;letter-spacing:.25em;background:linear-gradient(265deg,var(--pink),#fff 42%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .sub{font-size:28px;line-height:39px;margin:0 0 9px}
-.hero .sub2{font-size:28px;line-height:39px;margin:0 0 48px}
-.hero .body{font-size:16px;line-height:25px;letter-spacing:.01em;margin:0 0 44px;max-width:727px}
-.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #fff;border-radius:999px;padding:14px 40px;font-size:14px;letter-spacing:.05em;color:#fff}
-.btn::after{content:"›";font-size:18px;line-height:1}
-.scroll{position:absolute;right:56px;top:422px;writing-mode:vertical-rl;font-family:var(--serif);font-size:14px;letter-spacing:.15em}
-.scroll::after{content:"";display:block;width:1px;height:40px;background:#fff;margin:12px auto 0}
-/* photo strip + about */
-.about{position:relative;z-index:2;padding:96px 0 192px;background:#000 url(img/band.gif) center/cover no-repeat}
-.about::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
-.about>*{position:relative}
-.strip{display:flex;gap:24px;justify-content:center;padding:0 160px 96px}
-.strip div{flex:1;aspect-ratio:16/9;background:center/cover no-repeat;max-width:330px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-.about h2{font-family:var(--en);font-weight:600;font-size:72px;text-align:center;margin:0 0 88px}
-.about .lead{text-align:center;font-size:28px;line-height:45px;letter-spacing:.05em;margin:0 auto 58px;max-width:786px}
-.about .text{text-align:center;font-size:18px;line-height:30px;letter-spacing:.05em;max-width:967px;margin:0 auto}
-.about .text p{margin:0 0 30px}
-/* eigyoryoku (was an HTML embed) */
-.power{position:relative;z-index:2;background:#eee;padding:80px 48px 96px;color:#222;text-align:center}
-.power h2{font-family:var(--en);font-size:40px;color:#6b5b95;margin:0 0 10px}
-.power .small{font-size:14px;color:#666;font-weight:500;margin:0 0 56px}
-.power .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1040px;margin:0 auto;align-items:center;text-align:left}
-.power h3{font-size:28px;line-height:1.5;margin:0 0 40px;text-align:center}
-.circles{display:flex;align-items:center;justify-content:center;gap:16px}
-.circles .c{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-.circles .c1{background:#6b5b95}.circles .c2{background:#e91e63}
-.circles .x{width:44px;height:44px;border-radius:50%;background:#ffa500;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
-.power .card{background:#fff;border-left:4px solid #6b5b95;border-radius:8px;padding:28px 32px;box-shadow:0 6px 24px rgba(0,0,0,.08);font-weight:500;font-size:15px;line-height:1.9}
-.power .card b{display:block;color:#6b5b95;margin-bottom:8px;font-size:17px}
-/* service */
-.service{position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:115px 60px 192px}
-.sechead{display:flex;align-items:flex-end;justify-content:space-between;max-width:1160px;margin:0 auto 110px}
-.sechead h2{font-family:var(--en);font-weight:600;font-size:64px;line-height:1;margin:0}
-.more{font-family:var(--serif);font-size:14px;color:var(--ink)}
-.more::after{content:" ›"}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto 96px}
-.card3{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.logo b{color:var(--gold);font-weight:600}
+nav.main{display:flex;gap:28px;font-family:var(--serif);font-size:14px;letter-spacing:.16em;font-weight:600}
+nav.main a{position:relative;padding:4px 0}
+nav.main a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .3s}
+nav.main a:hover::after{right:0}
+nav.main a.ext::after{display:none}
+nav.main a.ext span{font-size:11px;margin-left:4px}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;gap:6px;align-items:center}
+.burger i{display:block;width:26px;height:2px;background:#fff;transition:.3s}
+.menu{position:fixed;inset:0;z-index:35;background:rgba(0,0,0,.92);display:none;flex-direction:column;align-items:center;justify-content:center;gap:28px;font-family:var(--serif);font-size:22px;letter-spacing:.2em}
+.menu.open{display:flex}
+/* ===== hero ===== */
+.hero{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 80px 100px 120px}
+.hero h1{margin:0 0 44px;font-size:64px;line-height:1.1;font-weight:900;letter-spacing:.38em;white-space:nowrap}
+.hero h1 span{display:block}
+.hero h1 .l1{background:linear-gradient(90deg,var(--pink),#fff 45%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .l2{letter-spacing:.24em;background:linear-gradient(265deg,var(--pink),#fff 42%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:28px;line-height:1.45;margin:0 0 6px;letter-spacing:.02em}
+.hero .sub2{font-size:28px;line-height:1.45;margin:0 0 44px;letter-spacing:.02em}
+.hero .body{font-size:16px;line-height:1.8;letter-spacing:.02em;margin:0 0 46px;max-width:727px;font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.85);border-radius:999px;padding:15px 40px;font-size:14px;letter-spacing:.08em;color:#fff;transition:background .3s,color .3s,transform .3s}
+.btn::after{content:"›";font-size:18px;line-height:1;transition:transform .3s}
+.btn:hover{background:#fff;color:#000;transform:translateY(-1px)}
+.btn:hover::after{transform:translateX(3px)}
+.btn.dark{background:#000;border-color:#000;color:#fff}
+.btn.dark:hover{background:var(--gold);border-color:var(--gold);color:#000}
+.scroll{position:absolute;right:56px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:var(--serif);font-size:13px;letter-spacing:.22em;font-weight:600}
+.scroll::after{content:"";display:block;width:1px;height:48px;background:linear-gradient(#fff,transparent);margin:14px auto 0;animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* ===== about ===== */
+.about{position:relative;z-index:2;padding:110px 0 200px;overflow:hidden;background:#000 url(img/band-poster.jpg) center/cover no-repeat}
+.about video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;z-index:0}
+.about::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.25) 40%,rgba(0,0,0,.6));z-index:1}
+.about>*{position:relative;z-index:2}
+.strip{display:flex;gap:24px;justify-content:center;padding:0 48px 110px;max-width:var(--w);margin:0 auto}
+.strip div{flex:1;aspect-ratio:16/9;background:center/cover no-repeat;border-radius:6px;box-shadow:0 20px 50px rgba(0,0,0,.55);transition:transform .5s}
+.strip div:hover{transform:translateY(-6px)}
+.about h2{font-family:var(--en);font-weight:600;font-size:72px;text-align:center;margin:0 0 80px;letter-spacing:-.01em}
+.about .lead{text-align:center;font-size:28px;line-height:1.65;letter-spacing:.05em;margin:0 auto 56px;max-width:786px}
+.about .text{text-align:center;font-size:18px;line-height:1.9;letter-spacing:.05em;max-width:900px;margin:0 auto;font-weight:500}
+.about .text p{margin:0 0 26px}
+.rule{width:56px;height:1px;background:var(--gold);margin:0 auto 40px}
+/* ===== power ===== */
+.power{position:relative;z-index:2;background:#f2f1ef;padding:110px 48px;color:var(--ink)}
+.power .in{max-width:var(--w);margin:0 auto}
+.kicker{font-family:var(--en);font-size:12px;letter-spacing:.3em;color:var(--gold2);margin:0 0 14px;font-weight:700}
+.power h2{font-size:40px;margin:0 0 8px;letter-spacing:.02em}
+.power .small{font-size:15px;color:var(--mute);font-weight:500;margin:0 0 64px}
+.power .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.power h3{font-size:30px;line-height:1.5;margin:0 0 44px;text-align:center}
+.circles{display:flex;align-items:center;justify-content:center;gap:18px}
+.circles .c{width:124px;height:124px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;letter-spacing:.05em;box-shadow:0 14px 30px rgba(0,0,0,.18)}
+.circles .c1{background:linear-gradient(145deg,#6b5b95,#4a4a7a)}.circles .c2{background:linear-gradient(145deg,#e91e63,#c2185b)}
+.circles .x{width:48px;height:48px;border-radius:50%;background:linear-gradient(145deg,#ffd700,#ffa500);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;box-shadow:0 8px 20px rgba(255,165,0,.35)}
+.power .card{background:#fff;border-radius:12px;padding:36px 40px;box-shadow:0 20px 50px rgba(0,0,0,.08);font-weight:500;font-size:15.5px;line-height:2}
+.power .card b{display:block;color:#6b5b95;margin-bottom:10px;font-size:18px;font-weight:700}
+/* ===== service ===== */
+.service{position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:130px 48px 170px}
+.sechead{display:flex;align-items:flex-end;justify-content:space-between;max-width:var(--w);margin:0 auto 90px}
+.sechead h2{font-family:var(--en);font-weight:600;font-size:64px;line-height:1;margin:0;letter-spacing:-.01em}
+.more{font-family:var(--serif);font-size:15px;letter-spacing:.14em;color:var(--ink);font-weight:600;position:relative;padding-bottom:4px}
+.more::after{content:"  ›"}
+.more::before{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.more:hover::before{transform:scaleX(1)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:var(--w);margin:0 auto 90px}
+.card3{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.07);transition:transform .4s,box-shadow .4s;display:flex;flex-direction:column}
+.card3:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(0,0,0,.12)}
 .card3 .ph{aspect-ratio:1/1;background:center/cover no-repeat}
-.card3 .in{padding:28px 20px 34px}
-.card3 h3{font-family:var(--en);font-weight:600;font-size:33px;line-height:1.4;margin:0 0 20px;background:linear-gradient(135deg,var(--gold),#8c6d12);-webkit-background-clip:text;background-clip:text;color:transparent}
-.card3 p{font-size:15px;line-height:24px;letter-spacing:.05em;margin:0}
-.cta-orange{display:flex;width:346px;height:62px;margin:0 auto;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:linear-gradient(90deg,#f2803a,#e8552e);color:#fff;font-family:var(--serif);font-size:20px;letter-spacing:.05em;box-shadow:0 10px 24px rgba(232,85,46,.35)}
+.card3 .in{padding:30px 26px 36px}
+.card3 h3{font-family:var(--en);font-weight:700;font-size:30px;line-height:1.35;margin:0 0 18px;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.card3 p{font-size:15px;line-height:1.8;letter-spacing:.04em;margin:0;font-weight:500}
+.cta-orange{display:flex;width:346px;max-width:100%;height:62px;margin:0 auto;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:linear-gradient(90deg,#f2803a,#e8552e);color:#fff;font-family:var(--serif);font-size:20px;letter-spacing:.08em;font-weight:600;box-shadow:0 14px 30px rgba(232,85,46,.35);transition:transform .3s,box-shadow .3s}
 .cta-orange::after{content:"›";font-size:22px}
-/* contact band */
-.band{position:relative;z-index:2;padding:96px;background:transparent;display:flex;align-items:center;justify-content:space-between;gap:40px}
-.band::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25)}
-.band>*{position:relative}
-.band .t{font-family:var(--serif);font-size:32px;line-height:51px;letter-spacing:.05em;margin:0 0 24px;max-width:672px}
-.band .s{font-family:var(--serif);font-size:16px;letter-spacing:.05em;margin:0}
-/* news */
+.cta-orange:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(232,85,46,.45)}
+/* ===== band (transparent → cosmos shows) ===== */
+.band{position:relative;z-index:2;padding:110px 48px}
+.band::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.28)}
+.band .in{position:relative;max-width:var(--w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.band .t{font-family:var(--serif);font-size:34px;line-height:1.6;letter-spacing:.04em;margin:0 0 20px;max-width:700px;font-weight:600}
+.band .s{font-size:15px;letter-spacing:.04em;margin:0;font-weight:500;opacity:.9}
+/* ===== news ===== */
 .news{position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:150px 48px}
-.news .sechead{margin-bottom:48px}
-.ncards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1160px;margin:0 auto}
-.ncard{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.news .sechead{margin-bottom:52px}
+.ncards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:var(--w);margin:0 auto}
+.ncard{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.06);transition:transform .4s,box-shadow .4s}
+.ncard:hover{transform:translateY(-5px);box-shadow:0 24px 50px rgba(0,0,0,.1)}
 .ncard .ph{aspect-ratio:16/9;background:center/cover no-repeat}
-.ncard .in{padding:20px 24px 28px}
-.tag{display:inline-block;background:#000;color:#fff;font-family:var(--en);font-size:12px;padding:4px 10px;border-radius:4px;margin-bottom:12px}
-.ncard h3{font-size:16px;line-height:25px;letter-spacing:.05em;margin:0 0 12px}
-.date{font-family:var(--en);font-weight:500;font-size:14px;color:#aaa;margin:0}
-/* careers */
-.careers{position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:68px 48px}
-.careers .box{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.careers h2{font-family:var(--en);font-weight:600;font-size:64px;margin:0 0 24px}
-.careers p{font-family:var(--serif);font-size:16px;line-height:25px;letter-spacing:.05em;max-width:426px;margin:0 0 26px}
-.careers .ph{aspect-ratio:3/2;background:url(img/careers.jpg) center/cover no-repeat;border-radius:12px}
-.btn.dark{background:#000;border-color:#000}
-/* footer */
+.ncard .in{padding:22px 24px 28px}
+.tag{display:inline-block;background:#000;color:#fff;font-family:var(--en);font-size:11px;letter-spacing:.08em;padding:5px 10px;border-radius:4px;margin-bottom:14px}
+.ncard h3{font-size:16px;line-height:1.7;letter-spacing:.04em;margin:0 0 12px}
+.date{font-family:var(--en);font-weight:500;font-size:13px;color:#aaa;margin:0;letter-spacing:.05em}
+/* ===== careers ===== */
+.careers{position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:40px 48px 150px}
+.careers .box{max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.careers h2{font-family:var(--en);font-weight:600;font-size:64px;margin:0 0 28px;letter-spacing:-.01em}
+.careers .cap{font-family:var(--serif);font-size:17px;letter-spacing:.06em;margin:0 0 22px;font-weight:600}
+.careers p{font-size:15.5px;line-height:1.9;letter-spacing:.04em;max-width:460px;margin:0 0 22px;font-weight:500}
+.careers .ph{aspect-ratio:3/2;background:url(img/careers.jpg) center/cover no-repeat;border-radius:14px;box-shadow:0 24px 50px rgba(0,0,0,.15)}
+/* ===== footer ===== */
 footer{position:relative;z-index:2;color:#fff}
-footer .gband{height:157px;background:transparent}
-footer .inner{background:#0a0a0a;padding:40px 48px 24px}
-.frow{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;max-width:1160px;margin:0 auto 28px}
-.frow .fl{font-family:var(--serif);font-size:16px;letter-spacing:.08em}
-.frow nav{gap:18px;font-size:12px}
-.frow .pp{font-family:var(--serif);font-size:11px;letter-spacing:.12em}
-.frow .pp small{display:block;font-size:9px;opacity:.7;margin-top:6px;letter-spacing:.02em}
-.sns{display:flex;gap:28px;justify-content:center;margin:12px 0 40px}
-.sns img{width:44px;height:44px;filter:invert(1)}
-.copy{text-align:center;font-size:12px;opacity:.6;font-weight:500}
-.fab{position:fixed;right:40px;bottom:40px;z-index:30;width:100px;height:100px;border-radius:50%;background:#000;border:1px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;line-height:1.4;text-align:center;gap:4px}
-.fab span{font-size:18px}
-@media (max-width:900px){.hero{padding:120px 24px 60px}.hero h1{font-size:40px;line-height:48px;letter-spacing:.2em}.hero .sub,.hero .sub2{font-size:20px;line-height:30px}.strip{padding:0 24px 60px;flex-direction:column;align-items:center}.strip div{width:100%}.about h2{font-size:40px}.about .lead{font-size:20px;line-height:32px}.power .grid,.cards,.ncards,.careers .box{grid-template-columns:1fr}.band{padding:60px 24px;flex-direction:column;align-items:flex-start}.service,.news{padding-left:24px;padding-right:24px}.sechead h2{font-size:40px}nav{display:none}.scroll{display:none}}
+footer .gband{height:170px}
+footer .inner{background:#050505;padding:56px 48px 28px;border-top:1px solid rgba(210,183,87,.25)}
+.frow{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;max-width:var(--w);margin:0 auto 36px}
+.frow .fl{font-family:var(--serif);font-size:18px;letter-spacing:.1em;font-weight:600}
+.fnav{display:flex;gap:20px;font-family:var(--serif);font-size:12px;letter-spacing:.16em;font-weight:600;flex-wrap:wrap}
+.frow .pp{font-family:var(--serif);font-size:11px;letter-spacing:.14em;text-align:right;font-weight:600}
+.frow .pp small{display:block;font-size:9px;opacity:.6;margin-top:6px;letter-spacing:.04em}
+.sns{display:flex;gap:26px;justify-content:center;margin:8px 0 40px}
+.sns a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.sns a:hover{background:rgba(255,255,255,.1)}
+.sns img{width:28px;height:28px;filter:invert(1)}
+.copy{text-align:center;font-size:12px;opacity:.55;font-weight:500;letter-spacing:.06em}
+.fab{position:fixed;right:36px;bottom:36px;z-index:30;width:96px;height:96px;border-radius:50%;background:rgba(0,0,0,.85);border:1px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;line-height:1.4;text-align:center;gap:4px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .3s,background .3s}
+.fab:hover{transform:scale(1.05);background:#000}
+.fab span{font-size:18px;color:var(--gold)}
+/* ===== appear ===== */
+.ap{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.ap.in{opacity:1;transform:none}
+.ap.d1{transition-delay:.12s}.ap.d2{transition-delay:.24s}.ap.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){.ap{opacity:1;transform:none;transition:none}}
+/* ===== responsive ===== */
+@media (max-width:1100px){.hero{padding:140px 40px 80px}.hero h1{font-size:52px;letter-spacing:.28em}.hero h1 .l2{letter-spacing:.16em}}
+@media (max-width:900px){nav.main{display:none}.burger{display:flex}.hero{padding:120px 24px 80px;min-height:88vh}.hero h1{font-size:38px;letter-spacing:.14em;white-space:normal}.hero h1 .l2{letter-spacing:.1em}.hero .sub,.hero .sub2{font-size:19px}.scroll{display:none}.strip{flex-direction:column;padding:0 24px 60px}.about h2{font-size:40px}.about .lead{font-size:20px}.power .grid,.cards,.ncards,.careers .box{grid-template-columns:1fr}.sechead h2,.careers h2{font-size:42px}.band .in{flex-direction:column;align-items:flex-start}.band .t{font-size:26px}.service,.news,.careers,.power,.band{padding-left:24px;padding-right:24px}header,header.on{padding:14px 20px}.fab{width:78px;height:78px;right:18px;bottom:18px;font-size:9px}}
 </style>
 </head>
 <body>
-<div class="cosmos"></div>
+<div class="cosmos"><video autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg"><source src="img/hero.mp4" type="video/mp4"></video></div>
 <div class="stars"><div id="st1"></div><div id="st2"></div></div>
 
-<header>
-  <a class="logo" href="#"><img src="img/logo.webp" alt="">CHO<b>U</b>JIN</a>
-  <nav><a href="#">HOME</a><a href="#">COMPANY</a><a href="#service">SERVICE</a><a href="#">COMMUNITY</a><a href="#news">NEWS</a><a href="#">CONTACT</a><a href="#careers">CAREERS</a></nav>
+<header id="hd">
+  <a class="logo" href="#top"><img src="img/logo.webp" alt="">CHO<b>U</b>JIN</a>
+  <nav class="main"><a href="#top">HOME</a><a href="#about">COMPANY</a><a href="#service">SERVICE</a><a href="#">COMMUNITY</a><a href="#news">NEWS</a><a href="#contact">CONTACT</a><a class="ext" href="#careers">CAREERS<span>↗</span></a></nav>
+  <button class="burger" id="bg" aria-label="menu"><i></i><i></i><i></i></button>
 </header>
+<div class="menu" id="menu"><a href="#top">HOME</a><a href="#about">COMPANY</a><a href="#service">SERVICE</a><a href="#">COMMUNITY</a><a href="#news">NEWS</a><a href="#contact">CONTACT</a><a href="#careers">CAREERS</a></div>
 
-<section class="hero">
-  <h1><span class="l1">新規事業の｢難問｣を</span><span class="l2">最高のエンターテイメントに</span></h1>
-  <p class="sub">企画だけでも、営業だけでも、新規事業は育たない</p>
-  <p class="sub2">「事業開発力」×「営業力」で、新規事業を楽しみクリアする</p>
-  <p class="body">仮説を立て、顧客に深く向き合い、成果につなげる──<br>事業開発と営業、その両輪がCHOUJINの強みです。</p>
-  <p><a class="btn" href="#">ABOUT US</a></p>
+<section class="hero" id="top">
+  <h1 class="ap"><span class="l1">新規事業の｢難問｣を</span><span class="l2">最高のエンターテイメントに</span></h1>
+  <p class="sub ap d1">企画だけでも、営業だけでも、新規事業は育たない</p>
+  <p class="sub2 ap d1">「事業開発力」×「営業力」で、新規事業を楽しみクリアする</p>
+  <p class="body ap d2">仮説を立て、顧客に深く向き合い、成果につなげる──<br>事業開発と営業、その両輪がCHOUJINの強みです。</p>
+  <p class="ap d3"><a class="btn" href="#about">ABOUT US</a></p>
   <div class="scroll">SCROLL</div>
 </section>
 
-<section class="about">
-  <div class="strip"><div style="background-image:url(img/camel.jpg)"></div><div style="background-image:url(img/lion.jpg)"></div><div style="background-image:url(img/nightsky.jpg)"></div></div>
-  <h2>What's the "CHOUJIN"？</h2>
-  <p class="lead">パートナーと共に、<br>新規事業の「難問」を「楽しみながら」クリアする集団</p>
-  <div class="text">
+<section class="about" id="about">
+  <video autoplay muted loop playsinline preload="metadata" poster="img/band-poster.jpg"><source src="img/band.mp4" type="video/mp4"></video>
+  <div class="strip"><div class="ap" style="background-image:url(img/camel.jpg)"></div><div class="ap d1" style="background-image:url(img/lion.jpg)"></div><div class="ap d2" style="background-image:url(img/nightsky.jpg)"></div></div>
+  <h2 class="ap">What's the "CHOUJIN"？</h2>
+  <div class="rule ap"></div>
+  <p class="lead ap d1">パートナーと共に、<br>新規事業の「難問」を「楽しみながら」クリアする集団</p>
+  <div class="text ap d2">
     <p>CHOUJIN '超人' の概念は、1883年にドイツの哲学者ニーチェが提唱した「Übermensch」に由来します。</p>
     <p>ニーチェは、「従来の価値観を超え、自らの意思で生きる人間」 こそが「超人」だと定義しました。</p>
     <p>CHOUJINでは、どんな環境でも楽しめる人間を「超人」と定義します。</p>
@@ -141,50 +184,56 @@ footer .inner{background:#0a0a0a;padding:40px 48px 24px}
 </section>
 
 <section class="power">
-  <h2>CHOUJINの営業力</h2>
-  <p class="small">企画だけでも、営業だけでも届かない領域へ</p>
-  <div class="grid">
-    <div>
-      <h3>二刀流で新規事業を<br>成功に導く</h3>
-      <div class="circles"><div class="c c1">事業開発力</div><div class="x">✕</div><div class="c c2">営業力</div></div>
+  <div class="in">
+    <p class="kicker ap">OUR STRENGTH</p>
+    <h2 class="ap">CHOUJINの営業力</h2>
+    <p class="small ap d1">企画だけでも、営業だけでも届かない領域へ</p>
+    <div class="grid">
+      <div class="ap d1">
+        <h3>二刀流で新規事業を<br>成功に導く</h3>
+        <div class="circles"><div class="c c1">事業開発力</div><div class="x">✕</div><div class="c c2">営業力</div></div>
+      </div>
+      <div class="card ap d2"><b>CHOUJINの強み</b>市場仮説の構築から顧客開拓まで、両領域を一体的に運営し相乗効果を最大化。CHOUJINは「事業開発力」×「営業力」で、新規事業を前に進めます。外注ではなく、チームの一員として参画し、貴社の新規事業を成功に導きます。</div>
     </div>
-    <div class="card"><b>CHOUJINの強み：</b>市場仮説の構築から顧客開拓まで、両領域を一体的に運営し相乗効果を最大化。CHOUJINは「事業開発力」×「営業力」で、新規事業を前に進めます。外注ではなく、チームの一員として参画し、貴社の新規事業を成功に導きます。</div>
   </div>
 </section>
 
 <section class="service" id="service">
-  <div class="sechead"><h2>SERVICE</h2><a class="more" href="#">VIEW MORE</a></div>
+  <div class="sechead ap"><h2>SERVICE</h2><a class="more" href="#">VIEW MORE</a></div>
   <div class="cards">
-    <div class="card3"><div class="ph" style="background-image:url(img/sv1.jpg)"></div><div class="in"><h3>営業コンサルティング</h3><p>新規事業の成功に向けて、営業戦略の設計から実行支援までを一気通貫でサポートします。</p></div></div>
-    <div class="card3"><div class="ph" style="background-image:url(img/sv2.jpg)"></div><div class="in"><h3>PMF支援</h3><p>市場検証から、プロダクトが顧客にとって、必要不可欠な存在になるまでを支援します。</p></div></div>
-    <div class="card3"><div class="ph" style="background-image:url(img/sv3.jpg)"></div><div class="in"><h3>営業人材育成支援</h3><p>新規事業における営業を、実際の顧客と向き合いながら学ぶ実戦研修。</p></div></div>
+    <div class="card3 ap"><div class="ph" style="background-image:url(img/sv1.jpg)"></div><div class="in"><h3>営業コンサルティング</h3><p>新規事業の成功に向けて、営業戦略の設計から実行支援までを一気通貫でサポートします。</p></div></div>
+    <div class="card3 ap d1"><div class="ph" style="background-image:url(img/sv2.jpg)"></div><div class="in"><h3>PMF支援</h3><p>市場検証から、プロダクトが顧客にとって、必要不可欠な存在になるまでを支援します。</p></div></div>
+    <div class="card3 ap d2"><div class="ph" style="background-image:url(img/sv3.jpg)"></div><div class="in"><h3>営業人材育成支援</h3><p>新規事業における営業を、実際の顧客と向き合いながら学ぶ実戦研修。</p></div></div>
   </div>
-  <a class="cta-orange" href="#">資料請求はコチラ</a>
+  <a class="cta-orange ap" href="#contact">資料請求はコチラ</a>
 </section>
 
-<section class="band">
-  <div><p class="t">営業の仕組みづくりから実行支援まで、<br>CHOUJINが最短ルートでサポートします。</p><p class="s">サービスに関するお問い合わせ、資料のご請求はこちらから承っております。</p></div>
-  <a class="btn" href="#">CONTACT</a>
+<section class="band" id="contact">
+  <div class="in">
+    <div class="ap"><p class="t">営業の仕組みづくりから実行支援まで、<br>CHOUJINが最短ルートでサポートします。</p><p class="s">サービスに関するお問い合わせ、資料のご請求はこちらから承っております。</p></div>
+    <a class="btn ap d1" href="#">CONTACT</a>
+  </div>
 </section>
 
 <section class="news" id="news">
-  <div class="sechead"><h2>NEWS</h2><a class="more" href="#">VIEW MORE</a></div>
+  <div class="sechead ap"><h2>NEWS</h2><a class="more" href="#">VIEW MORE</a></div>
   <div class="ncards">
-    <a class="ncard" href="#"><div class="ph" style="background-image:url(img/news1.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.5｜不動産×コーチング×アスリート 川島雅弘</h3><p class="date">2025/12/26 13:23</p></div></a>
-    <a class="ncard" href="#"><div class="ph" style="background-image:url(img/news2.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.4｜テラドローン株式会社 執行役員CTO</h3><p class="date">2025/12/19 04:44</p></div></a>
-    <a class="ncard" href="#"><div class="ph" style="background-image:url(img/news3.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.3｜社労士合格／介護福祉士 後藤早貴子</h3><p class="date">2025/12/12</p></div></a>
+    <a class="ncard ap" href="#"><div class="ph" style="background-image:url(img/news1.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.5｜不動産×コーチング×アスリート 川島雅弘</h3><p class="date">2025/12/26</p></div></a>
+    <a class="ncard ap d1" href="#"><div class="ph" style="background-image:url(img/news2.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.4｜テラドローン株式会社 執行役員CTO</h3><p class="date">2025/12/19</p></div></a>
+    <a class="ncard ap d2" href="#"><div class="ph" style="background-image:url(img/news3.webp)"></div><div class="in"><span class="tag">超人図鑑</span><h3>超人図鑑 Vol.3｜社労士合格／介護福祉士 後藤早貴子</h3><p class="date">2025/12/12</p></div></a>
   </div>
 </section>
 
 <section class="careers" id="careers">
   <div class="box">
-    <div>
+    <div class="ap">
       <h2>CAREERS</h2>
-      <p>― “熱量“と”実行力“を重視する組織です ―<br><br>CHOUJINは、AI・医療DX・遺伝子検査など、最先端領域の新規事業において、営業支援・組織構築・チーム運営を手がける専門チームです。</p>
+      <p class="cap">― “熱量“と”実行力“を重視する組織です ―</p>
+      <p>CHOUJINは、AI・医療DX・遺伝子検査など、最先端領域の新規事業において、営業支援・組織構築・チーム運営を手がける専門チームです。</p>
       <p>CHOUJINは、制約の中でも成果を出したいすべての挑戦者を、心から歓迎します。</p>
       <a class="btn dark" href="#">募集一覧をみる</a>
     </div>
-    <div class="ph"></div>
+    <div class="ph ap d1"></div>
   </div>
 </section>
 
@@ -193,20 +242,38 @@ footer .inner{background:#0a0a0a;padding:40px 48px 24px}
   <div class="inner">
     <div class="frow">
       <div class="fl">CHOUJIN LLC.</div>
-      <nav><a href="#">HOME</a><a href="#">COMPANY</a><a href="#">SERVICE</a><a href="#">COMMUNITY</a><a href="#">NEWS</a><a href="#">CONTACT</a><a href="#">CAREERS</a></nav>
+      <nav class="fnav"><a href="#top">HOME</a><a href="#about">COMPANY</a><a href="#service">SERVICE</a><a href="#">COMMUNITY</a><a href="#news">NEWS</a><a href="#contact">CONTACT</a><a href="#careers">CAREERS</a></nav>
       <div class="pp">PRIVACY POLICY<small>©2025 CHOUJIN LLC.</small></div>
     </div>
-    <div class="sns"><img src="img/sns1.webp" alt="Facebook"><img src="img/sns2.webp" alt="Instagram"><img src="img/sns3.webp" alt="Threads"><img src="img/sns4.webp" alt="X"><img src="img/sns5.webp" alt="note"></div>
+    <div class="sns"><a href="#"><img src="img/sns1.webp" alt="Facebook"></a><a href="#"><img src="img/sns2.webp" alt="Instagram"></a><a href="#"><img src="img/sns3.webp" alt="Threads"></a><a href="#"><img src="img/sns4.webp" alt="X"></a><a href="#"><img src="img/sns5.webp" alt="note"></a></div>
     <p class="copy">合同会社CHOUJIN</p>
   </div>
 </footer>
 
-<a class="fab" href="#"><span>✉</span>お問い合わせは<br>コチラまで</a>
+<a class="fab" href="#contact"><span>✉</span>お問い合わせは<br>コチラまで</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 <script>
-const opt=(el,sp)=>{const a=lottie.loadAnimation({container:el,renderer:'svg',loop:true,autoplay:true,path:'img/stars.json',rendererSettings:{preserveAspectRatio:'xMidYMid slice'}});a.setSpeed(sp);};
-opt(document.getElementById('st1'),1);opt(document.getElementById('st2'),1.5);
+// stars
+const mk=(el,sp)=>{const a=lottie.loadAnimation({container:el,renderer:'svg',loop:true,autoplay:true,path:'img/stars.json',rendererSettings:{preserveAspectRatio:'xMidYMid slice'}});a.setSpeed(sp);return a;};
+mk(document.getElementById('st1'),1);mk(document.getElementById('st2'),1.5);
+// keep the flame running: restart if a video ever stalls or gets paused by the browser
+document.querySelectorAll('video').forEach(v=>{
+  const kick=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};
+  v.addEventListener('pause',()=>{if(!document.hidden)kick();});
+  v.addEventListener('stalled',kick);v.addEventListener('ended',()=>{v.currentTime=0;kick();});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)kick();});
+  setInterval(()=>{if(v.paused&&!document.hidden)kick();},3000);
+  kick();
+});
+// header state
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>{hd.classList.toggle('on',scrollY>40);},{passive:true});
+// appear
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.ap').forEach(el=>io.observe(el));
+// menu
+const menu=document.getElementById('menu');document.getElementById('bg').onclick=()=>menu.classList.toggle('open');menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
 </script>
 </body>
 </html>
