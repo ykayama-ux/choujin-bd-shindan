@@ -251,8 +251,11 @@ footer .inner{background:#050505;padding:56px 48px 28px;border-top:1px solid rgb
 <a class="fab" href="#contact"><span>✉</span>お問い合わせは<br>コチラまで</a>
 
 <script>
+// debug switch: ?static=1 disables video/canvas for screenshot tools
+const STATIC=/[?&]static=1/.test(location.search);
+if(STATIC){document.querySelectorAll('video').forEach(v=>v.remove());document.getElementById('stars').remove();}
 // stars: lightweight canvas (twinkle + shooting stars), no library
-(()=>{const c=document.getElementById('stars'),x=c.getContext('2d');let W,H,S=[],M=[],last=0;const DPR=Math.min(devicePixelRatio||1,1.5);
+(()=>{const c=document.getElementById('stars');if(!c)return;const x=c.getContext('2d');let W,H,S=[],M=[],last=0;const DPR=Math.min(devicePixelRatio||1,1.5);
 const rs=()=>{W=c.width=innerWidth*DPR;H=c.height=innerHeight*DPR;S=[];const n=Math.round(W*H/9000);for(let i=0;i<n;i++)S.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.3+.3)*DPR,p:Math.random()*6.28,v:.4+Math.random()*1.2});};
 addEventListener('resize',rs,{passive:true});rs();
 const shoot=()=>{const a=Math.PI*(0.15+Math.random()*0.2);M.push({x:Math.random()*W*0.9,y:Math.random()*H*0.4,vx:Math.cos(a)*(9+Math.random()*6)*DPR,vy:Math.sin(a)*(9+Math.random()*6)*DPR,l:0,life:38+Math.random()*20});};
