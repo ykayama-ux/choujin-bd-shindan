@@ -17,9 +17,7 @@ img{display:block;max-width:100%}
 .cosmos{position:fixed;inset:0;z-index:0;background:#000 url(img/hero-poster.jpg) center/cover no-repeat;overflow:hidden}
 .cosmos video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;will-change:transform}
 .cosmos::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.05) 60%,rgba(0,0,0,.35))}
-.stars{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.9}
-.stars>div{position:absolute;inset:0;will-change:transform}
-.stars canvas{width:100%!important;height:100%!important}
+.stars{position:fixed;inset:0;z-index:1;pointer-events:none;width:100%;height:100%}
 /* ===== header ===== */
 header{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:22px 48px;transition:background .4s,padding .4s,backdrop-filter .4s}
 header.on{background:rgba(0,0,0,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:14px 48px}
@@ -152,7 +150,7 @@ footer .inner{background:#050505;padding:56px 48px 28px;border-top:1px solid rgb
 </head>
 <body>
 <div class="cosmos"><video autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg"><source src="img/hero.mp4" type="video/mp4"></video></div>
-<div class="stars"><div id="st1"></div><div id="st2"></div></div>
+<canvas class="stars" id="stars"></canvas>
 
 <header id="hd">
   <a class="logo" href="#top"><img src="img/logo.webp" alt="">CHO<b>U</b>JIN</a>
@@ -252,21 +250,22 @@ footer .inner{background:#050505;padding:56px 48px 28px;border-top:1px solid rgb
 
 <a class="fab" href="#contact"><span>✉</span>お問い合わせは<br>コチラまで</a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 <script>
-// stars
-const mk=(el,sp)=>{const a=lottie.loadAnimation({container:el,renderer:'canvas',loop:true,autoplay:true,path:'img/stars.json',rendererSettings:{preserveAspectRatio:'xMidYMid slice',clearCanvas:true}});a.setSpeed(sp);return a;};
-const lowPower=matchMedia('(max-width:900px)').matches||navigator.hardwareConcurrency<=4;
-mk(document.getElementById('st1'),1);if(!lowPower)mk(document.getElementById('st2'),1.5);
-// smooth anchor scroll (JS, so programmatic scroll stays instant)
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}}));
+// stars: lightweight canvas (twinkle + shooting stars), no library
+(()=>{const c=document.getElementById('stars'),x=c.getContext('2d');let W,H,S=[],M=[],last=0;const DPR=Math.min(devicePixelRatio||1,1.5);
+const rs=()=>{W=c.width=innerWidth*DPR;H=c.height=innerHeight*DPR;S=[];const n=Math.round(W*H/9000);for(let i=0;i<n;i++)S.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.3+.3)*DPR,p:Math.random()*6.28,v:.4+Math.random()*1.2});};
+addEventListener('resize',rs,{passive:true});rs();
+const shoot=()=>{const a=Math.PI*(0.15+Math.random()*0.2);M.push({x:Math.random()*W*0.9,y:Math.random()*H*0.4,vx:Math.cos(a)*(9+Math.random()*6)*DPR,vy:Math.sin(a)*(9+Math.random()*6)*DPR,l:0,life:38+Math.random()*20});};
+const f=t=>{requestAnimationFrame(f);if(t-last<33)return;last=t;if(document.hidden)return;x.clearRect(0,0,W,H);
+ for(const s of S){s.p+=0.03*s.v;const a=0.35+0.65*(0.5+0.5*Math.sin(s.p));x.globalAlpha=a;x.beginPath();x.arc(s.x,s.y,s.r,0,6.28);x.fillStyle='#fff';x.fill();}
+ x.globalAlpha=1;if(Math.random()<0.012)shoot();
+ for(let i=M.length-1;i>=0;i--){const m=M[i];m.x+=m.vx;m.y+=m.vy;m.l++;const k=1-m.l/m.life;const g=x.createLinearGradient(m.x,m.y,m.x-m.vx*7,m.y-m.vy*7);g.addColorStop(0,'rgba(255,255,255,'+(0.9*k)+')');g.addColorStop(1,'rgba(255,255,255,0)');x.strokeStyle=g;x.lineWidth=1.6*DPR;x.beginPath();x.moveTo(m.x,m.y);x.lineTo(m.x-m.vx*7,m.y-m.vy*7);x.stroke();if(m.l>m.life||m.x>W||m.y>H)M.splice(i,1);}
+};requestAnimationFrame(f);})();
 // keep the flame running: restart if a video ever stalls or gets paused by the browser
 document.querySelectorAll('video').forEach(v=>{
   const kick=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};
-  v.addEventListener('pause',()=>{if(!document.hidden)kick();});
-  v.addEventListener('stalled',kick);v.addEventListener('ended',()=>{v.currentTime=0;kick();});
+  v.addEventListener('stalled',kick);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)kick();});
-  setInterval(()=>{if(v.paused&&!document.hidden)kick();},3000);
   kick();
 });
 // header state
