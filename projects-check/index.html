@@ -10,26 +10,10 @@
 
 body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;--ink:#1A1A2E;--amber:#D4A574}.wrap{width:min(1160px,calc(100% - 96px))}.hero{display:block;min-height:0;padding:152px 0 80px}.hero h1{font:500 48px/1.35 "Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;margin:28px 0 24px}.hero .dek{font-size:18px;max-width:740px}.kicker{font-size:13px;color:#7c5940}.case{padding:80px 0}.case .grid{grid-template-columns:100px minmax(0,1fr);gap:40px}.case h2{font:500 42px/1.4 "Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}.case .lead{font-size:20px;line-height:1.8}.subject{font-size:15px;font-weight:400;margin-bottom:24px}.fieldnotes{margin:32px 0 0;max-width:none;gap:28px 40px}.fieldnotes dt{font-size:14px;color:#7c5940}.fieldnotes dd{font-size:18px}.sector{font-size:12px}.contact{background:#1A1A2E;color:#f6f5f1;padding:96px 0}.contact h2{font:500 44px/1.4 "Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}.contact p{font-size:18px;max-width:680px}.contact a{display:inline-flex;align-items:center;background:#D4A574;color:#1A1A2E;border:1px solid #D4A574;border-radius:4px;min-height:52px;padding:12px 28px;font-size:16px;font-weight:500}.contact .arrow{font-size:18px}.footnote,figcaption{font-size:13px}@media(max-width:840px){.wrap{width:calc(100% - 44px)}.hero{padding:128px 0 56px}.hero h1{font-size:32px}.hero .dek{font-size:16px}.case{padding:56px 0}.case .grid{grid-template-columns:1fr;gap:20px}.case h2{font-size:28px}.case .lead{font-size:18px}.subject{font-size:14px}.fieldnotes{grid-template-columns:1fr;gap:24px}.fieldnotes dd{font-size:16px}.contact{padding:64px 0}.contact h2{font-size:28px}.contact h2 br{display:none}.contact p{font-size:16px}}
 
-.intro-note{margin:18px 0 0;font-size:14px;line-height:1.8;color:#5b5b66;max-width:740px}
 .block{padding:24px 0 96px}
 .block+.block{border-top:1px solid var(--line);padding-top:88px}
 .block-title{margin:0 0 40px;font-size:30px;line-height:1.4;font-weight:600}
-.reps{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.rep{background:#fffdf8;border:1px solid rgba(26,26,46,.12);display:flex;flex-direction:column}
-.rep figure{margin:0;position:relative}
-.rep figure img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
-.rep .img-note{position:absolute;right:10px;bottom:10px;background:rgba(26,26,46,.72);color:#f6f5f1;font-size:12px;line-height:1;padding:6px 8px;border-radius:2px}
-.rep .rep-body{padding:32px 34px 34px;display:flex;flex-direction:column;flex:1}
-.rep h3{margin:0 0 10px;font-size:25px;line-height:1.45;font-weight:600}
-.rep .point{margin:0 0 22px;font-size:18px;line-height:1.8;color:#1A1A2E;font-weight:500}
-.rep .meta{margin:0 0 24px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:5.5em 1fr;gap:6px 12px;font-size:14px;line-height:1.7}
-.rep .meta dt{color:#7c5940;font-weight:700}
-.rep .meta dd{margin:0}
-.rep .story{margin:0 0 24px;display:grid;gap:16px}
-.rep .story dt{font-size:14px;color:#7c5940;font-weight:700;margin-bottom:4px}
-.rep .story dd{margin:0;font-size:18px;line-height:1.8}
 .attr{margin:16px 0 0;padding-top:14px;border-top:1px dashed rgba(26,26,46,.25);font-size:13px;line-height:1.7;color:#5b5b66}
-.rep .attr{margin-top:auto}
 .others-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .mini{background:#fffdf8;border:1px solid rgba(26,26,46,.12);padding:26px 26px 24px;display:flex;flex-direction:column}
 .mini .sector{margin:0 0 8px;font-size:12px;letter-spacing:.1em;color:#7c5940}
@@ -38,29 +22,47 @@ body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,s
 .mini .attr{margin-top:auto;padding-top:12px}
 .mini p.text+.attr{margin-top:16px}
 @media(max-width:1100px){.others-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:840px){.block{padding:16px 0 64px}.block+.block{padding-top:56px}.block-title{font-size:24px;margin-bottom:28px}.reps{grid-template-columns:1fr;gap:28px}.rep .rep-body{padding:24px 22px 26px}.rep h3{font-size:21px}.rep .point{font-size:16px}.rep .story dd{font-size:16px}.others-grid{grid-template-columns:1fr;gap:20px}.mini{padding:22px}}
+@media(max-width:840px){.block{padding:16px 0 64px}.block+.block{padding-top:56px}.block-title{font-size:24px;margin-bottom:28px}.others-grid{grid-template-columns:1fr;gap:20px}.mini{padding:22px}}
+
+.nw{display:inline-block;white-space:nowrap}
+.reps{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
+.rep{background:#fffdf8;border:1px solid rgba(26,26,46,.12);display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0}
+.rep figure{margin:0;position:relative}
+.rep figure img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.rep .img-note{position:absolute;right:10px;bottom:10px;background:rgba(26,26,46,.72);color:#f6f5f1;font-size:12px;line-height:1;padding:6px 8px;border-radius:2px}
+.rep h3{margin:0;padding:30px 34px 0;font-size:26px;line-height:1.45;font-weight:700}
+.rep .point{margin:0;padding:8px 34px 22px;font-size:18px;line-height:1.8;font-weight:500}
+.rep .meta{margin:0 34px 24px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:13px;line-height:1.7;color:#5b5b66}
+.rep .meta dt{color:#7c5940;font-weight:700;white-space:nowrap}
+.rep .meta dd{margin:0}
+.rep .label{margin:0 0 6px;font-size:14px;line-height:1.6;color:#7c5940;font-weight:700}
+.rep .step{padding:0 34px 26px}
+.rep .step p:not(.label),.rep .result p:not(.label){margin:0;font-size:17px;line-height:1.85}
+.rep .result{margin:0 34px 34px;padding:20px 22px 22px;background:#f3ede1}
+.rep .hl{font-weight:700;font-size:1.12em}
+@media(max-width:840px){.reps{display:flex;flex-direction:column;gap:28px}.rep{display:flex;flex-direction:column}.rep h3{padding:24px 22px 0;font-size:22px}.rep .point{padding:6px 22px 18px;font-size:16px}.rep .meta{margin:0 22px 20px}.rep .step{padding:0 22px 22px}.rep .step p:not(.label),.rep .result p:not(.label){font-size:16px}.rep .result{margin:0 22px 24px;padding:16px 18px 18px}}
 </style>
 <style>h1,h2,.subject{text-wrap:balance}@media(max-width:840px){.case h2{font-size:24px}}</style><style>.hero h1,.case h2,.contact h2{font-weight:600}</style></head>
 <body>
 <header class="hero wrap"><div><div class="kicker">PROJECTS</div><h1>事業開発の支援実績</h1><p class="dek">さまざまな領域で、顧客開拓、商談、提案改善に取り組んできました。代表的な実績と、これまでに担った支援を紹介します。</p></div></header>
 
 <section class="block"><div class="wrap"><h2 class="block-title">代表的な支援実績</h2><div class="reps">
-<article class="rep" id="genome"><figure><img src="https://lh3.googleusercontent.com/d/11RnqZKcdQIJGOIFn6uIiEzbN4QI4KsF0=w1400" alt="遺伝子検査の結果資料を読む人のイメージ画像" loading="lazy"><span class="img-note">イメージ</span></figure><div class="rep-body"><h3>遺伝子検査 × 健康保険組合・企業</h3><p class="point">導入先の声を、追加提案と新規開拓へ。</p><dl class="meta"><dt>期間</dt><dd>2021年6月〜2024年11月／約3年半</dd><dt>担当範囲</dt><dd>ターゲット設計・電話アプローチ・商談・提案改善・受注まで</dd></dl><dl class="story"><div><dt>課題</dt><dd>健康保険組合と健康経営に取り組む企業に、ゲノム解析を使った遺伝子検査の価値を伝え、導入につなげることに取り組みました。</dd></div><div><dt>取り組み</dt><dd>導入企業に理由や評価された点を聞き、事例として整理。既存顧客へのアップセル、新規の提案先、前年度に提案を断られた企業への再提案に活用しました。</dd></div><div><dt>到達点</dt><dd>約3年間で40社への導入につながり、受注のおよそ半分は、自分たちで獲得したアポイントから生まれました。導入先へのヒアリングと事例化を、次の受注に活かした案件です。</dd></div></dl></div></article>
-<article class="rep" id="ai-camera"><figure><img src="https://images.unsplash.com/photo-1621954938124-02e637ba3584?w=1400&q=80&auto=format&fit=crop" alt="食品工場の生産ラインのイメージ写真" loading="lazy"><span class="img-note">イメージ</span></figure><div class="rep-body"><h3>AIカメラ × 小売・製造業</h3><p class="point">万引き防止から、製造現場へ提案を広げる。</p><dl class="meta"><dt>期間</dt><dd>2021年9月〜2023年2月／約1年半</dd><dt>担当範囲</dt><dd>ターゲット設定・リストアップ・アポイント獲得・商談</dd></dl><dl class="story"><div><dt>課題</dt><dd>小売店の万引き防止に使われていたAI画像認識カメラについて、小売での顧客開拓と、製造業などへの用途展開に取り組みました。</dd></div><div><dt>取り組み</dt><dd>食品工場などに、部品の盗難対策、消毒実施の確認、ヘルメット着用やフォークリフトの安全点検といった用途で提案。商談設計では、現場の工程や課題、解決時のメリット、予算・決裁条件を確かめる方針を定めました。</dd></div><div><dt>到達点</dt><dd>小売では大手ドラッグストアやスーパーを開拓。製造業では、盗難対策・衛生管理・安全確認へ提案の用途を広げました。</dd></div></dl></div></article>
+<article class="rep" id="genome"><figure><img src="https://lh3.googleusercontent.com/d/11RnqZKcdQIJGOIFn6uIiEzbN4QI4KsF0=w1400" alt="遺伝子検査の結果資料を読む人のイメージ画像" loading="lazy"><span class="img-note">イメージ</span></figure><h3><span class="nw">遺伝子検査 ×</span> <span class="nw">健康保険組合・企業</span></h3><p class="point"><span class="nw">導入先の声を、</span><span class="nw">追加提案と新規開拓へ。</span></p><dl class="meta"><dt>担当範囲</dt><dd>ターゲット設計・電話アプローチ・商談・提案改善・受注まで</dd></dl><div class="step"><p class="label">取り組み</p><p>導入企業に理由や評価された点を聞き、事例として整理。既存顧客への追加提案、新規開拓、前年度に断られた企業への再提案に活用しました。</p></div><div class="result"><p class="label">到達点</p><p><strong class="hl"><span class="nw">約3年間で40社</span>への導入</strong>につながりました。受注のおよそ半分は、自分たちで獲得したアポイントから生まれました。</p></div></article>
+<article class="rep" id="ai-camera"><figure><img src="https://images.unsplash.com/photo-1621954938124-02e637ba3584?w=1400&q=80&auto=format&fit=crop" alt="食品工場の生産ラインのイメージ写真" loading="lazy"><span class="img-note">イメージ</span></figure><h3><span class="nw">AIカメラ ×</span> <span class="nw">小売・製造業</span></h3><p class="point"><span class="nw">万引き防止から、</span><span class="nw">製造現場へ提案を広げる。</span></p><dl class="meta"><dt>担当範囲</dt><dd>ターゲット設定・リストアップ・アポイント獲得・商談</dd></dl><div class="step"><p class="label">取り組み</p><p>小売での顧客開拓に加え、食品工場などへ盗難対策・衛生管理・安全確認の用途で提案。現場の工程や課題、予算・決裁条件を確かめる商談を設計しました。</p></div><div class="result"><p class="label">到達点</p><p>小売では<strong class="hl">大手ドラッグストアやスーパーを開拓</strong>。製造業では、盗難対策・衛生管理・安全確認へ<strong class="hl">提案用途を広げました</strong>。</p></div></article>
 </div></div></section>
 
 <section class="block"><div class="wrap"><h2 class="block-title">その他の支援実績</h2><div class="others-grid">
-<article class="mini" id="space-food"><p class="sector">宇宙・食品</p><h3>宇宙 × 食品メーカー</h3><p class="text">宇宙関連企業のパートナーとして、食品メーカーへ提案。研究開発部門への提案から、広報・CSRを入口にした小さな第一段階の提案へ切り替え、約15社と商談・面談。</p></article>
-<article class="mini" id="space-semiconductor"><p class="sector">宇宙・半導体</p><h3>宇宙 × 半導体・材料メーカー</h3><p class="text">宇宙関連企業のパートナーとして、大手企業への産業ヒアリングを担当。126社にアプローチし、商談26件。</p></article>
-<article class="mini" id="energy-visualization"><p class="sector">エネルギー</p><h3>電力の見える化 × 工務店・蓄電池販売会社</h3><p class="text">5年事業計画を一緒につくり、工務店や蓄電池販売会社へのアポイント獲得から商談まで担当。</p></article>
+<article class="mini" id="space-food"><p class="sector">宇宙・食品</p><h3><span class="nw">宇宙 ×</span> <span class="nw">食品メーカー</span></h3><p class="text">宇宙関連企業のパートナーとして、食品メーカーへ提案。研究開発部門への提案から、広報・CSRを入口にした小さな第一段階の提案へ切り替え、約15社と商談・面談。</p></article>
+<article class="mini" id="space-semiconductor"><p class="sector">宇宙・半導体</p><h3><span class="nw">宇宙 ×</span> <span class="nw">半導体・材料メーカー</span></h3><p class="text">宇宙関連企業のパートナーとして、大手企業への産業ヒアリングを担当。126社にアプローチし、商談26件。</p></article>
+<article class="mini" id="energy-visualization"><p class="sector">エネルギー</p><h3><span class="nw">電力の見える化 ×</span> <span class="nw">工務店・蓄電池販売会社</span></h3><p class="text">5年事業計画を一緒につくり、工務店や蓄電池販売会社へのアポイント獲得から商談まで担当。</p></article>
 <article class="mini" id="solar-monitoring"><p class="sector">エネルギー</p><h3>太陽光監視SaaS</h3><p class="text">商談とトライアルの反応を踏まえ、ターゲットを見直し。次の検証へ進めるための提案先を再検討。</p></article>
-<article class="mini" id="secure-computing"><p class="sector">ディープテック</p><h3>秘密計算 × 化学・材料メーカー</h3><p class="text">技術の説明から、材料開発の業務課題を確かめる提案へ切り替え。</p></article>
-<article class="mini" id="municipality"><p class="sector">自治体</p><h3>自治体 × 地域課題・DX</h3><p class="text">複数の部署に接触し、部署ごとの課題に合わせて提案テーマと商談の入口を調整。部署探索から顧客開拓・商談まで担当。</p></article>
-<article class="mini" id="remote-imaging"><p class="sector">医療</p><h3>遠隔画像診断 × 健診センター</h3><p class="text">遠隔画像診断と画像保管のシステムを、小・中規模の健診センターへ提案。アポイント獲得の体制をつくり、商談からクロージングまで担当。</p></article>
-<article class="mini" id="fertility-test"><p class="sector">健康経営</p><h3>妊娠力検査 × 企業の人事</h3><p class="text">前例のない検査を企業にどう案内するかを考え、トライアル、セミナー、受注へと進む人事向けの動線を構築。</p></article>
-<article class="mini" id="myopia-glasses"><p class="sector">ヘルスケア</p><h3>近視抑制メガネ × 新市場</h3><p class="text">メガネ店への営業に加え、イベントや企業の健康経営施策へ提案先を拡大。市場探索から顧客開拓・商談まで担当。</p></article>
-<article class="mini" id="care-staffing"><p class="sector">人材・介護</p><h3>介護の人材紹介 × 人材紹介会社</h3><p class="text">介護事業者ではなく人材紹介会社に、介護の人材紹介を提案する設計に。アポイント獲得から商談まで担当。</p></article>
-<article class="mini" id="analytical-instrument"><p class="sector">製造・品質保証</p><h3>分析機器 × 食品・飲料メーカー</h3><p class="text">数千万円規模の分析機器について、食品・飲料メーカーの品質保証部門へアプローチ。リード獲得率を3.3%から30%に。</p></article>
+<article class="mini" id="secure-computing"><p class="sector">ディープテック</p><h3><span class="nw">秘密計算 ×</span> <span class="nw">化学・材料メーカー</span></h3><p class="text">技術の説明から、材料開発の業務課題を確かめる提案へ切り替え。</p></article>
+<article class="mini" id="municipality"><p class="sector">自治体</p><h3><span class="nw">自治体 ×</span> <span class="nw">地域課題・DX</span></h3><p class="text">複数の部署に接触し、部署ごとの課題に合わせて提案テーマと商談の入口を調整。部署探索から顧客開拓・商談まで担当。</p></article>
+<article class="mini" id="remote-imaging"><p class="sector">医療</p><h3><span class="nw">遠隔画像診断 ×</span> <span class="nw">健診センター</span></h3><p class="text">遠隔画像診断と画像保管のシステムを、小・中規模の健診センターへ提案。アポイント獲得の体制をつくり、商談からクロージングまで担当。</p></article>
+<article class="mini" id="fertility-test"><p class="sector">健康経営</p><h3><span class="nw">妊娠力検査 ×</span> <span class="nw">企業の人事</span></h3><p class="text">前例のない検査を企業にどう案内するかを考え、トライアル、セミナー、受注へと進む人事向けの動線を構築。</p></article>
+<article class="mini" id="myopia-glasses"><p class="sector">ヘルスケア</p><h3><span class="nw">近視抑制メガネ ×</span> <span class="nw">新市場</span></h3><p class="text">メガネ店への営業に加え、イベントや企業の健康経営施策へ提案先を拡大。市場探索から顧客開拓・商談まで担当。</p></article>
+<article class="mini" id="care-staffing"><p class="sector">人材・介護</p><h3><span class="nw">介護の人材紹介 ×</span> <span class="nw">人材紹介会社</span></h3><p class="text">介護事業者ではなく人材紹介会社に、介護の人材紹介を提案する設計に。アポイント獲得から商談まで担当。</p></article>
+<article class="mini" id="analytical-instrument"><p class="sector">製造・品質保証</p><h3><span class="nw">分析機器 ×</span> <span class="nw">食品・飲料メーカー</span></h3><p class="text">数千万円規模の分析機器について、食品・飲料メーカーの品質保証部門へアプローチ。リード獲得率を3.3%から30%に。</p></article>
 </div></div></section>
 
 <section class="contact"><div class="wrap inner"><div><h2>今、向き合っている事業の話を<br>聞かせてください。</h2><p>現在の状況と課題を伺い、支援できる範囲と進め方をお話しします。</p><a href="https://choujin.net/contact" target="_top">事業について相談する<span class="arrow">→</span></a></div></div></section>
