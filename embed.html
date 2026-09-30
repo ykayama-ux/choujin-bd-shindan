@@ -38,9 +38,9 @@ ul{list-style:none}
 
 /* ② 題字とコンセプト */
 .masthead{background:var(--navy);color:var(--on-navy)}
-.masthead .wrap{display:flex;align-items:center;gap:48px;padding-top:44px;padding-bottom:52px}
+.masthead .wrap{display:flex;align-items:center;gap:52px;padding-top:40px;padding-bottom:46px}
 .title{font-size:clamp(56px,7.4vw,104px);font-weight:900;line-height:1;letter-spacing:.04em;white-space:nowrap}
-.concept{border-left:1px solid var(--gold);padding:6px 0 6px 32px;font-size:clamp(19px,1.9vw,26px);font-weight:700;line-height:1.7;letter-spacing:.04em}
+.concept{border-left:1px solid var(--gold);padding:4px 0 4px 36px;font-size:clamp(24px,2.7vw,38px);font-weight:900;line-height:1.5;letter-spacing:.05em}
 .concept span{display:inline-block}
 
 /* ③ 巻頭記事 */
@@ -50,14 +50,14 @@ ul{list-style:none}
 .feature-photo img{width:100%;height:100%;object-fit:cover}
 .label{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--gold);display:flex;gap:14px;align-items:center;margin-bottom:18px}
 .label .sep{width:1px;height:12px;background:var(--gold)}
-.feature-name{font-size:30px;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:.06em}
+.feature-name{margin-top:30px;font-size:26px;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:.06em}
 .feature-field{font-size:14px;color:var(--muted);margin-top:6px}
-.quote{margin:32px 0 28px;padding-left:22px;border-left:2px solid var(--gold)}
-.quote p{font-size:clamp(28px,2.8vw,40px);font-weight:900;color:var(--ink);line-height:1.45;letter-spacing:.02em}
+.quote{margin:0 0 26px;padding-left:22px;border-left:2px solid var(--gold)}
+.quote p{font-size:clamp(30px,3.2vw,44px);font-weight:900;color:var(--ink);line-height:1.45;letter-spacing:.02em}
 .quote p span{display:inline-block}
 .quote p span:first-child{margin-left:-.5em}
-.quote cite{display:block;margin-top:10px;font-style:normal;font-size:13px;color:var(--muted)}
-.lead{font-size:16px;line-height:1.95;color:var(--text)}
+.quote cite{display:block;margin-top:10px;font-style:normal;font-size:12px;color:var(--muted);letter-spacing:.04em}
+.lead{font-size:16px;line-height:1.95;color:var(--text);max-width:30em}
 .read{display:inline-flex;align-items:center;gap:14px;margin-top:32px;padding:15px 26px;background:var(--navy);color:#fff;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:.06em}
 .read::after{content:"";width:18px;height:1px;background:var(--gold);box-shadow:0 0 0 0 transparent;transition:width .2s}
 .read:hover::after{width:28px}
@@ -118,15 +118,16 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   .logo img{width:26px;height:26px}
   .logo-word{font-size:18px}
   .nav{width:100%;gap:22px;font-size:13px;margin-top:6px}
-  .masthead .wrap{flex-direction:column;align-items:flex-start;gap:18px;padding-top:28px;padding-bottom:32px}
+  .masthead .wrap{flex-direction:column;align-items:flex-start;gap:16px;padding-top:26px;padding-bottom:30px}
   .embed .masthead .wrap{padding-top:calc(28px + 103px)}
   .title{font-size:clamp(48px,15vw,64px)}
-  .concept{padding:2px 0 2px 16px;font-size:18px}
+  .concept{border-left:0;border-top:1px solid var(--gold);padding:16px 0 0;font-size:clamp(21px,6.4vw,28px);line-height:1.5}
   .feature{padding:0 0 56px}
   .feature .wrap{grid-template-columns:1fr;gap:28px;padding:0}
   .feature-text{padding:0 var(--gutter)}
-  .quote{margin:24px 0 22px;padding-left:16px}
-  .quote p{font-size:clamp(24px,7.2vw,30px)}
+  .quote{margin:0 0 20px;padding-left:16px}
+  .quote p{font-size:clamp(27px,8.4vw,34px)}
+  .feature-name{margin-top:24px;font-size:23px}
   .lead{font-size:15px}
   .read{display:flex;justify-content:space-between;margin-top:28px}
   .stories{padding:56px 0 72px}
@@ -149,22 +150,22 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   <section class="masthead" aria-labelledby="zukan-title">
     <div class="wrap">
       <h1 class="title" id="zukan-title">超人図鑑</h1>
-      <p class="concept"><span>誰かの本気が、</span><span>誰かの心に火を灯す。</span></p>
+      <p class="concept"><span>誰かの本気が、</span><br><span>誰かの心に火を灯す。</span></p>
     </div>
   </section>
 
   <section class="feature" aria-label="巻頭記事">
     <div class="wrap">
-      <a class="feature-photo" href="https://choujin.net/posts/vY5e9aq8" target="_top" tabindex="-1" aria-hidden="true"><img class="feature-img" src="https://storage.googleapis.com/studio-cms-assets/projects/d7WlzpreqV/s-1206x905_v-fms_webp_4ecc5b27-5264-441d-8b8a-030c88547ceb.webp" alt="競技中の川島雅弘さん" width="1206" height="905" loading="eager" style="object-position:60% 40%"></a>
+      <a class="feature-photo" href="https://choujin.net/posts/vY5e9aq8" target="_top" tabindex="-1" aria-hidden="true" style="aspect-ratio:1206/905"><img class="feature-img" src="https://storage.googleapis.com/studio-cms-assets/projects/d7WlzpreqV/s-1206x905_v-fms_webp_4ecc5b27-5264-441d-8b8a-030c88547ceb.webp" alt="競技中の川島雅弘さん" width="1206" height="905" loading="eager" style="object-position:50% 50%"></a>
       <div class="feature-text">
         <p class="label"><span>巻頭</span><span class="sep"></span><span>Vol.05</span></p>
-        <h2 class="feature-name">川島 雅弘</h2>
-        <p class="feature-field"><span class="nb">不動産</span> <span class="nb">×</span> <span class="nb">コーチング</span> <span class="nb">×</span> <span class="nb">アスリート</span></p>
         <blockquote class="quote" cite="https://choujin.net/posts/vY5e9aq8">
           <p><span>「まずは</span><span>日本の朝を</span><span>変えます。」</span></p>
-          <cite>川島 雅弘　記事末尾の宣言より</cite>
+          <cite>記事末尾の宣言より</cite>
         </blockquote>
-        <p class="lead">不動産、コーチング、アスリート。三つの道を歩む、川島雅弘の原点と志。</p>
+        <p class="lead">16ヶ月、契約が取れなかった。挫折を経験した川島雅弘が、朝の挑戦を通じて人を後押ししたい理由。</p>
+        <h2 class="feature-name">川島 雅弘</h2>
+        <p class="feature-field"><span class="nb">不動産</span> <span class="nb">×</span> <span class="nb">コーチング</span> <span class="nb">×</span> <span class="nb">アスリート</span></p>
         <a class="read" href="https://choujin.net/posts/vY5e9aq8" target="_top">この人の本気を読む</a>
       </div>
     </div>
