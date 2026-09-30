@@ -1,0 +1,4 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>embed test</title>
+<style>body{margin:0}.hd{position:fixed;top:0;left:0;right:0;height:84px;background:rgba(26,26,46,.95);z-index:9;color:#fff;display:flex;align-items:center;padding:0 24px;font:600 18px serif}@media(max-width:767px){.hd{height:103px}}iframe{display:block;width:100%;border:0;height:3000px}</style></head>
+<body><div class="hd">（サイト共通ヘッダーの代わり）</div><iframe id="f" src="embed.html" sandbox="allow-scripts allow-same-origin allow-top-navigation-by-user-activation"></iframe>
+<script>addEventListener('message',function(e){if(e.data&&e.data.type==='choujin-top-height')document.getElementById('f').style.height=(e.data.height+2)+'px'})</script></body></html>
