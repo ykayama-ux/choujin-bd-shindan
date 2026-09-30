@@ -1,6 +1,6 @@
 html.zk-article{--zk-navy:#1A1A2E;--zk-gold:#D0A16E;--zk-ink:#1A1A2E;--zk-text:#2E2E38;--zk-muted:#6B6B78;--zk-col:740px}
 html.zk-article [data-s-d368eb7f-3d94-4d88-a6b5-b18128967494]{display:none!important}
-html.zk-article [data-s-e550d148-8f10-4e37-b9d9-8aaf8f80fd00]{padding:0 0 96px!important;background:#F8F7F6!important}
+html.zk-article [data-s-e550d148-8f10-4e37-b9d9-8aaf8f80fd00]{padding:0 0 96px!important;background:#fff!important}
 html.zk-article .zk-mast{align-self:stretch;display:block;background:var(--zk-navy);padding:calc(var(--zk-head,84px) + 22px) 48px 24px;text-decoration:none;border-bottom:1px solid rgba(208,161,110,.35)}
 html.zk-article .zk-mast-in{max-width:1184px;margin:0 auto;display:flex;align-items:center;gap:22px}
 html.zk-article .zk-mast-title{font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:34px;font-weight:900;line-height:1;letter-spacing:.04em;color:#fff;white-space:nowrap}
@@ -12,11 +12,11 @@ html.zk-article .zk-meta{margin:0;font-family:"Noto Sans JP","Hiragino Sans",san
 html.zk-article .zk-vol{color:var(--zk-gold);font-weight:700;letter-spacing:.12em}
 html.zk-article .zk-date{color:var(--zk-muted);letter-spacing:.04em}
 html.zk-article [data-s-79d722e4-cd97-4478-9b20-b05712bb6c6f]{display:none!important}
-html.zk-article [data-s-41307287-c7e5-434f-ab5e-a4dd0ae2bdff]{padding:0 48px 88px!important;margin:0!important;background:transparent!important;width:100%!important;max-width:1184px}
+html.zk-article [data-s-41307287-c7e5-434f-ab5e-a4dd0ae2bdff]{padding:0 48px 88px!important;margin:0!important;background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0!important;width:100%!important;max-width:1184px}
 html.zk-article [data-s-515ded63-9bf3-4796-a574-518f49cc2091]{display:contents!important}
 html.zk-article [data-s-41307287-c7e5-434f-ab5e-a4dd0ae2bdff]>*{order:5}
 html.zk-article [data-s-515ded63-9bf3-4796-a574-518f49cc2091]>*{order:5;width:min(var(--zk-col),100%);box-sizing:border-box;align-self:center!important}
-html.zk-article [data-s-515ded63-9bf3-4796-a574-518f49cc2091]>h1:first-child{order:1;margin:0!important;font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif!important;font-size:clamp(30px,3.6vw,46px)!important;font-weight:900!important;line-height:1.42!important;letter-spacing:.02em!important;color:var(--zk-ink)!important}
+html.zk-article [data-s-515ded63-9bf3-4796-a574-518f49cc2091]>h1:first-child{order:1;margin:0!important;font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif!important;font-size:clamp(30px,3.6vw,46px)!important;font-weight:900!important;line-height:1.42!important;letter-spacing:.02em!important;color:var(--zk-ink)!important;word-break:auto-phrase!important;text-wrap:balance}
 html.zk-article [data-s-515ded63-9bf3-4796-a574-518f49cc2091]>h1:first-child *{font:inherit!important;color:inherit!important}
 html.zk-article [data-s-515ded63-9bf3-4796-a574-518f49cc2091]>.zk-sub{order:2;margin:14px 0 0!important;font-family:"Noto Sans JP","Hiragino Sans",sans-serif!important;font-size:clamp(16px,1.4vw,19px)!important;font-weight:700!important;line-height:1.7!important;letter-spacing:.02em!important;color:var(--zk-text)!important}
 html.zk-article [data-s-515ded63-9bf3-4796-a574-518f49cc2091]>.zk-sub *{font:inherit!important;color:inherit!important}
