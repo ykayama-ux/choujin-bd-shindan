@@ -58,17 +58,17 @@ function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=c
 function fieldHtml(f,text){text.split(' ').forEach(function(w,i){if(i)f.appendChild(document.createTextNode(' '));w.split(/(?<=／)/).forEach(function(p){if(p)f.appendChild(el('span','nb',p));});});}
 function apply(){
   var html=document.documentElement,cat=$('cat'),rich=$('rich'),card=$('card'),col=$('col'),outer=$('outer');
-  var on=/^\/posts\//.test(location.pathname)&&cat&&cat.getAttribute('href')==='/news/interview'&&rich&&card&&col&&outer;
+  var on=/\/posts\/[^/]+\/?$/.test(location.pathname)&&cat&&/\/news\/interview\/?$/.test(cat.getAttribute('href')||'')&&rich&&card&&col&&outer;
   if(!on){html.classList.remove('zk-article');return;}
   var hd=$('header');if(hd)html.style.setProperty('--zk-head',Math.round(hd.getBoundingClientRect().height)+'px');
   var id=location.pathname.split('/').filter(Boolean).pop(),p=POSTS[id];
   if(!p){var t=($('admin')||{}).textContent||'',m=t.match(/Vol\.?\s*(\d+)\s*[｜|]\s*(.+)$/),d=($('date')||{}).textContent||'';p={vol:m?+m[1]:null,date:d.trim().replace(/\//g,'.'),name:'',field:m?m[2].trim():''};}
-  if(!outer.querySelector(':scope>.zk-mast')){var a=el('a','zk-mast');a.href='/news/interview';var i=el('span','zk-mast-in');i.appendChild(el('span','zk-mast-title','超人図鑑'));a.appendChild(i);outer.insertBefore(a,outer.firstChild);}
+  if(!outer.querySelector(':scope>.zk-mast')){var a=el('a','zk-mast');a.href=cat.getAttribute('href');var i=el('span','zk-mast-in');i.appendChild(el('span','zk-mast-title','超人図鑑'));a.appendChild(i);outer.insertBefore(a,outer.firstChild);}
   var row=$('row');if(row&&!row.querySelector('.zk-meta')){var mt=el('p','zk-meta');if(p.vol)mt.appendChild(el('span','zk-vol','Vol.'+(p.vol<10?'0':'')+p.vol));if(p.date)mt.appendChild(el('span','zk-date',p.date));row.appendChild(mt);}
   var h1=rich.firstElementChild;
   if(h1&&h1.tagName==='H1'){var n=h1.nextElementSibling;if(n&&!n.classList.contains('zk-sub')&&/^[〜～~]/.test(n.textContent.trim()))n.classList.add('zk-sub');}
   if(!card.querySelector(':scope>.zk-person')&&(p.name||p.field)){var ps=el('p','zk-person');if(p.name)ps.appendChild(el('span','zk-name',p.name));var f=el('span','zk-field');fieldHtml(f,p.field);ps.appendChild(f);card.insertBefore(ps,card.firstChild);}
-  if(!card.querySelector(':scope>.zk-back')){var b=el('a','zk-back','超人図鑑の一覧へ戻る');b.href='/news/interview';card.appendChild(b);}
+  if(!card.querySelector(':scope>.zk-back')){var b=el('a','zk-back','超人図鑑の一覧へ戻る');b.href=cat.getAttribute('href');card.appendChild(b);}
   html.classList.add('zk-article');
 }
 var t;function sched(){clearTimeout(t);t=setTimeout(apply,30);}
