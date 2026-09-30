@@ -1,0 +1,129 @@
+<style>
+html,body{margin:0;padding:0;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+.cj-top{--navy:#1A1A2E;--white:#f6f5f1;--muted:#c2c7d1;--amber:#D4A574;background:var(--navy);color:var(--white);font-family:inherit;line-height:1.8}
+.cj-top *{box-sizing:border-box}.cj-top a{color:inherit;text-decoration:none}.cj-top img{display:block;max-width:100%}.cj-top a:focus-visible{outline:2px solid var(--amber);outline-offset:6px}
+.cj-wrap{width:min(1160px,calc(100% - 96px));margin-inline:auto}.cj-section,.cj-philosophy,.cj-final{padding:88px 0}
+.cj-kicker{font-size:13px;font-weight:400;letter-spacing:.14em;color:var(--amber);margin:0 0 18px}.cj-title{font-size:46px;line-height:1.35;letter-spacing:-.025em;font-weight:600;margin:0 0 24px;text-wrap:balance}
+.cj-copy{font-size:18px;font-weight:400;line-height:1.8;max-width:680px;margin:0;text-wrap:pretty}.cj-link{display:inline-flex;align-items:center;font-size:16px;line-height:1.6;color:var(--amber)!important;border-bottom:1px solid #d4a57488;padding-bottom:6px;margin-top:24px}
+.cj-bd-grid,.cj-community-layout{display:grid;grid-template-columns:minmax(0,.45fr) minmax(0,.55fr);gap:48px;align-items:start}.cj-bd .cj-kicker{margin-bottom:24px}.cj-bd .cj-title{margin-bottom:24px}.cj-bd .cj-title br{display:block}
+.cj-sample{position:relative;aspect-ratio:4/3;width:100%;margin:0;overflow:hidden;background:#252535}.cj-sample img{width:100%;height:100%;object-fit:cover;object-position:var(--position,50% 50%)}.cj-sample figcaption{position:absolute;z-index:3;right:8px;bottom:8px;max-width:calc(100% - 16px);padding:4px 8px;background:rgba(14,17,27,.82);color:#fff;font-size:13px;line-height:1.5;font-weight:400;letter-spacing:0;white-space:nowrap;pointer-events:none}
+#BD01{--position:50% 48%}#PR01{--position:50% 48%}#PR02{--position:50% 50%}#PR03{--position:50% 48%}#PR04{--position:50% 50%}#CM01{--position:50% 50%}#CM01 figcaption{right:calc(38.5% + 8px)}#CM02{--position:50% 48%}
+.cj-territory-grid{display:grid;grid-template-columns:minmax(0,.32fr) minmax(0,.68fr);gap:48px;align-items:start}.cj-territory .cj-title{margin:0;font-size:26px;line-height:1.5;text-wrap:balance}.cj-domains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}.cj-domains span{display:block;border-top:1px solid #ffffff35;padding:18px 0;font-size:24px;line-height:1.4;white-space:nowrap}.cj-domains span:nth-last-child(-n+2){border-bottom:1px solid #ffffff35}
+.cj-projects-head{display:flex;gap:28px;justify-content:space-between;align-items:end;margin-bottom:36px}.cj-projects-head .cj-title{margin-bottom:0}.cj-projects-head .cj-link{flex-shrink:0;margin-top:0}.cj-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 40px;align-items:start}.cj-case{min-width:0}.cj-case .cj-sample{aspect-ratio:16/10}.cj-case-title{font-size:24px;line-height:1.4;letter-spacing:-.015em;font-weight:600;margin:18px 0 12px;text-wrap:balance}.cj-case-no{display:inline-block;font-size:14px;line-height:1.5;font-weight:400;letter-spacing:.08em;color:var(--amber);margin-right:12px;vertical-align:baseline}.cj-change{font-size:18px;line-height:1.8;font-weight:400;margin:0;text-wrap:balance}.cj-case .cj-link{margin-top:16px}
+.cj-philosophy .cj-title{font-size:72px;line-height:1.3}.cj-philosophy .cj-copy{max-width:none;text-wrap:wrap}.cj-philosophy .cj-copy span{display:inline-block}
+.cj-community-title .phrase{display:inline-block}.cj-community-title .last{display:block}.cj-community-photos{position:relative;aspect-ratio:1000/712}.cj-community-main{position:absolute;width:78%;left:0;top:0}.cj-community-side{position:absolute;width:52%;right:0;top:45.2%}
+.cj-heroes-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:32px}.cj-heroes-head .cj-title{margin:0}.cj-heroes-head .cj-copy{max-width:460px}.cj-people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.cj-person{display:block;min-width:0}.cj-photo{aspect-ratio:4/3;width:100%;background-position:center 40%!important;background-size:cover!important;background-repeat:no-repeat}.cj-person-name{font-size:20px;font-weight:500;line-height:1.5;margin:16px 0 8px}.cj-person-meta{font-size:14px;line-height:1.8;color:var(--muted);margin:0}
+.cj-other-head{margin-bottom:28px}.cj-other-links{border-top:1px solid #ffffff35}.cj-other-links a{display:grid;grid-template-columns:320px minmax(0,1fr);gap:32px;padding:20px 0;border-bottom:1px solid #ffffff35;font-size:16px;line-height:1.8}.cj-other-links strong{font-weight:500}.cj-other-links span{color:var(--muted)}.cj-other-links a:hover strong{color:var(--amber)}
+.cj-final{text-align:center}.cj-final .cj-title{font-size:44px;line-height:1.4;max-width:940px;margin:0 auto 24px}.cj-final .cj-copy{margin-inline:auto;max-width:720px}.cj-button{display:inline-flex;align-items:center;justify-content:center;background:var(--amber);color:var(--navy)!important;border:1px solid var(--amber);border-radius:4px;min-height:52px;font-size:16px;font-weight:500;line-height:1.5;padding:12px 28px;margin-top:28px}.cj-diagnosis{display:block;width:fit-content;max-width:100%;margin:24px auto 0;font-size:16px;text-decoration:underline!important;text-underline-offset:4px}
+@media(min-width:1024px) and (max-width:1099px){.cj-bd .cj-title{font-size:42px}}
+@media(max-width:1023px){.cj-bd-grid,.cj-community-layout{grid-template-columns:minmax(0,1fr);gap:28px}.cj-bd .cj-title{max-width:720px}.cj-bd .cj-sample{width:100%;max-width:760px}.cj-cases{grid-template-columns:minmax(0,1fr);gap:48px}.cj-projects-head{align-items:start;flex-direction:column;gap:20px}.cj-community-photos{width:100%;max-width:760px}.cj-community-title .last{display:inline-block}.cj-community-title .phrase{margin-right:.1em}.cj-domains{column-gap:24px}.cj-domains span{font-size:22px}.cj-other-links a{grid-template-columns:260px minmax(0,1fr);gap:24px}}
+@media(max-width:767px){.cj-wrap{width:calc(100% - 44px)}.cj-section,.cj-philosophy,.cj-final{padding:56px 0}.cj-title{font-size:30px;line-height:1.4;margin-bottom:20px}.cj-kicker{font-size:13px;margin-bottom:16px}.cj-copy,.cj-change{font-size:16px;line-height:1.8}.cj-bd .cj-title{margin-bottom:20px}.cj-bd .cj-kicker{margin-bottom:20px}.cj-link{font-size:16px}.cj-territory-grid{grid-template-columns:minmax(0,1fr);gap:24px}.cj-domains{grid-template-columns:minmax(0,1fr);gap:0}.cj-domains span{font-size:20px;padding:16px 0}.cj-domains span:nth-last-child(-n+2){border-bottom:0}.cj-domains span:last-child{border-bottom:1px solid #ffffff35}.cj-projects-head{margin-bottom:28px}.cj-cases{gap:48px}.cj-case-title{font-size:22px;line-height:1.45;margin-top:16px;margin-bottom:12px}.cj-case-no{font-size:13px;margin-right:10px}.cj-philosophy .cj-title{font-size:40px;line-height:1.35}.cj-community-title .last{display:block}.cj-community-photos{display:flex;flex-direction:column;gap:18px;aspect-ratio:auto}.cj-community-main,.cj-community-side{position:relative;top:auto;left:auto;right:auto}.cj-community-main{width:100%}#CM01 figcaption{right:6px}.cj-community-side{width:72%;align-self:flex-end}.cj-heroes-head{display:block;margin-bottom:28px}.cj-heroes-head .cj-title{margin-bottom:20px}.cj-people{grid-template-columns:minmax(0,1fr);gap:32px}.cj-person-name{font-size:20px}.cj-person-meta{font-size:14px}.cj-other-links a{grid-template-columns:minmax(0,1fr);gap:8px;padding:20px 0}.cj-final .cj-title{font-size:30px;line-height:1.4}.cj-final .cj-title br{display:none}.cj-button{max-width:100%;width:100%;min-height:52px;padding:12px 20px}.cj-sample figcaption{right:6px;bottom:6px;font-size:13px;padding:4px 6px}#BD01{--position:50% 48%}#CM02{--position:50% 48%}}
+
+/* 2026-09-26: native fixed FV video remains visible through the navy embed background. */
+html,body,.cj-top{background:transparent}
+
+
+.cj-attr{margin:14px 0 0;padding-top:10px;border-top:1px dashed #ffffff38;font-size:13px;line-height:1.7;color:var(--muted)}
+.cj-sub{margin:72px 0 24px;font-size:24px;line-height:1.45;font-weight:600;letter-spacing:-.01em}
+.cj-minis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.cj-mini{border:1px solid #ffffff35;padding:24px 26px 22px;display:flex;flex-direction:column}
+.cj-mini h4{margin:0 0 10px;font-size:19px;line-height:1.5;font-weight:600}
+.cj-mini p{margin:0;font-size:16px;line-height:1.8;color:#dcdfe6}
+.cj-mini .cj-attr{margin-top:14px}
+.cj-mini .cj-link{margin-top:auto;padding-top:16px;align-self:flex-start}
+.cj-mini p+.cj-link{margin-top:16px}
+.cj-all{margin:40px 0 0}
+.cj-all .cj-link{margin-top:0}
+.cj-other-head{margin-bottom:28px}
+.cj-other-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;border-top:1px solid #ffffff35}
+.cj-other-links a{display:block;padding:22px 0;border-bottom:1px solid #ffffff35;font-size:16px;line-height:1.8}
+.cj-other-links strong{display:block;font-weight:500;margin-bottom:6px}
+.cj-other-links span{color:var(--muted)}
+.cj-other-links a:hover strong{color:var(--amber)}
+@media(max-width:767px){.cj-sub{margin-top:56px;font-size:21px}.cj-minis{grid-template-columns:minmax(0,1fr);gap:20px}.cj-mini{padding:20px}.cj-other-links{grid-template-columns:minmax(0,1fr)}.cj-other-links a{padding:20px 0}}
+.nb{display:inline-block}
+.cj-bd .cj-bd-grid{grid-template-columns:minmax(0,1fr)}
+.cj-case>.cj-case-title:first-child{margin-top:0}
+.cj-source-note{font-size:13px;line-height:1.7;color:rgba(246,245,241,.72);margin:10px 0 0;letter-spacing:.02em}
+
+/* 2026-09-30 超人図鑑欄：一覧ページ（/news/interview）と同じ記事データ・同じ巻頭 */
+.cj-heroes .cj-heroes-head{justify-content:flex-start;align-items:flex-end;gap:36px}
+.cj-heroes .zk-concept{max-width:none;font-size:22px;font-weight:600;line-height:1.7;border-left:1px solid var(--amber);padding:2px 0 2px 28px;margin-bottom:4px}
+.zk-concept span{display:inline-block}
+.cj-heroes .nb{display:inline-block}
+.cj-heroes .zk-grid,.cj-heroes .zk-concept{word-break:auto-phrase;line-break:strict}
+.zk-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:start}
+.zk-feature{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.zk-feature-photo,.zk-thumb{display:block;overflow:hidden;aspect-ratio:4/3;background:#2a2a40}
+.zk-feature-photo{aspect-ratio:3/2}
+.zk-img{width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+.zk-feature:hover .zk-img,.zk-row:hover .zk-img{opacity:.85}
+.zk-feature-text{display:block;padding-top:20px}
+.zk-vol{display:block;font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--amber)}
+.zk-feature-name{display:block;font-size:24px;font-weight:600;line-height:1.5;margin-top:6px}
+.zk-field{display:block;font-size:14px;line-height:1.7;color:var(--muted)}
+.zk-quote{display:block;margin-top:20px;padding-left:18px;border-left:2px solid var(--amber)}
+.zk-quote-line{display:block;font-size:26px;font-weight:700;line-height:1.5}
+.zk-quote-line span{display:inline-block}
+.zk-quote-line span:first-child{margin-left:-.5em}
+.zk-cite{display:block;margin-top:6px;font-size:13px;color:var(--muted)}
+.zk-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.14)}
+.zk-list li{border-bottom:1px solid rgba(255,255,255,.14)}
+.zk-row{display:grid;grid-template-columns:136px minmax(0,1fr);gap:20px;align-items:center;padding:18px 0}
+.zk-row-text{display:block;min-width:0}
+.zk-name{display:block;font-size:18px;font-weight:500;line-height:1.5;margin-top:2px}
+.zk-row .zk-field{font-size:13px}
+@media(max-width:1023px){.zk-grid{grid-template-columns:minmax(0,1fr);gap:32px}.zk-feature{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center}.zk-feature-text{padding-top:0}.zk-row{grid-template-columns:160px minmax(0,1fr)}}
+@media(max-width:767px){.cj-heroes .zk-concept{font-size:18px;padding-left:16px}.zk-feature-photo{aspect-ratio:4/3}.zk-feature{grid-template-columns:minmax(0,1fr);gap:0}.zk-feature-text{padding-top:18px}.zk-quote-line{font-size:22px}.zk-feature-name{font-size:22px}.zk-row{grid-template-columns:112px minmax(0,1fr);gap:16px;padding:16px 0}.zk-name{font-size:17px}}
+</style>
+<div class="cj-top">
+<section class="cj-section cj-bd"><div class="cj-wrap">
+  <p class="cj-kicker">CHOUJINの事業開発</p>
+  <div class="cj-bd-grid"><div>
+    <h2 class="cj-title">事業戦略を、<br>顧客の本音で磨く。</h2>
+    <p class="cj-copy">顧客候補へのアプローチから、商談・ヒアリングまで。顧客の反応をもとに、狙う市場、提供価値、売り方を具体化します。</p>
+    <a target="_top" class="cj-link" href="https://choujin.net/service">支援内容と進め方を見る →</a>
+  </div></div>
+</div></section>
+<section class="cj-section cj-territory"><div class="cj-wrap cj-territory-grid">
+  <h2 class="cj-title">これまで関わった領域</h2>
+  <div class="cj-domains"><span>宇宙・半導体</span><span>製造・化学</span><span>医療・ヘルスケア</span><span>食品・畜産</span><span>教育</span><span>自治体・地域課題</span></div>
+</div></section>
+<section class="cj-section cj-projects"><div class="cj-wrap">
+  <div class="cj-projects-head"><div><p class="cj-kicker">PROJECTS</p><h2 class="cj-title">事業開発の支援実績</h2><p class="cj-source-note">※代表・メンバーの前職での実績を含みます。</p></div></div>
+  <div class="cj-cases">
+<article class="cj-case">
+  <h3 class="cj-case-title"><span class="nb">遺伝子検査 ×</span> <span class="nb">健康保険組合・企業</span></h3>
+  <p class="cj-change">導入先の声を事例化し、既存顧客への追加提案と新規開拓、過去に見送られた企業への再提案に活用。約3年間で40社への導入につなげました。</p>
+  <a class="cj-link" href="https://choujin.net/projects#genome" target="_top">支援内容を見る →</a>
+</article>
+<article class="cj-case">
+  <h3 class="cj-case-title"><span class="nb">AIカメラ ×</span> <span class="nb">小売・製造業</span></h3>
+  <p class="cj-change">小売の万引き防止に使われていたAIカメラを、製造現場の盗難対策・衛生管理・安全確認へ提案。ターゲット設定からアポイント獲得、商談まで担いました。</p>
+  <a class="cj-link" href="https://choujin.net/projects#ai-camera" target="_top">支援内容を見る →</a>
+</article></div>
+  <h3 class="cj-sub"><span class="nb">その他の</span><span class="nb">支援実績</span></h3>
+  <div class="cj-minis">
+<article class="cj-mini"><h4><span class="nb">宇宙 ×</span> <span class="nb">食品メーカー</span></h4><p>宇宙関連企業のパートナーとして、食品メーカーへ提案。研究開発部門への提案から、広報・CSRを入口にした小さな第一段階の提案へ切り替え、約15社と商談・面談。</p><a class="cj-link" href="https://choujin.net/projects#space-food" target="_top">詳しく見る →</a></article>
+<article class="cj-mini"><h4><span class="nb">電力の見える化 ×</span> <span class="nb">工務店・</span><span class="nb">蓄電池販売会社</span></h4><p>5年事業計画を一緒につくり、工務店や蓄電池販売会社へのアポイント獲得から商談まで担当。</p><a class="cj-link" href="https://choujin.net/projects#energy-visualization" target="_top">詳しく見る →</a></article>
+<article class="cj-mini"><h4><span class="nb">自治体 ×</span> <span class="nb">地域課題・DX</span></h4><p>複数の部署に接触し、部署ごとの課題に合わせて提案テーマと商談の入口を調整。部署探索から顧客開拓・商談まで担当。</p><a class="cj-link" href="https://choujin.net/projects#municipality" target="_top">詳しく見る →</a></article>
+<article class="cj-mini"><h4><span class="nb">近視抑制メガネ ×</span> <span class="nb">新市場</span></h4><p>メガネ店への営業に加え、イベントや企業の健康経営施策へ提案先を拡大。市場探索から顧客開拓・商談まで担当。</p><a class="cj-link" href="https://choujin.net/projects#myopia-glasses" target="_top">詳しく見る →</a></article>
+  </div>
+  <p class="cj-all"><a class="cj-link" href="https://choujin.net/projects" target="_top">支援実績を一覧で見る →</a></p>
+</div></section>
+<section class="cj-section cj-other"><div class="cj-wrap"><div class="cj-other-head"><p class="cj-kicker">SERVICE</p><h2 class="cj-title"><span class="nb">その他の</span><span class="nb">支援サービス</span></h2></div><div class="cj-other-links"><a target="_top" href="https://choujin.net/service#external-coo"><strong>外部COO</strong><span>経営・事業・組織の課題を整理し、実行まで支援します。</span></a><a target="_top" href="https://choujin.net/service#sales-onboarding"><strong>新人営業オンボーディング</strong><span>商談準備と実践の振り返りを通じて、現場で動ける営業担当者を育てます。</span></a><a target="_top" href="https://choujin.net/service#ai-ritsu"><strong>AI伴走リッツー</strong><span>日々の疑問を相談しながら、自分たちの業務にAIを活かせるよう支援します。</span></a><a target="_top" href="https://choujin.net/service#training"><strong>研修・講演・ファシリテーション</strong><span>AI、事業開発、健康経営、宇宙などをテーマに、学びと対話の場をつくります。</span></a></div></div></section>
+<section class="cj-philosophy"><div class="cj-wrap"><p class="cj-kicker">CHOUJINの考え方</p><h2 class="cj-title">困難を、<br>歓びに変える。</h2><p class="cj-copy"><span>知らないことを面白がる。</span><span>難しいことから逃げない。</span><span>相手の「なぜ」に向き合う。</span></p><a target="_top" class="cj-link" href="https://choujin.net/company">CHOUJINについて →</a></div></section>
+<section class="cj-section cj-community"><div class="cj-wrap cj-community-layout">
+  <div class="cj-community-head"><p class="cj-kicker">CHOUJINコミュニティ</p>
+    <h2 class="cj-title cj-community-title"><span class="phrase">分野や肩書きを</span><span class="phrase">越えて、</span><span class="phrase last">人がつながる場。</span></h2>
+    <p class="cj-copy">円卓の会、勉強会、スポーツや滝行などを通じて、仕事や年齢の異なる人たちが交流しています。</p>
+    <a target="_top" class="cj-link" href="https://choujin.net/community">交流・学びの場を見る →</a>
+  </div><div class="cj-community-photos"><figure id="CM01" data-asset-id="CM01" class="cj-sample cj-community-main">
+      <img src="https://service-v5--choujin-bd-shindan.netlify.app/service-v5/img/top_cm01.jpg" alt="滝の前で集合したコミュニティのメンバー" loading="eager" decoding="async">
+    </figure><figure id="CM02" data-asset-id="CM02" class="cj-sample cj-community-side">
+      <img src="https://service-v5--choujin-bd-shindan.netlify.app/service-v5/img/top_cm02.jpg" alt="和室に集まったコミュニティのメンバー" loading="eager" decoding="async">
+    </figure></div>
+</div></section>
+<section class="cj-section cj-heroes" lang="ja"><div class="cj-wrap"><div class="cj-heroes-head"><div><p class="cj-kicker">人を知る</p><h2 class="cj-title">超人図鑑</h2></div><p class="cj-copy zk-concept"><span>誰かの本気が、</span><span>誰かの心に火を灯す。</span></p></div><div class="zk-grid"><a target="_top" class="zk-feature" href="https://choujin.net/posts/vY5e9aq8"><span class="zk-feature-photo"><img class="zk-img" src="https://storage.googleapis.com/studio-cms-assets/projects/d7WlzpreqV/s-1206x905_v-fms_webp_4ecc5b27-5264-441d-8b8a-030c88547ceb.webp" alt="競技中の川島雅弘さん" width="1206" height="905" loading="lazy" decoding="async" style="object-position:60% 40%"></span><span class="zk-feature-text"><span class="zk-vol">巻頭　Vol.05</span><span class="zk-feature-name">川島 雅弘</span><span class="zk-field"><span class="nb">不動産</span> <span class="nb">×</span> <span class="nb">コーチング</span> <span class="nb">×</span> <span class="nb">アスリート</span></span><span class="zk-quote"><span class="zk-quote-line"><span>「まずは</span><span>日本の朝を</span><span>変えます。」</span></span><span class="zk-cite">記事末尾の宣言より</span></span></span></a><ul class="zk-list"><li><a target="_top" class="zk-row" href="https://choujin.net/posts/BL2PzFZm"><span class="zk-thumb"><img class="zk-img" src="https://storage.googleapis.com/studio-cms-assets/projects/d7WlzpreqV/s-1440x1080_v-fms_webp_6eedaecc-ed40-4ee8-b1f3-180fd60cdf9f.jpg" alt="取材で話す塩澤駿一さん" width="1440" height="1080" loading="lazy" decoding="async" style="object-position:40% 30%"></span><span class="zk-row-text"><span class="zk-vol">Vol.04</span><span class="zk-name">塩澤 駿一</span><span class="zk-field"><span class="nb">テラドローン株式会社</span> <span class="nb">執行役員CTO</span></span></span></a></li><li><a target="_top" class="zk-row" href="https://choujin.net/posts/u4iI8qk7"><span class="zk-thumb"><img class="zk-img" src="https://storage.googleapis.com/studio-cms-assets/projects/d7WlzpreqV/s-4032x2268_v-frms_webp_b1c66553-b80c-44c3-84ac-2ea1f6264104.webp" alt="後藤早貴子さん" width="4032" height="2268" loading="lazy" decoding="async" style="object-position:47% 60%;transform:scale(1.45);transform-origin:47% 60%"></span><span class="zk-row-text"><span class="zk-vol">Vol.03</span><span class="zk-name">後藤 早貴子</span><span class="zk-field"><span class="nb">社会保険労務士試験</span> <span class="nb">合格／</span><span class="nb">介護福祉士</span></span></span></a></li><li><a target="_top" class="zk-row" href="https://choujin.net/posts/kEJhPE1T"><span class="zk-thumb"><img class="zk-img" src="https://storage.googleapis.com/studio-cms-assets/projects/d7WlzpreqV/s-1170x781_v-fs_webp_7aafc71a-088e-43c3-89fb-3c7ef42cae62.webp" alt="符毅欣さん" width="1170" height="781" loading="lazy" decoding="async" style="object-position:50% 30%"></span><span class="zk-row-text"><span class="zk-vol">Vol.02</span><span class="zk-name">符 毅欣</span><span class="zk-field"><span class="nb">株式会社ONCALL</span> <span class="nb">代表取締役／</span><span class="nb">医師</span></span></span></a></li><li><a target="_top" class="zk-row" href="https://choujin.net/posts/EO1A8TFZ"><span class="zk-thumb"><img class="zk-img" src="https://storage.googleapis.com/studio-cms-assets/projects/d7WlzpreqV/s-1024x768_v-fs_webp_819c58db-9e85-41aa-ac73-d0c89105d47b.jpg" alt="取材で話す今林広樹さん" width="1024" height="768" loading="lazy" decoding="async" style="object-position:45% 45%"></span><span class="zk-row-text"><span class="zk-vol">Vol.01</span><span class="zk-name">今林 広樹</span><span class="zk-field"><span class="nb">EAGLYS</span> <span class="nb">代表取締役</span></span></span></a></li></ul></div><a target="_top" class="cj-link" href="https://choujin.net/news/interview">超人図鑑を見る →</a></div></section>
+</div>
+<script>(function(){var base="https://choujin.net";try{var r=new URL(document.referrer);if(r.hostname==="preview.studio.site"){var m=r.pathname.match(/^\/live\/[^/]+/);base=r.origin+(m?m[0]:"/live/M3aAjv9GWe");}}catch(e){}document.querySelectorAll('a[href^="https://choujin.net/"]').forEach(function(a){var u=new URL(a.href);a.href=base+u.pathname+u.search+u.hash;a.target="_top";});})();</script><script>(function(){function r(){parent.postMessage({type:"choujin-top-height",key:"top1",height:Math.ceil(document.body.getBoundingClientRect().height)},"*")}if(window.ResizeObserver)new ResizeObserver(r).observe(document.body);window.addEventListener("load",r);window.addEventListener("message",function(e){if(e.source===parent&&e.data&&e.data.type==="choujin-top-measure")r()});r()})();</script>

@@ -1,0 +1,7 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>プレビュー：トップの超人図鑑（変更後）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#1A1A2E;font-family:"Noto Sans JP",sans-serif}.bar{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;padding:10px 16px;background:#f6f5f1;color:#1A1A2E;font-size:13px}.bar a{color:#1A1A2E}iframe{display:block;width:100%;border:0;height:6000px}</style></head>
+<body><div class="bar"><strong>プレビュー：トップの超人図鑑（変更後）</strong><span>トップページの埋め込み1（支援実績〜超人図鑑）をそのまま表示。超人図鑑の欄までスクロールします</span><a href="before.html">変更前を見る</a></div>
+<iframe id="f" src="embed1.html" title="トップページ埋め込み1"></iframe>
+<script>var f=document.getElementById('f');addEventListener('message',function(ev){if(ev.data&&ev.data.type==='choujin-top-height')f.style.height=ev.data.height+'px'});
+f.addEventListener('load',function(){setTimeout(function(){var s=f.contentDocument.querySelector('.cj-heroes');if(s)scrollTo(0,f.offsetTop+s.offsetTop-document.querySelector('.bar').offsetHeight-8)},600)});</script></body></html>
