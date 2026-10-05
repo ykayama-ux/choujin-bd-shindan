@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="合同会社CHOUJINの企業向け宇宙ワークショップ。宇宙事業のいまを知り、自分たちの会社で何ができるかを考える機会をつくります。" />
+  <meta name="theme-color" content="#08131d" />
+  <title>企業向け 宇宙ワークショップ｜合同会社CHOUJIN</title>
+
+  <style>
+    :root {
+      --ink: #06111a;
+      --ink-2: #0b1824;
+      --ink-3: #14283a;
+      --paper: #f4f0e8;
+      --paper-2: #ebe4d8;
+      --white: #ffffff;
+      --muted: #a9b8c3;
+      --muted-dark: #586a77;
+      --line: rgba(255,255,255,.16);
+      --line-dark: rgba(6,17,26,.12);
+      --accent: #89d8f0;
+      --accent-2: #d7f4fb;
+      --accent-3: #e8cfa0;
+      --max: 1180px;
+      --radius: 28px;
+      --shadow: 0 28px 80px rgba(2, 9, 16, .18);
+      --shadow-soft: 0 18px 48px rgba(6, 17, 26, .08);
+      --glass: rgba(255,255,255,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--ink);
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Hiragino Sans",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        "YuGothic",
+        "Noto Sans JP",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(137,216,240,.08), transparent 22%),
+        linear-gradient(180deg, #f7f3ec 0%, var(--paper) 30%, #f1ece2 100%);
+      line-height: 1.75;
+      letter-spacing: .02em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    ::selection {
+      color: var(--ink);
+      background: var(--accent);
+    }
+
+    .wrap {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 40;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid transparent;
+      transition: background .25s ease, border-color .25s ease, backdrop-filter .25s ease;
+    }
+
+    .site-header.is-scrolled {
+      background: linear-gradient(180deg, rgba(6,17,26,.92), rgba(6,17,26,.78));
+      border-color: rgba(255,255,255,.09);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 34px rgba(2,8,14,.22);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 48px), 1320px);
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: .12em;
+      font-size: 14px;
+    }
+
+    .brand-mark {
+      width: 30px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(255,255,255,.48);
+      border-radius: 50%;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      transform: translateX(6px);
+      box-shadow: 0 0 24px rgba(137,216,240,.28);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: rgba(255,255,255,.76);
+      font-size: 13px;
+    }
+
+    .header-nav a {
+      transition: color .2s ease;
+    }
+
+    .header-nav a:hover {
+      color: var(--white);
+    }
+
+    .header-cta {
+      color: var(--ink) !important;
+      background: var(--white);
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+
+    .hero {
+      min-height: 100vh;
+      min-height: 100svh;
+      background:
+        radial-gradient(circle at 78% 24%, rgba(137,216,240,.18), transparent 24%),
+        radial-gradient(circle at 16% 8%, rgba(255,255,255,.09), transparent 16%),
+        radial-gradient(circle at 60% 78%, rgba(232,207,160,.09), transparent 22%),
+        linear-gradient(160deg, #04111b 0%, #081623 44%, #06111a 72%, #07121a 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 150px 0 92px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -22% -8% auto auto;
+      width: 64vw;
+      max-width: 1040px;
+      min-width: 560px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.14);
+      transform: rotate(-12deg) scaleY(.42);
+      box-shadow:
+        0 0 0 78px rgba(255,255,255,.022),
+        0 0 0 158px rgba(255,255,255,.014),
+        0 0 120px rgba(137,216,240,.08) inset;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      right: 20%;
+      top: 22%;
+      background: var(--accent);
+      box-shadow:
+        -23vw 21vh 0 -2px rgba(255,255,255,.64),
+        11vw 26vh 0 -3px rgba(255,255,255,.52),
+        -8vw 48vh 0 -2px rgba(255,255,255,.34),
+        18vw 55vh 0 -3px rgba(255,255,255,.54),
+        -2vw 12vh 28px 8px rgba(137,216,240,.18);
+      pointer-events: none;
+    }
+
+    .hero .hero-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .42;
+      background-image:
+        radial-gradient(circle at 12% 20%, rgba(255,255,255,.9) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,.75) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 64% 72%, rgba(255,255,255,.7) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 22% 66%, rgba(255,255,255,.65) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 84% 42%, rgba(255,255,255,.9) 0 1px, transparent 1.5px);
+    }
+
+    /* hero video (NASA Artemis II, public domain) */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 72% 50%;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-shade {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(4,17,27,.45) 0%, rgba(4,17,27,.18) 45%, rgba(4,17,27,0) 100%),
+        linear-gradient(180deg, rgba(4,17,27,.35) 0%, transparent 18%, transparent 80%, rgba(4,17,27,.55) 100%);
+    }
+
+    @media (max-width: 720px) {
+      .hero-video-shade {
+        background: linear-gradient(180deg, rgba(4,17,27,.38) 0%, rgba(4,17,27,.28) 40%, rgba(4,17,27,.45) 70%, rgba(4,17,27,.7) 100%);
+      }
+    }
+
+    .video-credit {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      opacity: .7;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap: clamp(56px, 8vw, 120px);
+      align-items: end;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      color: var(--accent-2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 880px;
+      font-size: clamp(48px, 6.9vw, 96px);
+      line-height: 1.04;
+      letter-spacing: -.05em;
+      font-weight: 790;
+      text-wrap: balance;
+    }
+
+    .hero-lead {
+      margin: 34px 0 0;
+      max-width: 760px;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.85;
+      letter-spacing: .01em;
+      color: rgba(255,255,255,.88);
+    }
+
+    .hero-lead strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .hero-positioning {
+      margin: 26px 0 0;
+      padding: 14px 18px 14px 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-left: 2px solid var(--accent);
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+      line-height: 1.8;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border-radius: 18px;
+      width: fit-content;
+      max-width: 100%;
+      box-shadow: 0 18px 40px rgba(0,0,0,.16);
+    }
+
+    .hero-actions {
+      margin-top: 42px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 56px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 750;
+      letter-spacing: .03em;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: linear-gradient(180deg, #ffffff, #eef8fb);
+      color: var(--ink);
+      box-shadow: 0 18px 38px rgba(137,216,240,.18);
+    }
+
+    .button-primary::after,
+    .submit-button::after {
+      content: "→";
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .button-ghost {
+      border-color: rgba(255,255,255,.22);
+      color: rgba(255,255,255,.92);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-note {
+      padding: 30px 28px 28px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      color: rgba(255,255,255,.74);
+      font-size: 14px;
+      line-height: 1.9;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 56px rgba(0,0,0,.18);
+    }
+
+    .hero-note b {
+      display: block;
+      color: var(--white);
+      font-size: 17px;
+      margin-bottom: 10px;
+      letter-spacing: .01em;
+    }
+
+    .hero-note .fee {
+      margin-top: 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .hero-note .fee span:first-child {
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .hero-note .fee strong {
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    section {
+      position: relative;
+      overflow: clip;
+    }
+
+    .section {
+      padding: clamp(92px, 11vw, 150px) 0;
+    }
+
+    .section-intro {
+      display: grid;
+      grid-template-columns: minmax(220px, .58fr) minmax(0, 1.42fr);
+      gap: clamp(40px, 8vw, 110px);
+      align-items: start;
+    }
+
+    .eyebrow {
+      margin: 2px 0 0;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--muted-dark);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(34px, 4.8vw, 66px);
+      line-height: 1.18;
+      letter-spacing: -.04em;
+      font-weight: 780;
+      max-width: 930px;
+      text-wrap: balance;
+    }
+
+    .section-copy {
+      margin: 28px 0 0;
+      max-width: 800px;
+      font-size: 18px;
+      line-height: 2;
+      color: #31424d;
+    }
+
+    .section-copy strong {
+      color: var(--ink);
+      font-weight: 740;
+    }
+
+    .relation {
+      background:
+        radial-gradient(circle at 100% 0%, rgba(137,216,240,.09), transparent 26%),
+        linear-gradient(180deg, #f7f4ee 0%, var(--paper) 100%);
+    }
+
+    .relation-visual {
+      margin-top: clamp(64px, 9vw, 110px);
+      min-height: 390px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      border: 1px solid rgba(6,17,26,.08);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.62), rgba(255,255,255,.42));
+      box-shadow: var(--shadow-soft);
+    }
+
+    .relation-axis {
+      padding: 52px 48px 52px 0;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      min-height: 360px;
+    }
+
+    .orbit-diagram {
+      position: absolute;
+      inset: 40px 24px 40px 0;
+      overflow: hidden;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      border: 1px solid rgba(8,19,29,.16);
+      border-radius: 50%;
+      transform: rotate(-12deg) scaleY(.42);
+    }
+
+    .orbit-ring.one {
+      width: 380px;
+      height: 380px;
+      left: -70px;
+      top: -20px;
+    }
+
+    .orbit-ring.two {
+      width: 520px;
+      height: 520px;
+      left: -120px;
+      top: -90px;
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 12px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--ink);
+      left: 164px;
+      top: 94px;
+      box-shadow:
+        128px 70px 0 -3px rgba(8,19,29,.28),
+        42px 160px 0 -4px rgba(8,19,29,.22);
+    }
+
+    .relation-axis p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      max-width: 380px;
+      font-size: 22px;
+      line-height: 1.7;
+      font-weight: 700;
+      letter-spacing: -.015em;
+    }
+
+    .relation-body {
+      border-left: 1px solid rgba(6,17,26,.08);
+      padding: 52px 34px 52px clamp(40px, 6vw, 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .relation-body p {
+      margin: 0;
+      max-width: 680px;
+      font-size: 18px;
+      line-height: 2;
+      color: #30414c;
+    }
+
+    .relation-body .lead {
+      color: var(--ink);
+      font-size: clamp(23px, 2.6vw, 34px);
+      line-height: 1.65;
+      font-weight: 720;
+      letter-spacing: -.02em;
+    }
+
+
+    .why {
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+    }
+
+    .why-head {
+      display: grid;
+      grid-template-columns: minmax(220px, .58fr) minmax(0, 1.42fr);
+      gap: clamp(40px, 8vw, 110px);
+      align-items: start;
+    }
+
+    .why-body {
+      margin-top: clamp(64px, 8vw, 100px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
+      gap: clamp(48px, 9vw, 130px);
+      padding-top: 42px;
+      border-top: 1px solid var(--line-dark);
+      position: relative;
+    }
+
+    .why-main {
+      max-width: 690px;
+      padding: 4px 0;
+    }
+
+    .why-main p {
+      margin: 0;
+      color: #30414c;
+      font-size: 17px;
+      line-height: 2;
+    }
+
+    .why-main p + p {
+      margin-top: 28px;
+    }
+
+    .why-main .why-lead {
+      color: var(--ink);
+      font-size: clamp(22px, 2.5vw, 32px);
+      line-height: 1.7;
+      letter-spacing: -.018em;
+      font-weight: 720;
+    }
+
+    .why-facilitation {
+      padding: 26px clamp(24px, 3vw, 34px);
+      border: 1px solid rgba(6,17,26,.08);
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(249,247,241,.88));
+      box-shadow: var(--shadow-soft);
+    }
+
+    .why-label {
+      margin: 0 0 20px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 780;
+      letter-spacing: .03em;
+    }
+
+    .why-facilitation > p:not(.why-label):not(.why-note) {
+      margin: 0;
+      color: #40515b;
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .why-note {
+      margin: 26px 0 0;
+      color: #718089;
+      font-size: 12px;
+      line-height: 1.8;
+      padding-top: 18px;
+      border-top: 1px solid rgba(6,17,26,.08);
+    }
+
+    .flow {
+      background:
+        radial-gradient(circle at 10% 10%, rgba(137,216,240,.10), transparent 22%),
+        radial-gradient(circle at 85% 80%, rgba(232,207,160,.08), transparent 20%),
+        linear-gradient(180deg, #07131d 0%, #06111a 100%);
+      color: var(--white);
+    }
+
+    .flow .eyebrow {
+      color: var(--accent-2);
+    }
+
+    .flow .section-copy {
+      color: rgba(255,255,255,.68);
+    }
+
+    .flow .section-copy strong {
+      color: var(--white);
+    }
+
+    .flow-list {
+      margin-top: clamp(62px, 8vw, 100px);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border-radius: 28px;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 90px minmax(220px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(24px, 4vw, 56px);
+      padding: 42px 34px 42px;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .flow-step .num {
+      color: var(--accent-2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      padding-top: 6px;
+    }
+
+    .flow-step h3 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.35;
+      letter-spacing: -.025em;
+      font-weight: 720;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: rgba(255,255,255,.66);
+      font-size: 16px;
+      line-height: 1.9;
+      max-width: 650px;
+    }
+
+
+    .after {
+      background:
+        radial-gradient(circle at 84% 14%, rgba(137,216,240,.14), transparent 20%),
+        linear-gradient(180deg, #e4eceb 0%, #dfe8e8 100%);
+    }
+
+    .after-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+      gap: clamp(50px, 10vw, 140px);
+      align-items: start;
+    }
+
+    .after-title {
+      position: sticky;
+      top: 120px;
+    }
+
+    .after-title .section-title {
+      max-width: 560px;
+    }
+
+    .after-body {
+      padding-top: 12px;
+    }
+
+    .after-body p {
+      margin: 0;
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.9;
+      letter-spacing: -.012em;
+      color: #20323c;
+    }
+
+    .after-body p + p {
+      margin-top: 34px;
+    }
+
+    .after-body .small {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #53656e;
+      padding-top: 28px;
+      border-top: 1px solid rgba(8,19,29,.16);
+    }
+
+    .apply {
+      background:
+        linear-gradient(180deg, #f7f3ec 0%, #f2ede3 100%);
+    }
+
+    .apply-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+      gap: clamp(44px, 8vw, 120px);
+      align-items: end;
+      padding-bottom: 54px;
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .apply-note {
+      color: var(--muted-dark);
+      font-size: 15px;
+      line-height: 1.9;
+      max-width: 470px;
+    }
+
+    .apply-note strong {
+      color: var(--ink);
+      font-weight: 740;
+    }
+
+    .form-shell {
+      display: grid;
+      grid-template-columns: minmax(220px, .55fr) minmax(0, 1.45fr);
+      gap: clamp(42px, 8vw, 100px);
+      padding-top: 62px;
+      align-items: start;
+    }
+
+    .form-aside {
+      color: #3f505a;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .form-aside p {
+      margin: 0;
+    }
+
+    .form-aside p + p {
+      margin-top: 24px;
+    }
+
+    .form-aside .company {
+      font-weight: 750;
+      color: var(--ink);
+    }
+
+    form {
+      width: 100%;
+      padding: 14px 0 0;
+    }
+
+    .field {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      padding: 20px 0 21px;
+      border-bottom: 1px solid rgba(6,17,26,.12);
+    }
+
+    .field:first-of-type {
+      border-top: 1px solid rgba(6,17,26,.12);
+    }
+
+    .field label {
+      font-size: 14px;
+      font-weight: 720;
+      padding-top: 13px;
+    }
+
+    .required {
+      margin-left: 8px;
+      color: #687a84;
+      font-size: 11px;
+      font-weight: 650;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      border-radius: 0;
+      padding: 10px 0;
+      min-height: 48px;
+      font-size: 16px;
+    }
+
+    .field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #8b999f;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      box-shadow: inset 0 -2px 0 var(--ink);
+    }
+
+    .hp-field {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+    }
+
+    .form-footer {
+      margin-top: 34px;
+      display: flex;
+      justify-content: space-between;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .form-footer p {
+      margin: 0;
+      max-width: 520px;
+      color: var(--muted-dark);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .submit-button {
+      border: 0;
+      background: linear-gradient(180deg, #081623, #0c2132);
+      color: var(--white);
+      min-width: 240px;
+      min-height: 58px;
+      border-radius: 999px;
+      padding: 0 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease;
+      box-shadow: 0 18px 32px rgba(6,17,26,.18);
+    }
+
+    .submit-button:hover {
+      transform: translateY(-2px);
+      background: #132b3c;
+    }
+
+    .site-footer {
+      background: #061019;
+      color: rgba(255,255,255,.6);
+      padding: 34px 0 40px;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-inner b {
+      color: var(--white);
+      letter-spacing: .1em;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition-duration: .001ms !important;
+        transition-delay: 0ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .header-nav a:not(.header-cta) {
+        display: none;
+      }
+
+      .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding-top: 132px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 54px;
+      }
+
+      .hero-note {
+        max-width: 700px;
+      }
+
+      .hero-positioning {
+        width: 100%;
+      }
+
+      .section-intro,
+      .why-head,
+      .why-body,
+      .after-grid,
+      .apply-head,
+      .form-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .why-facilitation {
+        padding: 24px 22px;
+        border: 1px solid rgba(6,17,26,.08);
+        border-radius: 22px;
+      }
+
+      .after-title {
+        position: static;
+      }
+
+      .relation-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .relation-axis {
+        min-height: 310px;
+        padding-right: 0;
+      }
+
+      .relation-body {
+        border-left: 0;
+        border-top: 1px solid rgba(6,17,26,.08);
+        padding-left: 0;
+      }
+
+      .flow-step {
+        grid-template-columns: 64px minmax(0, .8fr) minmax(0, 1.2fr);
+      }
+
+      .form-shell {
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(calc(100% - 32px), var(--max));
+      }
+
+      .site-header {
+        height: 66px;
+      }
+
+      .header-inner {
+        width: calc(100% - 32px);
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .brand-mark {
+        width: 26px;
+      }
+
+      .header-cta {
+        padding: 9px 14px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 112px 0 70px;
+      }
+
+      .hero::before {
+        width: 760px;
+        right: -360px;
+        top: -100px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 12vw, 64px);
+      }
+
+      .hero-lead {
+        margin-top: 26px;
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        margin-top: 34px;
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-note {
+        padding-top: 24px;
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+
+      .section-title {
+        font-size: clamp(32px, 9.5vw, 48px);
+      }
+
+      .section-copy {
+        margin-top: 22px;
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      .section-intro,
+      .why-head {
+        gap: 24px;
+      }
+
+      .why-body {
+        margin-top: 52px;
+        gap: 34px;
+        padding-top: 32px;
+      }
+
+      .why-main .why-lead {
+        font-size: 23px;
+      }
+
+      .relation-visual {
+        margin-top: 54px;
+      }
+
+      .relation-axis {
+        min-height: 275px;
+        padding: 36px 0;
+      }
+
+      .orbit-diagram {
+        inset: 24px 0 24px -20px;
+      }
+
+      .relation-axis p {
+        font-size: 20px;
+      }
+
+      .relation-body {
+        padding: 36px 0 4px;
+      }
+
+      .relation-body .lead {
+        font-size: 24px;
+      }
+
+      .relation-body p {
+        font-size: 16px;
+      }
+
+
+      .flow-list {
+        margin-top: 52px;
+      }
+
+      .flow-step {
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 14px 16px;
+        padding: 30px 20px;
+      }
+
+      .flow-step .num {
+        grid-row: 1 / span 2;
+      }
+
+      .flow-step h3 {
+        font-size: 27px;
+      }
+
+      .flow-step p {
+        font-size: 15px;
+      }
+
+
+      .after-grid {
+        gap: 36px;
+      }
+
+      .after-body p {
+        font-size: 21px;
+      }
+
+      .apply-head {
+        gap: 26px;
+        padding-bottom: 40px;
+      }
+
+      .form-shell {
+        padding-top: 42px;
+      }
+
+      .field {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 18px 0;
+      }
+
+      .field label {
+        padding-top: 0;
+      }
+
+      .form-footer {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .submit-button {
+        width: 100%;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="CHOUJIN 宇宙ワークショップ トップへ">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>CHOUJIN</span>
+      </a>
+
+      <nav class="header-nav" aria-label="ページ内ナビゲーション">
+        <a href="#about">内容</a>
+        <a href="#why">CHOUJINがやる理由</a>
+        <a href="#flow">進め方</a>
+        <a href="#after">その後</a>
+        <a href="#contact" class="header-cta">問い合わせる</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-launch-poster.jpg" aria-hidden="true">
+        <source src="assets/hero-launch.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-video-shade" aria-hidden="true"></div>
+      <div class="hero-stars" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div>
+          <div class="hero-kicker">企業向け 宇宙ワークショップ</div>
+
+          <h1 id="hero-title">宇宙を学び、自分たちの会社で何ができるかを考える。</h1>
+
+          <p class="hero-lead">
+            自社の事業に宇宙がどう関わるのか、まだ分からない企業のためのワークショップです。
+            <strong>宇宙事業を始めることは前提にしません。</strong>
+            まず可能性を知り、夢を語るだけでも構いません。
+          </p>
+
+          <p class="hero-positioning">
+            特定の宇宙サービスを提案するワークショップではありません。
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">ワークショップについて問い合わせる</a>
+            <a class="button button-ghost" href="#about">内容を見る</a>
+          </div>
+        </div>
+
+        <aside class="hero-note">
+          <b>新規事業・研究開発・経営企画などの担当者・管理職を想定しています。</b>
+          これから、自社と宇宙の可能性を探りたい企業向けです。
+
+          <div class="fee">
+            <span>料金</span>
+            <strong>当面、ワークショップ費用はいただきません。</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section relation" id="about">
+      <div class="wrap">
+        <div class="section-intro reveal">
+          <p class="eyebrow">何をするのか</p>
+
+          <div>
+            <h2 class="section-title">最初に、宇宙事業のいま・歴史・事例を短く共有します。</h2>
+            <p class="section-copy">
+              CHOUJIN代表の嘉山が説明します。
+              そのうえで、<strong>「御社なら、こういう可能性もあるのでは」</strong>という一例を提示します。
+            </p>
+          </div>
+        </div>
+
+        <div class="relation-visual reveal">
+          <div class="relation-axis">
+            <div class="orbit-diagram" aria-hidden="true">
+              <span class="orbit-ring one"></span>
+              <span class="orbit-ring two"></span>
+              <span class="orbit-dot"></span>
+            </div>
+
+            <p>
+              どの企業にも、<br />
+              いろんなチャンスがあります。
+            </p>
+          </div>
+
+          <div class="relation-body">
+            <p class="lead">
+              宇宙事業には、製造業に関わるもの、衛星を使った事業、宇宙実験など、さまざまな形があります。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section why" id="why">
+      <div class="wrap">
+        <div class="why-head reveal">
+          <p class="eyebrow">CHOUJINがやる理由</p>
+          <h2 class="section-title">特定の宇宙サービスからではなく、御社の事業から考えます。</h2>
+        </div>
+
+        <div class="why-body reveal">
+          <div class="why-main">
+            <p class="why-lead">
+              宇宙ベンチャー自身が説明する場合、その会社の技術やサービスが出発点になりやすくなります。
+            </p>
+            <p>
+              CHOUJINは、まず「御社なら、こんなチャンスがあると思う」という一例を出し、
+              そこから参加者自身に考えてもらう場をつくります。
+            </p>
+          </div>
+
+          <div class="why-facilitation">
+            <p class="why-label">講師・ファシリテーションの経験</p>
+            <p>
+              CHOUJINには、前職で、人前で話しながら参加者に声をかけ、
+              反応を聞きながら場を進め、聞き手を退屈させない経験があります。
+              その経験を、講師としての説明とワークショップのファシリテーションに使います。
+            </p>
+            <p class="why-note">※代表・メンバーの前職での経験を含みます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow" id="flow">
+      <div class="wrap">
+        <div class="section-intro reveal">
+          <p class="eyebrow">当日の進め方</p>
+
+          <div>
+            <h2 class="section-title">説明は短く。考える時間と、発表する時間を中心に進めます。</h2>
+            <p class="section-copy">
+              チーム対抗で行います。
+              <strong>チームで考える・発表する・感想を交わす時間</strong>を大事にします。
+            </p>
+          </div>
+        </div>
+
+        <div class="flow-list reveal">
+          <div class="flow-step">
+            <div class="num">01</div>
+            <h3>事例紹介</h3>
+            <p>
+              嘉山から、宇宙事業のいま・歴史・事例を紹介します。
+              御社にあり得そうな可能性も、一例として投げかけます。
+            </p>
+          </div>
+
+          <div class="flow-step">
+            <div class="num">02</div>
+            <h3>チームで考える</h3>
+            <p>
+              「自分たちの会社なら、宇宙と何ができるか」をチームで考えます。
+            </p>
+          </div>
+
+          <div class="flow-step">
+            <div class="num">03</div>
+            <h3>発表</h3>
+            <p>
+              各チームで考えたアイデアを発表します。
+            </p>
+          </div>
+
+          <div class="flow-step">
+            <div class="num">04</div>
+            <h3>感想・表彰</h3>
+            <p>
+              感想を共有し、表彰します。
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section class="section after" id="after">
+      <div class="wrap after-grid">
+        <div class="after-title reveal">
+          <p class="eyebrow">ワークショップの後</p>
+          <h2 class="section-title">やりたいことが見えた場合は、事業化の相談まで続けます。</h2>
+        </div>
+
+        <div class="after-body reveal">
+          <p>
+            ワークショップで出たアイデアについて、<strong>本当に事業化できるかどうか</strong>をCHOUJINと話します。
+          </p>
+
+          <p>
+            やりたいことが明確になった場合は、CHOUJINが企業側の要望を整理し、
+            その内容を宇宙ベンチャーへ伝え、提案を集めるところまで支援します。
+          </p>
+
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section apply" id="contact">
+      <div class="wrap">
+        <div class="apply-head reveal">
+          <div>
+            <p class="eyebrow">申し込み・問い合わせ</p>
+            <h2 class="section-title">自社で何ができるかを考える機会として、ご相談ください。</h2>
+          </div>
+
+          <p class="apply-note">
+            <strong>【要確認：開催形式／標準所要時間／推奨参加人数】</strong>
+          </p>
+        </div>
+
+        <div class="form-shell reveal">
+          <aside class="form-aside">
+            <p class="company">合同会社CHOUJIN</p>
+            <p>
+              企業向け「宇宙ワークショップ」についてのご相談は、右のフォームからお送りください。
+            </p>
+          </aside>
+
+          <form
+            name="space-workshop"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="space-workshop" />
+
+            <p class="hp-field">
+              <label>
+                この欄は入力しないでください
+                <input name="bot-field" tabindex="-1" autocomplete="off" />
+              </label>
+            </p>
+
+            <div class="field">
+              <label for="company">
+                会社名<span class="required">必須</span>
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                autocomplete="organization"
+                required
+                placeholder="例）株式会社〇〇"
+              />
+            </div>
+
+            <div class="field">
+              <label for="name">
+                お名前<span class="required">必須</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                placeholder="例）山田 太郎"
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">
+                メールアドレス<span class="required">必須</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                inputmode="email"
+                required
+                placeholder="example@company.jp"
+              />
+            </div>
+
+            <div class="field">
+              <label for="department">所属・役職</label>
+              <input
+                type="text"
+                id="department"
+                name="department"
+                autocomplete="organization-title"
+                placeholder="例）新規事業部 部長"
+              />
+            </div>
+
+            <div class="field">
+              <label for="message">ご相談内容</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="検討している背景、参加を想定している部門などがあればご記入ください。"
+              ></textarea>
+            </div>
+
+            <div class="form-footer">
+              <p>
+                送信前に、会社名・お名前・メールアドレスをご確認ください。
+              </p>
+
+              <button class="submit-button" type="submit">送信する</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <b>CHOUJIN</b>
+      <span>© 合同会社CHOUJIN<span class="video-credit">映像：NASA（Artemis II）</span></span>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const header = document.getElementById("siteHeader");
+
+      const updateHeader = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 16);
+      };
+
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealTargets = document.querySelectorAll(".reveal");
+
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        revealTargets.forEach((el) => el.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+        );
+
+        revealTargets.forEach((el) => observer.observe(el));
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const targetId = link.getAttribute("href");
+          if (!targetId || targetId === "#") return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          const headerOffset = 74;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+          window.scrollTo({
+            top,
+            behavior: reduceMotion ? "auto" : "smooth"
+          });
+        });
+      });
+    })();
+  </script>
+  <script>
+    (() => {
+      const v = document.querySelector(".hero-video");
+      if (v && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        v.removeAttribute("autoplay");
+        v.pause();
+      }
+    })();
+  </script>
+</body>
+</html>
